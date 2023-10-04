@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+@import url('global/global.css');
+
+
+@import url('header/header.css');
+@import url('header/media-query-header.css');
+
+
+@import url('main/main.css');
+@import url('main/media-query-main.css');
+
+
+@import url('section-2/section-inov.css');
+@import url('section-2/media-query-section2.css');
+
+@import url('section-3/trabalhe.css');
+@import url('section-3/media-query-section3.css');
+
+@import url('footer/footer.css');
+@import url('footer/media-query-footer.css');
+
+@import url('meio-ambiente/meio-ambiente.css');
+
+
+@import url('novidades/novidades.css');
+
+
+@import url('trabalhe-conosco/trabalhe-conosco.css');
+@import url('trabalhe-conosco/media-query-conosco.css');
+
+
+@import url('fale-conosco/fale-conosco.css');
+
+
+@import url('servicos/servicos.css');
+@import url('servicos/media-query-servicos.css');
+
+
+
+
+@media (max-width: 425px){}
+
+@media (min-width: 427px) and (max-width: 665px){}
+
+@media (min-width: 666px) and (max-width: 736px){}
+
+@media (min-width: 737px) and (max-width: 1024px){}
+
+@media (min-width: 2025px){}

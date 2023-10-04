@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+@media (max-width: 426px) {
+  /* Celular Grande */
+  .Logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-left: 0px;
+  }
+  h1 {
+    font-size: 8pt;
+  }
+
+  ul.list-one {
+    width: 100%;
+    margin: 0px auto;
+    flex-wrap: wrap;
+  }
+  a.flex {
+    display: none;
+  }
+}
+@media (min-width: 427px) and (max-width: 665px) {
+  .cont-inicial{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    /* background-color: aqua; */
+  }
+   a.flex{
+    margin: 0px;
+  }
+  img.Logo{
+    margin: 0px;
+  }
+}
+@media (min-width: 666px) and (max-width: 736px){
+  .list-one a {
+    display: inline-block;
+    padding: 10px 0px;
+    /* font-size: 2em; */
+}
+}
+@media (min-width: 737px) and (max-width: 1024px){
+  .list-one a {
+    display: inline-block;
+    padding: 10px 0px;
+    font-size: 1.5em;
+}
+}
+@media (min-width: 1025px){
+  .list-one a {
+    display: inline-block;
+    padding: 10px 0px;
+    font-size: 1.5em;
+}
+
+}

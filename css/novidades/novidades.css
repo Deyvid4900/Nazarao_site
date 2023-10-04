@@ -1,0 +1,77 @@
+
+
+.banner img{
+    width: 100%;
+}
+.sobre-card h1{
+    margin: auto;
+    max-width: max-content;
+    padding-top: 40px;
+    font-weight: 700;
+    font-size: 32px;
+}
+.sobre-card{
+    width: 1000px;
+    height: 600px;
+    margin: auto;
+    border-radius: 12px;
+    background: #fcfcfc;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.30);
+    margin-top: 60px;
+}
+
+.flex-mao{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+}
+.flex-mao p{
+    max-width: 36ch;
+    margin-left: 60px;
+    margin-top: -80px;
+    font-size: 20px;
+    color: #282828;
+}
+.flex-mao img{
+    padding-top: 95px;
+    width: 392px;
+}
+.beneficios-bg h1{
+    font-size: 32px;
+    max-width: max-content;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.img-presente{
+    width: 240px;
+}
+.flex-beneficios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    padding-left: 40px;
+    padding-top: 60px;
+}
+
+.text-beneficios h3{
+    font-size: 22px;
+    color: #00192A;    
+}
+.text-beneficios p{
+    width: 600px;
+    color: #8F8F8F;
+    font-size: 20px;
+}
+
+.experimente{
+    width: 1050px;
+    max-width: max-content;
+    margin: auto;
+    padding-top: 140px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #282828;
+}

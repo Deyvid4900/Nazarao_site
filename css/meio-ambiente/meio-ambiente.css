@@ -1,0 +1,107 @@
+
+.inov{
+    max-width: 1400px;
+}
+
+.inov-e-tec img{
+    width: 100%;
+}
+
+.inov-info{
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+}
+.inov-info h1{
+    color: #00192A;
+}
+.inov-p{
+    text-align: center;
+    max-width: 70ch;
+    margin: auto;
+    font-weight: 500;
+    color: #282828;
+}
+
+.inov-p-2{
+    padding-top: 40px;
+    text-align: start;
+    max-width: 86ch;
+    margin: auto;
+    font-weight: 400;
+    color: #2c2c2c;
+}
+.primeiro-p{
+    text-align: start;
+    max-width: 86ch;
+    margin: auto;
+    font-weight: 400;
+    color: #2c2c2c;
+    padding-bottom: 20px;
+}
+.segundo-p{
+    text-align: start;
+    max-width: 86ch;
+    margin: auto;
+}
+.titulo-iniciativa{
+    padding-top: 60px;
+    font-size: 28px;
+    max-width: max-content;
+    margin-left: 18%;
+    margin-bottom: 16px;
+}
+
+.img-eco{
+    padding-top: 80px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.img-eco img{
+    width: 250px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+.ricicle-h3{
+    padding-top: 80px;
+    max-width: max-content;
+    padding-bottom: 60px;
+    margin: auto;
+    font-size: 28px;
+    color: #00192A;
+}
+.compromisso{
+    max-width: max-content;
+    margin-left: 18%;
+    padding-top: 50px;
+    padding-bottom:12px;
+    font-size: 28px;
+    color: #00192A;
+}
+.compromisso-p{
+    text-align: start;
+    max-width: 86ch;
+    margin: auto;
+    font-weight: 400;
+    color: #2c2c2c;
+
+}
+.mao img{
+    width: 320px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+}
+.ultimo{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: start;
+    padding-top: 80px;
+}
+
+.ultimo-p p{
+    max-width: 50ch;
+}

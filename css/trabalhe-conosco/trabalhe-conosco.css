@@ -1,0 +1,160 @@
+.main-trab{
+    max-width: 1400px;
+}
+.down{
+   width: 100%;
+   /* display: flex;
+   align-items: center;
+   justify-content: center; */
+}
+.img-posto{
+    width: 90%;
+    background-image: url('../../img-svg/img/Trabalhe\ conosco.jpg');
+    background-size: cover;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    height: 480px;
+    padding: 10px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #FFF;
+ }
+ .info-text a{
+    color: white;
+    font-size: 20px;
+}
+.info-text p{
+    max-width: 300px;
+}
+
+.info-text a::after{
+    content: "";
+    display: block;
+    width: 102px;
+    height: 3px;
+    background-color: #0669AC;
+    border-radius: 1px;
+}
+
+.info-text a:hover::after{
+    background-color: #075b92;
+}
+.conosco-trab h1{
+    margin: auto;
+    max-width: max-content;
+    font-size: 40px;
+    padding-top: 100px;
+}
+
+.conosco-trab p{
+    text-align: center;
+    width: 620px;
+    font-size: 18px;
+    margin: auto;
+    padding-top: 40px;
+}
+.section-bg{
+    max-width: 1400px;
+}
+.diversidade{
+    padding-top: 60px;
+}
+.diversidade h3{
+    font-size: 28px;
+    margin-left: 80px;
+}
+.diversidade p{
+    color: #282828;
+    max-width: 100ch;
+    font-weight: 400px;
+    font-size: 18px;
+    margin-left: 80px;
+}
+
+
+.square-info{
+    height: 400px;
+    width: 1000px;
+    margin: auto;
+    margin-top: 60px;
+    /* margin-bottom: 600px; */
+    border-radius: 12px;
+    background: var(--c15, #FCFCFC);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.30);
+}
+
+.square-info p{
+    max-width: 250px;
+    color: #464646;
+    font-size: 22px;
+}
+.tudo-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tudo-info p{
+    margin-left: 60px;
+}
+.dec-line::after{
+    content: "";
+    display: block;
+    width: 14px;
+    height: 4px;
+    border-radius: 2px;
+    background: #02436F;
+}
+.dec-line-1::after{
+    content: "";
+    display: block;
+    width: 14px;
+    margin-left: 187px;
+    height: 4px;
+    border-radius: 2px;
+    background: #02436F;
+}
+.tudo-info img{
+    width: 400px;
+    border-radius: 12px;
+    margin-top: 60px;
+    margin-right: 50px;
+}
+
+.cultura h3{
+    font-size: 32px;
+    padding-top: 80px;
+    margin-left: 80px;
+}
+
+.cultura p{
+    max-width: 1100px;
+    margin-left: 80px;
+    font-size: 18px;
+}
+
+.topics-info p{
+    font-size: 20px;
+    width: 1000px;
+    max-width: max-content;
+    margin-left: 80px;
+    margin-top: 60px;
+}
+.topics-info{
+    position: relative;
+}
+
+.dec-elip::before{
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-image: url('../../img-svg/Icons/Ellipse\ 1.svg');
+    background-repeat: no-repeat;
+    margin-right: 8px;
+    margin-bottom: 2px;
+    /* position: absolute;
+    left: 60px; */
+    
+}

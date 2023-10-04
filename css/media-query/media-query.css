@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+/*1° section*/
+
+@media (max-width: 1250px){
+    .Tlt{
+    font-family: Inter;
+    font-size: 29px;
+    margin-bottom: 0;
+    font-weight: 700;
+    }
+    .cartao-nazarao{
+        height: 250px;
+    }
+}
+ @media (max-width: 900px){
+    .text-text{
+        margin-left: 100px;
+    }
+    .grid-text{
+        margin-right: 0;
+    }
+}
+ @media (max-width: 895px){
+    .img-nazarao img{
+        margin-right: auto;
+        padding: 0;
+    }
+    .text-text{
+        margin-right: 0;
+    }
+ }
+ @media (max-width: 830px){
+    .cartao-nazarao{
+        margin-left: -20px;
+    }
+ }
+ @media (max-width: 1000px){
+    .text-text{
+        margin-left: 100px;
+    }
+    .Tlt{
+        font-size: 26px;
+        margin-bottom: -10px;
+    }
+    .Sgd{
+        font-size: 18px;
+    }
+    .btn-green{
+        padding: 0.4rem 1rem;
+        font-size: 16px;
+    }
+    .arrow{
+        margin-top: -4px;
+    }
+    
+    
+    .cont-inicial{
+        margin-bottom: 20px;
+    }
+    .list-one{
+        display: none;
+    }
+    .cartao-nazarao{
+        height: 200px;
+    }
+    .btn-green{
+        margin-top: -120px;
+        padding: 10px 20px;
+    }
+ }
+@media (max-width: 800px){
+    .grid-text{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .Tlt{
+        font-size: 28px;
+        margin-top: 0;
+        width: 600px;
+    }
+    .Sgd{
+        width: 600px;
+    }
+    .btn-green{
+        padding: 10px 20px;
+        font-size: 20px;
+        margin-top: 0px;
+    }
+    .text-text{
+        display: grid;
+        grid-template-rows: auto auto auto 1fr;
+        gap: 0px 10px;
+    }
+    .text-text{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .img-banner{
+        padding-bottom: 40px;
+    }
+    .img-nazarao{
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    .img-nazarao img{
+        display: none;
+        height: 400px;
+        margin-top: -210px;
+    }
+    .btn-green::after{
+        content: "";
+        display: inline;
+        width: 26px;
+        height: 23px;
+        background-image: url('../../img-svg/svg/Arrow\ 1.svg') ;
+        position: absolute;
+        margin-left: 32px;
+        align-items: center;
+    }
+}

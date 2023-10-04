@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+/*Second section*/
+
+.painel-solar-bg{
+    height: 720px;
+    background-image: linear-gradient(90deg, #02416F 31.84%, #065B95 78.28%);
+    padding-bottom: 60px;
+}
+.pnl-solar{
+    width: 100px;
+    margin: 0px auto;
+    background-color: #02416F;
+}
+
+
+.mini-titulo{
+    color: white;
+}
+.contentt{
+    height: 720px;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+    gap: 60px;
+    margin-left: 190px;
+    margin-right: auto;
+    max-width: 1400px;
+    background-color: #02416F;
+
+    
+}
+.img-pnl-solar{
+    width: 500px;
+}
+.img-pnl-solar  img{
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    
+}
+
+.mini-titulo{
+    color: #E3E3E3;
+    font-size: 18px;
+    margin: 0;
+}
+.text-lg{
+    font-size: 16px;
+    font-style: normal;
+    color: #E3E3E3;
+    width: 450px;
+    margin-bottom: 24px;
+}
+.text-2{
+    width: 500px;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    color: white;
+    margin: 0;
+    margin-bottom: 18px;
+}
+
+
+.btn-sm{
+    font-size: 20px;
+    color: white;
+    grid-row: 4;
+    padding: 0;
+}
+
+.btn-sm::after{
+    content: "";
+    display: block;
+    width: 103px;
+    height: 3px;
+    background-color: #0669AC;
+    border-radius: 1px;
+    
+}
+.btn-sm:hover::after{
+    background-color: #0873bb;
+}
+
+
+/* .top-dec{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    height: 40px;
+}
+*/
+.dec{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+img.bottom-dec{
+    background-color: red;
+    width: 100px;
+}
+
+

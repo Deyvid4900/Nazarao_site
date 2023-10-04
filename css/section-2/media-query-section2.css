@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+@media (max-width: 426px) {
+  /* Celular Grande */
+  .text-text {
+    padding-left: 20px;
+  }
+  .Sgd{
+    font-size: small;
+  }
+  h2 {
+    margin: 0px auto;
+    width: 100%;
+  }
+  .junto {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .info-p-ppp {
+    margin: 0px auto;
+    width: 100%;
+  }
+  .text-2 {
+    width: 100%;
+  }
+  .text-lg {
+    width: 100%;
+  }
+  .btnn {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .img-nazarao {
+    width: 100%;
+  }
+  .cartao-nazarao {
+    width: 100%;
+    height: 90%;
+  }
+}

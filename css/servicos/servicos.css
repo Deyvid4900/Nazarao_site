@@ -1,0 +1,122 @@
+main{
+    width: 100% ;
+}
+.img-bg img{
+    width: 100%;
+}
+.servicos-bg h1{
+    max-width: max-content;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: 28px;
+}
+
+.motor-oleo{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 40px;
+}
+.span-text h3{
+    font-size: 24px;
+    margin-left: 18.4%;
+}
+.motor-oleo img{
+    width: 400px;
+    border-radius: 6px;
+    
+}
+.motor-oleo p{
+    
+    width: 40ch;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+.importancia-bg{
+    padding-top: 80px;
+}
+.h33{
+    font-size: 24px;
+    margin-left: 18.3%;
+    padding-bottom: 12px;
+}
+.protecao-motor{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-left: 20px;
+    padding-bottom: 40px;
+}
+.protecao-motor img{
+    width: 260px;
+    height: 100%;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+.protecao-motor p{
+    max-width: 60ch;
+}
+.mexer-h3{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.protecao h3{
+    font-size: 24px;
+}
+.artic p{
+    max-width: 95ch;
+    margin: 0 auto;
+}
+.conveniencia-bg{
+    padding-top: 80px;
+}
+.conveniencia-bg h3{
+    font-size: 24px;
+    margin-left: 14.8%;
+}
+.conveniencia-main p{
+    margin: 0 auto;
+    max-width: 95ch;
+}
+.conveniencia-flex{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 auto;
+}
+.conveniencia-flex img{
+    width: 350px;
+    border-radius: 6px;
+}
+#conveniencia-f p{
+
+    max-width: 51ch;
+    font-size: 17px;
+    position: relative;
+    font-weight: 500;
+}
+.before::before{
+    content: "";
+    display: block;
+    width: 12px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #02436F;
+}
+.after::after{
+    content: "";
+    display: block;
+    width: 14px;
+    height: 3px;
+    border-radius: 1px;
+    background-color: #02436F;
+    position: absolute;
+    right: 36.7%
+}
+.p-ultimo{
+    padding-top: 32px;
+    max-width: 96ch;
+    margin: 0 auto;
+}

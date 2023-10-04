@@ -1,0 +1,151 @@
+@charset "UTF-8";
+main{
+    width: 100%;
+}
+.banner-one{
+    
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
+ .img-banner{
+     width: 95vw;
+     display: block;
+     margin-left: 0px;
+     margin-right: auto;
+     padding-bottom: 80px;
+ }
+ 
+
+ /* 1° section*/
+
+ .grid{
+    /* max-width: 1400px; */
+ }
+
+ .grid-text{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 120px;
+    margin:  30px 15%;
+    /* background-color: red; */
+
+    
+}
+.text-text{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    /* margin-bottom: 60px; */
+    width: 100%;
+    margin: 0px auto;
+    /* background-color: #538019; */
+}
+
+.Tlt{
+    font-family: Inter;
+    font-size: 2rem;
+    margin-bottom: 0;
+    font-weight: 700;
+    width: 500px;
+    margin-right: 0;
+    padding-right: 0;
+}
+.Sgd{
+    width: 23.9375rem;
+    font-family: Inter;
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+.btn-green{
+    align-self: center;
+    justify-self: start;
+}
+.btn-green{
+
+    background-color: #6EA22A;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-top: -20px;
+    font-size: 22px;
+}
+.btn-green::after{
+    content: "";
+    display: inline;
+    width: 0px;
+    height: 23px;
+    background-image: url('../../img-svg/svg/Arrow\ 1.svg') ;
+    position: absolute;
+    margin-left: 32px;
+    align-items: center;
+    transition: 0.4s;
+}
+.btn-green:hover::after{
+    width: 26px;
+}
+
+.btn-green:hover{
+    background-color: #538019;
+}
+.img-nazarao{
+    margin-left: -0px;
+    width: 100%;
+    
+}
+.cartao-nazarao{
+    height: auto;
+    width: 100%;
+    /* padding-left: -600px;
+    margin-left: -100px; */
+}
+
+
+
+
+.content_Painel{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: linear-gradient(to right,#02416F,#065B95);
+    height: 900px;
+    color: #E3E3E3;
+    
+}
+.imgPainelSolar{
+    width: 90%;
+    margin: 0px auto;
+    border-radius: 10px;
+}
+.divClassImgPainelSolar{
+    display: flex;
+    justify-content: center;
+}
+.divClassTxtPainelSolar{
+    height: 400px;
+    align-items: start;
+}
+.divClassTxtPainelSolar h1{
+    font-size: 3rem;
+    color: #FFF;
+    width: 100%;
+}
+.divClassTxtPainelSolar p{
+    font-size: 24px;
+    font-weight: 400;
+}
+.divClassTxtPainelSolar a {
+    color: #dfdfdfb2;
+    font-size:  25px;
+    text-decoration: underline;
+  }
+  .divClassTxtPainelSolar a:hover  {
+    color: #FFF;
+    font-size:  25px;
+    
+  }

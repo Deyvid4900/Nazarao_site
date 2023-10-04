@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+.simbolo-naz{
+    padding-top: 0px;
+    height: 60px;
+    margin: 0;
+    padding-bottom: 12px;
+}
+h2{
+    font-weight: 700;
+    margin: 0;
+    font-size: 44px;
+    font-family: 'Inter';
+    color: #fff;
+    width: 400px;
+}
+.info-p-ppp{
+    color: #E3E3E3;
+    font-size: 1.1rem;
+    width: 440px;
+}
+
+.info-banner{
+    position: absolute;
+    top: 120px;
+    left: 220px;
+     
+}
+
+.info-text a{
+    color: white;
+    font-size: 20px;
+}
+
+.info-text a::after{
+    content: "";
+    display: block;
+    width: 102px;
+    height: 3px;
+    background-color: #0669AC;
+    border-radius: 1px;
+}
+
+.info-text a:hover::after{
+    background-color: #075b92;
+}
+.conosco{
+    padding-bottom: 20px;
+}
