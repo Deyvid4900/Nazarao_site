@@ -28,11 +28,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    font-size: 12px;
+    gap: 60px;
     box-sizing: border-box;
     max-width: 1400px;
     margin: 0px auto;
     flex-wrap: wrap;
+    padding-bottom: 15px;
 }
 .list-one a{
     display: inline-block;

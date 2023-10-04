@@ -12,7 +12,7 @@ main{
  .img-banner{
      width: 95vw;
      display: block;
-     margin-left: 0px;
+     margin-left: -5px;
      margin-right: auto;
      padding-bottom: 80px;
  }
@@ -131,7 +131,7 @@ main{
     align-items: start;
 }
 .divClassTxtPainelSolar h1{
-    font-size: 3rem;
+    font-size: 32;
     color: #FFF;
     width: 100%;
 }

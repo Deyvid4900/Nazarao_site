@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-bt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Frota</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="img-svg/Frame 3.svg" type="svg" />
+    <style>
+        body{
+            background-color: #012C4A;
+            font-family: "Poppins", sans-serif;
+            position: relative;
+        }
+        h1{
+            font-size: 26px;
+            padding-top: 16px;
+
+        }
+        .controle-flex{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .controle-flex img{
+            width: 34px;
+            padding-top: 12px;
+        }
+        .form-login{
+            background-color: #FBFBFB;
+            height: 350px;
+            width: 350px;
+            padding-left: 60px;
+            border-radius: 12px;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 30%);
+        }
+        .formm{
+            padding-top: 20px;
+        }
+        .text-inp label{
+            display: block;
+        }
+        .text-inp input[type="text"], .pass-inp input[type="password"]{
+            padding: 6px;
+
+        }
+        .text-inp input[type="text"]:focus,.pass-inp input[type="password"]:focus{
+            outline: none;
+            box-shadow: 0 0 0 1.4px #0669AC;
+        }
+        .pass-inp label{
+            display: block;
+            padding-top: 20px;
+        }
+        input{
+            border-radius: 4px;
+            border: 1px solid #C8C8C8;
+            width: 265px;
+        }
+        .button-acessar{
+            padding-top: 24px;
+        }
+        button{
+            color: white;
+            font-size: 20px;
+            background-color: #035185;
+            width: 280px;
+            height: 32px;
+            box-shadow: none;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+   <div class="form-login">
+        <div class="controle-flex">
+            <h1>Controle de frota</h1>
+            <img src="img-svg/dec/2-removebg-preview 2.svg" alt="">
+        </div>
+       <form class="formm" action="post">
+        <div class="text-inp">
+            <label for="usuario">Usuário</label>
+            <input type="text" name="usuario" id="usuario" maxlength="20" required="required" autocomplete="off">
+        </div>
+        <div class="pass-inp">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" maxlength="20" required="required" autocomplete="off">
+        </div>
+        <div class="button-acessar">
+            <button>Acessar</button>
+        </div>
+       </form>
+   </div>
+</body>
+</html>
