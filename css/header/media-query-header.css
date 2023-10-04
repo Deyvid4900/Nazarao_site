@@ -2,6 +2,9 @@
 
 @media (max-width: 426px) {
   /* Celular Grande */
+    .flex{
+      display: none;
+    }
   .Logo {
     display: flex;
     width: 100%;
@@ -12,22 +15,50 @@
     font-size: 8pt;
   }
 
+  .list-one{
+    display: none;
+  }
+
   ul.list-one {
     width: 100%;
     margin: 0px auto;
     flex-wrap: wrap;
   }
-  a.flex {
-    display: none;
+  .cont-inicial{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0px 40px 0px 0px;
+    /* background-color: aqua; */
   }
+  a.flex{
+    margin: 0px;
+  }
+  img.Logo{
+    margin: 0px;
+  }
+  /* a.flex {
+    display: none;
+  } */
 }
 @media (min-width: 427px) and (max-width: 665px) {
+  .Off{
+    width: 40px;
+  }
+  .flex{
+    display: none;
+  }
   .cont-inicial{
     display: flex;
     justify-content: space-around;
     width: 100%;
+    padding: 0px 25px 0px 10px;
     /* background-color: aqua; */
   }
+  .list-one{
+    display: none;
+  }
+  
    a.flex{
     margin: 0px;
   }
@@ -36,6 +67,9 @@
   }
 }
 @media (min-width: 666px) and (max-width: 736px){
+  .Off{
+    display: none;
+  }
   .list-one a {
     display: inline-block;
     padding: 10px 0px;
@@ -43,6 +77,9 @@
 }
 }
 @media (min-width: 737px) and (max-width: 1024px){
+  .Off{
+    display: none;
+  }
   .list-one a {
     display: inline-block;
     padding: 10px 0px;
@@ -50,6 +87,9 @@
 }
 }
 @media (min-width: 1025px){
+  .Off{
+    display: none;
+  }
   .list-one a {
     display: inline-block;
     padding: 10px 0px;
