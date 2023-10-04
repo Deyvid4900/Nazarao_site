@@ -1,60 +1,73 @@
-.footer-bg{
-    margin-top: 80px;
+.divImgFooter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
-.footer-info{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: start;
-    margin: 0 auto;
-    padding-top: 40px;
-    flex-wrap: wrap;
+.imgFooter {
+    margin: 10px auto;
+    grid-area: 1 / 1 / 2 / 2; 
 }
-.footer-bg::before{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 4px;
-    display: block;
-    background-image: linear-gradient(90deg, #02436F 40.19%, #73C50C 70.63%);
+.footer-bg {
+  margin-top: 80px;
 }
-.list-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px 0;
-    margin-top: -20px;
+.footer-info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  margin: 0 auto;
+  padding-top: 40px;
+  flex-wrap: wrap;
 }
-.decor{
-    font-size: 18px;
+.footer-bg::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  display: block;
+  background-image: linear-gradient(90deg, #02436f 40.19%, #73c50c 70.63%);
 }
-.rede-social{
-    margin-left: 29.4%;
-    padding-bottom: 24px;
+.list-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px 0;
+  margin-top: -20px;
 }
-.face, .linkedin{
-    padding-right: 8px;
+.decor {
+  font-size: 18px;
+}
+.rede-social {
+  /* margin-left: 29.4%;
+  padding-bottom: 24px; */
+}
+.face,
+.linkedin {
+  padding-right: 8px;
 }
 
-.direitos{
-    display: flex;
-    font-size: 16px;
-    justify-content: end;
-    margin-top: 10px;
-    padding-right: 40px;
-    color: #464646;
-    
+.direitos {
+  display: flex;
+  font-size: 16px;
+  justify-content: end;
+  margin-top: 10px;
+  padding-right: 40px;
+  color: #464646;
+}
+
+h4 {
+  font-size: 20px;
+}
+.list li:nth-last-child(n + 2) {
+  margin-bottom: 8px;
+}
+.list-2 li:nth-last-child(n + 2) {
+  margin-bottom: 8px;
+}
+.list-3 li:nth-last-child(n + 2) {
+  margin-bottom: 8px;
 }
 
 
-h4{
-    font-size: 20px;
-}
-.list li:nth-last-child(n +2){
-    margin-bottom: 8px;
-}
-.list-2 li:nth-last-child(n +2){
-    margin-bottom: 8px;
-}
-.list-3 li:nth-last-child(n +2){
-    margin-bottom: 8px;
-}
+
