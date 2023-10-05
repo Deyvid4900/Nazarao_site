@@ -1,7 +1,7 @@
 .quem-somos-bg, .nossa-equipe-bg, .valores-bg, .compromisso-bg, .compromisso-social-bg{
     font-family: "Poppins", sans-serif;
 }
-main, section{
+.quem-somos-bg, #quemm section{
     display: flex;
 }
 .quem-somos{
