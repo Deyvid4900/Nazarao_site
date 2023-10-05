@@ -17,17 +17,24 @@
         font-size: 16px;
         justify-content: end;
         text-align: center;
-        padding: 16px;
+        padding: 0px;
         color: #464646;
       }
+      /* .list-info{
+        width: 260px;
+      }
+      .list-info ul{
+        padding: 0px;
+      }
+      .list,.list-2,.list-3{
+        width: 100%;
+      } */
   }
 @media (min-width: 427px) and (max-width: 665px){
     .footer-info{
        align-items: start;
        
     }
-
-
     .divRede-social{
         width: 100%;
         display: flex;
