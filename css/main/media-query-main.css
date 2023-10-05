@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   /* Celular Grande */
 
   .Tlt {
@@ -33,7 +33,7 @@
     /* background-color: red; */
   }
   .text-text {
-    margin: 20px auto;
+    margin: 70px auto;
   }
 
 
@@ -69,12 +69,14 @@
     font-weight: 400;
   }
 }
+.divClassImgPainelSolar{
+  display: flex;
+  
+}
 
 @media (min-width: 427px) and (max-width: 665px) {
   /* Celular Grande */
-  body {
-    /* background: purple; */
-  }
+ 
   .Tlt {
     margin: 0px auto;
     width: 100%;
@@ -124,19 +126,23 @@
     font-size: 16px;
     font-weight: 400;
   }
+  
+  .cartao-nazarao{
+    width: 100%;
+  }
+  
 }
 
 @media (min-width: 666px) and (max-width: 736px) {
   /* tablets */
-  body {
-    /* background: blue; */
-  }
-
   .Tlt {
     margin: 0px auto;
     width:  75%;
     font-size: 1.5rem;
     
+  }
+  .cartao-nazarao{
+    width: 500px;
   }
 
   .grid-text {
@@ -171,8 +177,8 @@
     border-radius: 0px;
   }
   .divClassImgPainelSolar {
-    display: flex;
-    justify-content: center;
+   
+
   }
   .divClassTxtPainelSolar {
     height: 400px;
@@ -189,12 +195,13 @@
     font-size: 16px;
     font-weight: 400;
   }
+  .divClassImgPainelSolar{
+    
+  }
 }
 @media (min-width: 737px) and (max-width: 1024px) {
   /* tablets grandes/notebook */
-  body {
-    /* background: green; */
-  }
+ 
   .Tlt {
     text-align: center;
   }
@@ -230,13 +237,12 @@
   }
   .imgPainelSolar {
     padding-top: 100px;
-    width: 75%;
+    width: 65%;
     margin: 0px auto;
-    border-radius: 50px;
+    /* border-radius: 50px; */
   }
   .divClassImgPainelSolar {
-    display: flex;
-    justify-content: center;
+    
   }
   .divClassTxtPainelSolar {
     height: 400px;
@@ -256,12 +262,45 @@
   /* 
   
   */
+  .divClassImgPainelSolar{
+    display: flex;
+    justify-content: center;
+  }
 }
 
 
-@media (min-width: 2025px) {
+@media (min-width: 1025px) {
   /* tablets grandes/notebook */
-  body {
-    /* background: yellow; */
+  .content_Painel{
+    width: 90%;
   }
+  .img-nazarao{
+    min-width: 500px;
+    justify-content: center;
+    
+  }
+  .grid-text{
+    flex-wrap: nowrap;
+    margin: 30px 10%;
+  }
+  .text-text{
+    display: flex;
+    justify-content: end;
+    
+    
+  }
+  .imgPainelSolar{
+    width: 75%;
+    margin-left: 0px;
+    
+
+  }
+  .divClassImgPainelSolar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+  }
+  
+  
+  
 }
