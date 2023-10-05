@@ -272,7 +272,7 @@
 @media (min-width: 1025px) {
   /* tablets grandes/notebook */
   .content_Painel{
-    width: 90%;
+    width: 100%;
   }
   .img-nazarao{
     min-width: 500px;
