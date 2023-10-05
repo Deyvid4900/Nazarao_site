@@ -61,4 +61,12 @@
     }
 }
 
-@media (min-width: 2025px){}
+@media (min-width: 1025px){
+  .text-text{
+    padding-left: 70px;
+  }
+  .info-text{
+    margin-left: 0px ;
+    padding-top: 0px;
+  }
+}
