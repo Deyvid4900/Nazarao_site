@@ -25,8 +25,22 @@
     color: white;
     font-size: 20px;
 }
+.info-text{
+    margin-left: -200px;
+    margin-top: -60px;
+}
+.info-text img{
+    width: 65px;
+    padding-bottom: 24px;
+    
+}
+.tit-h2{
+    margin: 0;
+    font-size: 44px;
+    max-width: 12ch;
+}
 .info-text p{
-    max-width: 300px;
+    max-width: 50ch;
 }
 
 .info-text a::after{

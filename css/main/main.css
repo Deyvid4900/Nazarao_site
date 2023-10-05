@@ -105,6 +105,9 @@ main{
 }
 
 
+.painel-solar-bg{
+    background-image: linear-gradient(to right,#02416F,#065B95);
+}
 
 
 .content_Painel{
@@ -112,14 +115,14 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-image: linear-gradient(to right,#02416F,#065B95);
     height: 900px;
     color: #E3E3E3;
     
 }
 .imgPainelSolar{
-    width: 90%;
-    margin: 0px auto;
+    width: 50%;
+    margin-left: -300px;
+    /* padding-right: 100px; */
     border-radius: 10px;
 }
 .divClassImgPainelSolar{
@@ -129,23 +132,31 @@ main{
 .divClassTxtPainelSolar{
     height: 400px;
     align-items: start;
+    margin-left: -520px;
 }
 .divClassTxtPainelSolar h1{
-    font-size: 32;
+    font-size: 36px;
     color: #FFF;
-    width: 100%;
+    width: 18ch;
 }
 .divClassTxtPainelSolar p{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
+    max-width: 30ch
 }
 .divClassTxtPainelSolar a {
-    color: #dfdfdfb2;
-    font-size:  25px;
-    text-decoration: underline;
+    color: #fff;
+    font-size:  21px;
+    text-decoration: none;
   }
-  .divClassTxtPainelSolar a:hover  {
-    color: #FFF;
-    font-size:  25px;
-    
+  .divClassTxtPainelSolar a::after{
+    content: "";
+    display: block;
+    width: 110px;
+    height: 3px;
+    background-color: #0669AC;
+  }
+
+  .divClassTxtPainelSolar a:hover::after{
+    background-color: #1679bb;
   }

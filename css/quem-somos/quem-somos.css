@@ -1,0 +1,108 @@
+.quem-somos-bg, .nossa-equipe-bg, .valores-bg, .compromisso-bg, .compromisso-social-bg{
+    font-family: "Poppins", sans-serif;
+}
+main, section{
+    display: flex;
+}
+.quem-somos{
+    margin: 0 auto;
+}
+.quem-somos h1{
+    font-size: 38px;
+    width: max-content;
+}
+.quem-somos p{
+    max-width: 112ch;
+    font-size: 14px;
+}
+.equipe-flex{
+    margin: 0 auto;
+}
+.nossa-equipe h3{
+    font-size: 32px;
+    width: max-content;
+}
+.gerente-img{
+    height: 300px;
+    width: 980px;
+    background-color: #ccc;
+   margin-bottom: 40px;
+}
+
+.nossa-equipe-text p{
+    max-width: 100ch;
+    font-size: 15px;
+}
+
+.valores-bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 70px;
+    padding-top: 40px;
+}
+.missao, .valores, .visao{
+    border-right: 3px solid #02246F;
+    padding-right: 12px;
+    
+}
+.missao h3{
+    font-size: 28px;
+}
+.missao p{
+    width: 28ch;
+    font-size: 15px;
+}
+.visao h3{
+    font-size: 28px;
+}
+.visao p{
+    width: 28ch;
+    font-size: 15px;
+}
+.valores h3{
+    font-size: 28px;
+}
+.valores p{
+    width: 28ch;
+    font-size: 15px;
+}
+
+.compromisso-flex{
+    margin: 0 auto;
+}
+
+.compromissos h3{
+    font-size: 28px;
+    width: max-content;
+}
+.compromisso-bg{
+    display: flex;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.compromissos p{
+    max-width: 103ch;
+    font-size: 15px;
+}
+
+.compromisso-social-bg{
+    display: flex;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.compromisso-social, .compromisso-social-flex{
+    margin: 0 auto;
+}
+
+.compromisso-social h3{
+    font-size: 28px;
+    width: max-content;
+}
+
+.compromisso-social p{
+    max-width: 103ch;
+    font-size: 15px;
+}

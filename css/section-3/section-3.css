@@ -5,8 +5,10 @@
     height: 60px;
     margin: 0;
     padding-bottom: 12px;
+    width: 10px;
 }
-h2{
+
+.tit-h2{
     font-weight: 700;
     margin: 0;
     font-size: 44px;
