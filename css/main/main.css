@@ -159,3 +159,7 @@ main{
   .divClassTxtPainelSolar a:hover::after{
     background-color: #1679bb;
   }
+
+  .contentt{
+    width: 100%;
+  }
