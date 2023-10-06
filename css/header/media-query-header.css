@@ -70,10 +70,15 @@
   .Off{
     display: none;
   }
+
+  .list-one {
+   gap: 40px;
+}
   .list-one a {
     display: inline-block;
     padding: 10px 0px;
     /* font-size: 2em; */
+    font-size: 12px;
 }
 }
 @media (min-width: 737px) and (max-width: 1024px){
@@ -83,7 +88,8 @@
   .list-one a {
     display: inline-block;
     padding: 10px 0px;
-    font-size: 1.5em;
+    font-size: 12px;
+
 }
 }
 @media (min-width: 1025px){

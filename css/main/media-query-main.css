@@ -118,7 +118,7 @@
     width: 70%;
   }
   .divClassTxtPainelSolar h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #fff;
     
   }
@@ -176,10 +176,7 @@
     margin: 0px auto;
     border-radius: 0px;
   }
-  .divClassImgPainelSolar {
-   
-
-  }
+  
   .divClassTxtPainelSolar {
     height: 400px;
     align-items: start;
@@ -195,9 +192,7 @@
     font-size: 16px;
     font-weight: 400;
   }
-  .divClassImgPainelSolar{
-    
-  }
+  
 }
 @media (min-width: 737px) and (max-width: 1024px) {
   /* tablets grandes/notebook */
@@ -241,9 +236,7 @@
     margin: 0px auto;
     /* border-radius: 50px; */
   }
-  .divClassImgPainelSolar {
-    
-  }
+  
   .divClassTxtPainelSolar {
     height: 400px;
     align-items: start;
