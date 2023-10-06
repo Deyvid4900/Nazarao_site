@@ -30,6 +30,10 @@
         background-image: url('');
          background-color: #012C4A;
     }
+    .info-text{
+        margin-left: 50px ;
+        padding-top: 0px;
+      }
 }
 
 @media (min-width: 666px) and (max-width: 736px){
@@ -37,13 +41,32 @@
         background-image: url('');
          background-color: #012C4A;
     }
+    .info-text{
+      margin-left: 0px ;
+      padding-top: 0px;
+    }
+
+    
 }
+
 
 @media (min-width: 737px) and (max-width: 1024px){
     .img-posto{
         background-image: url('');
          background-color: #012C4A;
     }
+    .info-text{
+      margin-left: 0px ;
+      padding-top: 0px;
+    }
 }
 
-@media (min-width: 2025px){}
+@media (min-width: 1025px){
+  .text-text{
+    padding-left: 70px;
+  }
+  .info-text{
+    margin-left: 0px ;
+    padding-top: 0px;
+  }
+}

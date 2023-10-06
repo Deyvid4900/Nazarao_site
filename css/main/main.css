@@ -20,9 +20,7 @@ main{
 
  /* 1° section*/
 
- .grid{
-    /* max-width: 1400px; */
- }
+
 
  .grid-text{
     display: flex;
@@ -96,10 +94,12 @@ main{
     margin-left: -0px;
     width: 100%;
     
+    display: flex;
+    justify-content: center;
 }
 .cartao-nazarao{
     height: auto;
-    width: 100%;
+    width: 75%;
     /* padding-left: -600px;
     margin-left: -100px; */
 }
@@ -126,13 +126,12 @@ main{
     border-radius: 10px;
 }
 .divClassImgPainelSolar{
-    display: flex;
-    justify-content: center;
+    /* display: flex; */
 }
 .divClassTxtPainelSolar{
     height: 400px;
     align-items: start;
-    margin-left: -520px;
+    margin-left: 0px;
 }
 .divClassTxtPainelSolar h1{
     font-size: 36px;
@@ -159,4 +158,8 @@ main{
 
   .divClassTxtPainelSolar a:hover::after{
     background-color: #1679bb;
+  }
+
+  .contentt{
+    width: 100%;
   }

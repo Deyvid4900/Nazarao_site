@@ -17,23 +17,33 @@
         font-size: 16px;
         justify-content: end;
         text-align: center;
-        /* padding-right: 40px; */
+        padding: 0px;
         color: #464646;
       }
+      /* .list-info{
+        width: 260px;
+      }
+      .list-info ul{
+        padding: 0px;
+      }
+      .list,.list-2,.list-3{
+        width: 100%;
+      } */
   }
 @media (min-width: 427px) and (max-width: 665px){
     .footer-info{
        align-items: start;
        
     }
-
-
     .divRede-social{
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
         flex-wrap: wrap;
+    }
+    .direitos{
+        padding: 16px;
     }
 }
 @media (min-width: 666px) and (max-width: 736px){
@@ -43,6 +53,9 @@
         align-items: center;
         justify-content: space-around;
         flex-wrap: wrap;
+    }
+    .direitos{
+        padding: 16px;
     }
 }
 
@@ -54,6 +67,9 @@
         justify-content: space-around;
         flex-wrap: wrap;
     }
+    .direitos{
+        padding: 16px;
+    }
 }
 
 @media (min-width: 1025px){
@@ -62,5 +78,8 @@
         display: flex;
         align-items: end;
         justify-content: space-around;
+    }
+    .divNazaraoDireitos{
+        width: 300px;
     }
 }

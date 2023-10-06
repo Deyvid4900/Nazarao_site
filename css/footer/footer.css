@@ -38,10 +38,7 @@
 .decor {
   font-size: 18px;
 }
-.rede-social {
-  /* margin-left: 29.4%;
-  padding-bottom: 24px; */
-}
+
 .face,
 .linkedin {
   padding-right: 8px;
@@ -67,6 +64,12 @@ h4 {
 }
 .list-3 li:nth-last-child(n + 2) {
   margin-bottom: 8px;
+}
+
+.divNazaraoDireitos{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 

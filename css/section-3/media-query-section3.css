@@ -4,3 +4,21 @@
     /* Celular Grande */
    
   }
+@media (min-width: 427px) and (max-width: 665px){
+ 
+  
+}
+@media (min-width: 666px) and (max-width: 736px){
+  .TextoInformativo{
+    margin-left: 0px; 
+ }
+}
+@media (min-width: 737px) and (max-width: 1024px){
+  .TextoInformativo{
+    margin-left: 0px; 
+ }
+}
+
+@media (min-width: 1025px){
+
+}
