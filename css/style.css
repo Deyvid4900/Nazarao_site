@@ -37,7 +37,7 @@
 @import url('servicos/media-query-servicos.css');
 
 @import url('quem-somos/quem-somos.css');
-
+@import url('quem-somos/media-query-quem.css');
 
 
 @media (max-width: 425px){}

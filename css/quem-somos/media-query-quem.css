@@ -1,0 +1,258 @@
+@media (max-width: 460px){
+/*celular pequeno*/
+
+    .quem-somos h1{
+        padding-top: 44px;
+        font-size: 28px;
+    }
+    .quem-somos p{
+        max-width: 44ch;
+        font-size: 13px;
+    }
+    .nossa-equipe h3{
+        font-size: 26px;
+        width: max-content;
+    }
+    .gerente-img{
+        height: 300px;
+        width: 100%;
+        background-color: #ccc;
+        margin-bottom: 40px;
+        margin: 0 auto;
+    }
+    .nossa-equipe-text p{
+        max-width: 44ch;
+        font-size: 13px;
+    }
+    .valores-bg{
+        display: flex;
+        overflow: scroll;
+    }
+   .missao, .valores, .visao{
+    border-right: 3px solid #02246F;
+    padding-right: 12px;
+
+    }
+    .missao{
+        padding-left: 440px;
+    }
+    .missao h3, .visao h3, .valores h3{
+        font-size: 26px;
+    }
+    .missao p{
+        width: 28ch;
+        font-size: 13px;
+    }
+    .visao p{
+        width: 26ch;
+        font-size: 13px;
+    }
+    .valores p{
+        width: 26ch;
+        font-size: 13px;
+    }
+    .valores-bg{
+        gap: 50px;
+    }
+
+    .compromissos h3, .compromisso-social h3{
+        font-size: 26px;
+    }
+
+    .compromissos p{
+        max-width: 44ch;
+        font-size: 13px;
+    }
+
+    .compromisso-social p{
+        max-width: 44ch;
+        font-size: 13px;
+    }
+
+}
+
+@media (min-width: 460px) and (max-width: 665px){
+/*celular grande*/
+
+    .quem-somos h1{
+        padding-top: 44px;
+        font-size: 28px;
+    }
+    .quem-somos p{
+        max-width: 54ch;
+        font-size: 14px;
+    }
+    .nossa-equipe h3{
+        font-size: 26px;
+        width: max-content;
+    }
+    .gerente-img{
+        height: 300px;
+        width: 478px;
+        background-color: #ccc;
+        margin-bottom: 40px;
+        margin: 0 auto;
+    }
+    .nossa-equipe-text p{
+        max-width: 50ch;
+        font-size: 15px;
+    }
+    .valores-bg{
+        display: flex;
+        flex-direction: column;
+    }
+    .missao, .valores, .visao{
+        border-right: none;
+        border-bottom: 3px solid #02246F;
+
+    }
+    .missao h3, .visao h3, .valores h3{
+        font-size: 26px;
+    }
+    .missao p{
+        width: 50ch;
+        font-size: 15px;
+    }
+    .visao p{
+        width: 50ch;
+    }
+    .valores p{
+        width: 50ch;
+    }
+    .valores-bg{
+        gap: 20px;
+    }
+
+    .compromissos h3, .compromisso-social h3{
+        font-size: 26px;
+    }
+
+    .compromissos p{
+        max-width: 52ch;
+        font-size: 15px;
+    }
+
+    .compromisso-social p{
+        max-width: 52ch;
+        font-size: 15px;
+    }
+
+
+}
+
+@media (min-width: 666px) and (max-width: 736px){
+    /* tablets */
+    .quem-somos h1{
+        padding-top: 40px;
+        font-size: 32px;
+    }
+    .quem-somos p{
+        max-width: 68ch;
+        font-size: 13px;
+    }
+    .nossa-equipe h3{
+        font-size: 28px;
+        width: max-content;
+    }
+    .gerente-img{
+        height: 300px;
+        width: 560px;
+        background-color: #ccc;
+        margin-bottom: 40px;
+        margin: 0 auto;
+    }
+    .nossa-equipe-text p{
+        max-width: 55ch;
+        font-size: 15px;
+    }
+    .valores-bg{
+        display: flex;
+        flex-direction: column;
+}
+    .missao, .valores, .visao{
+    border-right: 3px solid #02246F;
+    padding-right: 12px;
+    
+}
+    .missao p{
+        width: 59ch;
+        font-size: 15px;
+}
+    .visao p{
+        width: 59ch;
+    }
+    .valores p{
+        width: 59ch;
+}
+    .valores-bg{
+        gap: 20px;
+}
+    
+    .compromissos p{
+        max-width: 60ch;
+        font-size: 15px;
+    }
+
+    .compromisso-social p{
+        max-width: 60ch;
+        font-size: 15px;
+    }
+
+
+
+
+
+
+
+}
+
+@media (min-width: 737px) and (max-width: 1024px){
+    /* tablets grandes/notebook */
+    
+    .quem-somos p{
+        max-width: 83ch;
+        font-size: 14px;
+    }
+    .nossa-equipe h3{
+        /* padding-left: 70px; */
+        font-size: 32px;
+        width: max-content;
+    }
+    .gerente-img{
+        height: 300px;
+        width: 730px;
+        background-color: #ccc;
+        margin-bottom: 40px;
+        margin: 0 auto;
+    }
+    .nossa-equipe-text p{
+        max-width: 78ch;
+        font-size: 15px;
+    }
+    .valores-bg{
+        gap: 50px;
+    }
+    .missao, .valores, .visao{
+        padding-right: 12px;
+    }
+    
+    .missao p{
+        max-width: 22ch;
+    }
+    .visao p{
+        max-width: 20ch;
+    }
+    .valores p{
+        max-width: 20ch;
+    }
+    .compromissos p{
+        max-width: 78ch;
+        font-size: 15px;
+    }
+    .compromisso-social p{
+        max-width: 78ch;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 2025px){}
