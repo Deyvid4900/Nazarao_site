@@ -7,20 +7,27 @@
   .cont-inicial{
     flex-wrap: wrap;
   }
+  .Logo{
+    width: 105px;
+  }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 465px) {
   /* Celular Grande */
-  
+  /* .cont-inicial img{
+    width: 100px;
+  } */
   .flex {
     display: none;
   }
   .Logo {
     display: flex;
-    width: 100%;
-    justify-content: center;
-    margin-left: 0px;
+    width: 160px;
+    justify-content: space-between;
+    padding-right: 130px;
+   
   }
+  
   h1 {
     font-size: 8pt;
   }
@@ -43,13 +50,24 @@
   a.flex {
     margin: 0px;
   }
-  img.Logo {
-    margin: 0px;
+  .Logo {
+    margin-left: -60px;
+    width: 120px;
+    padding: 0;
+  }
+  
+  .btnHamburger{
+    margin-right: -50px;
+    width: 40px;
+    height: 25px;
   }
 }
-@media (min-width: 427px) and (max-width: 665px) {
+@media (min-width: 465px) and (max-width: 665px) {
   .Off {
     width: 40px;
+  }
+  .btnHamburger{
+    margin-right: -130px;
   }
   .flex {
     display: none;
@@ -68,9 +86,11 @@
   a.flex {
     margin: 0px;
   }
-  img.Logo {
-    margin: 0px;
+  .Logo {
+   margin-left: -110px;
+   width: 180px;
   }
+  
 }
 @media (min-width: 666px) and (max-width: 736px) {
   .Off {
@@ -88,6 +108,14 @@
   }
   .btnHamburger {
     display: none;
+  }
+  .cont-inicial  a{
+    margin: 20px;
+  }
+  .Logo{
+    width: 180px;
+    margin-left: -0.1px;
+    padding-left: 28px;
   }
 }
 @media (min-width: 737px) and (max-width: 1024px) {
