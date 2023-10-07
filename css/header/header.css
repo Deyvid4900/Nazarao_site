@@ -12,7 +12,7 @@ body{
     color: #fff;
     background-color: #0669AC; 
     border-radius: 4px;
-    margin-right: 100px;
+    margin-right: 80px;
 }
 
 .cont-inicial{
@@ -105,6 +105,7 @@ nav::after{
     z-index: 9;
     display: flex;
     justify-content: end;
+    
 }
 .sideBarON{
     position: absolute;
@@ -115,6 +116,7 @@ nav::after{
     z-index: 9;
     display: flex;
     justify-content: end;
+    
 }
 .firstSideBar{
     width: 100%;
@@ -123,7 +125,8 @@ nav::after{
     justify-content: end;
     align-items: center;
     z-index: 8;
-   background-color: #eee;
+   background-color: #012C4A;
+   
 }
 .firstSideBar>img{
     margin: 0px 10px;
@@ -136,7 +139,23 @@ nav::after{
     z-index: 8;
 }
 .sideBarLinks>div>a{
-    color: #02416F;
+    color: #000;
+    font-weight: 500;
+    
+}
+.border-siderBar{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+}
+#btn-sideBar{
+    background-color: #0669AC;
+    text-align: center;
+    border-radius: 4px;
+    padding: 4px 2px;
+    
+}
+#btn-sideBar a{
+    color: white; 
 }
 .sideBarLinks{
     display: flex;
@@ -145,3 +164,4 @@ nav::after{
     /* padding-top: 20px; */
     padding: 20px 10px 10px 10px;
 }
+
