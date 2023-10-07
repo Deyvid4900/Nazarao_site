@@ -28,7 +28,11 @@
     <link rel="icon" href="img-svg/Frame 3.svg" type="svg" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="./css/postos-nazarao/postos-nazarao.css" />
+    <script type="module" src="./api.js"></script>
     
   </head>
   <body>
@@ -44,7 +48,7 @@
                 <div><a href="meio-ambiente.html">Inovação e Ecologia</a></div>
                 <div><a href="novidades.html">Novidades</a></div>
                 <div><a href="trr.html">TRR</a></div>
-                <div><a href="3">Postos Nazarões</a></div>
+                <div><a href="postos-nazarao.html">Postos Nazarões</a></div>
               </div>
           </div>
         </div>
@@ -60,10 +64,15 @@
                 <li><a href="meio-ambiente.html">Inovação e Ecologia</a></li>
                 <li><a href="novidades.html">Novidades</a></li>
                 <li><a href="trr.html">TRR</a></li>
-                <li><a href="3">Postos Nazarões</a></li>
+                <li><a href="postos-nazarao.html">Postos Nazarões</a></li>
             </ul>
         </nav>
     </header>
+    <div id="map"></div>
+
+   
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyB46wG7bMX070nj2Avrb24R-R7F5ihAfwM", v: "weekly"});</script>
     
 
 
