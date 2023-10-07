@@ -43,7 +43,9 @@
     margin: auto;
     margin-top: 60px;
 }
-
+.beneficios-bg{
+    padding-bottom: 60px;
+}
 .img-presente{
     width: 240px;
 }

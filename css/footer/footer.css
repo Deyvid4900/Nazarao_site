@@ -12,9 +12,6 @@ footer::before {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.divFooterContent a{
- color: #02436F; 
-}
 
 .divFooterBloco{
   padding: 3%;
@@ -27,5 +24,8 @@ footer::before {
   justify-content: center;
   align-items: center;
 
-  
+}
+
+.pad-rg{
+  padding-right: 6px;
 }
