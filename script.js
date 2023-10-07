@@ -1,10 +1,8 @@
-//efeito width no objeto selecionado
-const usuario = document.getElementById("usuario");
-const senhaUsuario = document.getElementById("senha");
-const btn_form = document.getElementById("btn_Acessar");
+const btn_sideBar = document.getElementById("btnHamburger");
+const div_sideBar = document.getElementById("sideBar");
+const corpo = [...document.getElementsByTagName("body")]
 
-const dataDeExpiracao = new Date();
-dataDeExpiracao.setDate(dataDeExpiracao.getDate() + 7);
+
 
 const listas = document.querySelectorAll(".list-one a");
 
@@ -19,25 +17,20 @@ function selectLista(lista) {
 
 listas.forEach(selectLista);
 
-const injetaDados=()=>{
-    window.location.href = "http://gruponazarao.lzt.com.br/";
-    const inputs = [...document.querySelectorAll["input"]]
-    
+btn_sideBar.addEventListener("click",()=>{
+  div_sideBar.removeAttribute("class","sideBarOFF")
+  div_sideBar.setAttribute("class","sideBarON")
+  btn_sideBar.setAttribute("class","OFF")
+  corpo[0].setAttribute("class","estatico")
+  
 
-    inputs[0].value = localStorage.getItem("username");
-    inputs[1].value = localStorage.getItem("password");
+})
+div_sideBar.addEventListener("click",()=>{
+  div_sideBar.removeAttribute("class","sideBarON")
+  div_sideBar.setAttribute("class","sideBarOFF")
+  btn_sideBar.removeAttribute("class","OFF")
+  btn_sideBar.setAttribute("class","btnHamburger")
+  corpo[0].removeAttribute("class","estatico")
+  console.log("ok")
+})
 
-}
-
-btn_form.addEventListener("click", () => {
-  const usernameValue = usuario.value;
-  const passwordValue = senhaUsuario.value;
-
-  const dataDeExpiracao = new Date();
-  dataDeExpiracao.setDate(dataDeExpiracao.getDate() + 7);
-
-  document.cookie = "username=" + usernameValue + "; expires=" + dataDeExpiracao.toUTCString() + "; path=/";
-  document.cookie = "password=" + passwordValue + "; expires=" + dataDeExpiracao.toUTCString() + "; path=/";
-
-  setTimeout(injetaDados,1000)
-});

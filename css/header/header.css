@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+body{
+    z-index: 1;
+}
+
+
 .cont-inicial  a{
     text-decoration: none;
     font-size: 1rem;
@@ -64,4 +69,79 @@ nav::after{
     height: 4px;
     display: block;
     background-image: linear-gradient(90deg, #02436F 40.19%, #73C50C 70.63%);
+}
+
+
+
+.btnHamburger{
+    background-color: #73C50C;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 35px;
+}
+
+
+
+
+/* SideBarConfig */
+.estatico{
+    overflow: hidden;
+}
+.OFF{
+    display: none;
+}
+
+.sideBarOFF{
+    display: none !important;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.582);
+    height: 100vh;
+    width: 100%;
+    z-index: 9;
+    display: flex;
+    justify-content: end;
+}
+.sideBarON{
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.582);
+    height: 100vh;
+    width: 100%;
+    z-index: 9;
+    display: flex;
+    justify-content: end;
+}
+.firstSideBar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    z-index: 8;
+   background-color: #eee;
+}
+.firstSideBar>img{
+    margin: 0px 10px;
+}
+.sideBarContent{
+    background-color: #fff;
+    width: 40%;
+    height: 100%;
+    text-align: end;
+    z-index: 8;
+}
+.sideBarLinks>div>a{
+    color: #02416F;
+}
+.sideBarLinks{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* padding-top: 20px; */
+    padding: 20px 10px 10px 10px;
 }

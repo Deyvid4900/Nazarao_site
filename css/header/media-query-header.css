@@ -1,10 +1,20 @@
 @charset "UTF-8";
 
+@media (max-width: 280px) {
+  .sideBarContent{
+    width: 60%;
+  }
+  .cont-inicial{
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 426px) {
   /* Celular Grande */
-    .flex{
-      display: none;
-    }
+  
+  .flex {
+    display: none;
+  }
   .Logo {
     display: flex;
     width: 100%;
@@ -15,7 +25,7 @@
     font-size: 8pt;
   }
 
-  .list-one{
+  .list-one {
     display: none;
   }
 
@@ -24,82 +34,85 @@
     margin: 0px auto;
     flex-wrap: wrap;
   }
-  .cont-inicial{
+  .cont-inicial {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
-    padding: 0px 40px 0px 0px;
-    /* background-color: aqua; */
+    padding: 0px 5% 0px 5%;
   }
-  a.flex{
+  a.flex {
     margin: 0px;
   }
-  img.Logo{
+  img.Logo {
     margin: 0px;
   }
-  /* a.flex {
-    display: none;
-  } */
 }
 @media (min-width: 427px) and (max-width: 665px) {
-  .Off{
+  .Off {
     width: 40px;
   }
-  .flex{
+  .flex {
     display: none;
   }
-  .cont-inicial{
+  .cont-inicial {
     display: flex;
     justify-content: space-around;
     width: 100%;
     padding: 0px 25px 0px 10px;
     /* background-color: aqua; */
   }
-  .list-one{
+  .list-one {
     display: none;
   }
-  
-   a.flex{
+
+  a.flex {
     margin: 0px;
   }
-  img.Logo{
+  img.Logo {
     margin: 0px;
   }
 }
-@media (min-width: 666px) and (max-width: 736px){
-  .Off{
+@media (min-width: 666px) and (max-width: 736px) {
+  .Off {
     display: none;
   }
 
   .list-one {
-   gap: 40px;
-}
+    gap: 40px;
+  }
   .list-one a {
     display: inline-block;
     padding: 10px 0px;
     /* font-size: 2em; */
     font-size: 12px;
+  }
+  .btnHamburger {
+    display: none;
+  }
 }
-}
-@media (min-width: 737px) and (max-width: 1024px){
-  .Off{
+@media (min-width: 737px) and (max-width: 1024px) {
+  .Off {
     display: none;
   }
   .list-one a {
     display: inline-block;
     padding: 10px 0px;
     font-size: 12px;
-
+  }
+  .btnHamburger {
+    display: none;
+  }
 }
-}
-@media (min-width: 1025px){
-  .Off{
+@media (min-width: 1025px) {
+  .Off {
     display: none;
   }
   .list-one a {
     display: inline-block;
     padding: 10px 0px;
     font-size: 1.5em;
-}
-
+  }
+  .btnHamburger {
+    display: none;
+  }
 }
