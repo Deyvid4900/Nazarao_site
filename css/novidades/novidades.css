@@ -75,7 +75,7 @@
 
 .experimente{
     display: flex;
-    max-width: 80ch;
+    width: 90ch;
     text-align: center;
     max-width: max-content;
     margin: auto;
