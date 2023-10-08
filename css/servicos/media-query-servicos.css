@@ -1,9 +1,336 @@
-@media (max-width: 425px){}
+@media (max-width: 460px){
+    /*Celular Pequeno*/
+    .servicos-bg h1{
+        font-size: 22px;
+        
 
-@media (min-width: 427px) and (max-width: 665px){}
+    }
+    .span-text h3{
+        font-size: 20px;
+        width: max-content;
+        margin-left: -1px;
+        padding-left: 60px;
+    }
+    .motor-oleo{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: max-content;
+        gap: 20px;
+    }
+    .motor-oleo p{
+        order: 1;
+        font-size: 14px;
+        width: 36ch;
+    }
+    .motor-oleo img{
+        order: 2;
+        width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+    }
+    .h33{
+        font-size: 20px;
+        width: 23ch;
+        margin: 0 auto;
+    }
+    .protecao h3{
+        font-size: 19px;
+        margin-bottom: 0;
+    }
+    .protecao p{
+        font-size: 14px;
+        max-width: 30ch;
+        margin-top: 6px;
+    }
+    .protecao-motor{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .protecao-motor img{
+        order: 2;
+        width: 220px;
+        height: 100%;
+        margin-left: -44px;
+    }
+    .mexer-h3{
+        max-width: 16ch;
+    }
+    .bicoGasolina{
+        margin-left: 20px;
+    }
+    .reducao-emissao h3{
+        max-width: 18ch;
+    }
+    .artic p{
+        max-width: 28ch;
+        font-size: 14px;
+    }
+    .conveniencia-main h3{
+        margin-left: 15%;
+    }
+    .conveniencia-main p{
+        max-width: 40ch;
+        font-size: 13px;
+        margin: 0 auto;
+        width: max-content;
+    }
+    .after::after{
+        right: 26.3%;
+        border-radius: 2px;
+    }
+    .conveniencia-flex{
+        gap: 15px;
+        flex-direction: column;
+        
+    }
+    #conveniencia-f img{
+        width: 260px;
+        height: 100%;
+        margin: 0 auto;
+    }
+    #conveniencia-f p{
+        max-width: 33ch;
+        font-size: 13px;
+        width: max-content;
+        margin: 0 auto;
+    }
+    .p-ultimo{
+        max-width: 38ch;
+        font-size: 13px;
+        margin: 0 auto;
+    }
 
-@media (min-width: 666px) and (max-width: 736px){}
+}
 
-@media (min-width: 737px) and (max-width: 1024px){}
+@media (min-width: 460px) and (max-width: 665px){
+    /* Celular Grande */
+    .servicos-bg h1{
+        font-size: 24px;
+    }
+    .span-text h3{
+        font-size: 20px;
+        width: max-content;
+        margin-left: -1px;
+        padding-left: 100px;
+    }
+    .motor-oleo{
+        margin: 0 auto;
+        gap: 20px;
+    }
+    .motor-oleo p{
+        font-size: 14px;
+        width: 24ch;
+    }
+    .motor-oleo img{
+        width: 230px;
+        margin-top: 10px;
+    }
+    .h33{
+        font-size: 18px;
+        width: max-content;
+        margin: 0 auto;
+    }
+    .protecao h3{
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+    .protecao p{
+        font-size: 13px;
+        max-width: 30ch;
+        margin-top: 6px;
+    }
+    .protecao-motor{
+        align-items: center;
+        gap: 20px;
+    }
+    .protecao-motor img{
+        width: 180px;
+        height: 100%;
+    }
+    .mexer-h3{
+        max-width: 16ch;
+    }
+    .bicoGasolina{
+        margin-left: 20px;
+    }
+    .reducao-emissao h3{
+        max-width: 18ch;
+    }
+    .artic p{
+        max-width: 54ch;
+        font-size: 14px;
+    }
+    .conveniencia-main h3{
+        margin-left: 15%;
+    }
+    .conveniencia-main p{
+        max-width: 54ch;
+        font-size: 14px;
+    }
+    .after::after{
+        right: 64.2%;
+    }
+    .conveniencia-flex{
+        gap: 15px;
+    }
+    #conveniencia-f img{
+        width: 220px;
+        height: 100%;
+    }
+    #conveniencia-f p{
+        max-width: 26ch;
+        font-size: 13px;
+        margin-top: -1px;
+    }
+    .p-ultimo{
+        max-width: 54ch;
+        font-size: 13px;
+    }
+}
 
-@media (min-width: 2025px){}
+@media (min-width: 666px) and (max-width: 736px){
+    /* tablets */ 
+    .servicos-bg h1{
+        font-size: 26px;
+    }
+    .motor-oleo{
+        margin: 0 auto;
+        gap: 20px;
+    }
+    .motor-oleo p{
+        font-size: 15px;
+        width: 24ch;
+    }
+    .motor-oleo img{
+        width: 260px;
+        margin-top: 10px;
+    }
+    .h33{
+        font-size: 20px;
+        width: max-content;
+        margin: 0 auto;
+    }
+    .protecao h3{
+        font-size: 18px;
+    }
+    .protecao p{
+        font-size: 14px;
+        max-width: 32ch;
+    }
+    .protecao-motor{
+        align-items: center;
+        gap: 20px;
+    }
+    .protecao-motor img{
+        width: 180px;
+        height: 100%;
+    }
+    .bicoGasolina{
+        margin-left: 70px;
+    }
+    .artic p{
+        max-width: 55ch;
+        font-size: 15px;
+    }
+    .conveniencia-main h3{
+        margin-left: 15%;
+    }
+    .conveniencia-main p{
+        max-width: 55ch;
+        font-size: 15px;
+    }
+    .after::after{
+        right: 64.2%;
+    }
+    .conveniencia-flex{
+        gap: 20px;
+    }
+    #conveniencia-f img{
+        width: 260px;
+        height: 100%;
+    }
+    #conveniencia-f p{
+        max-width: 26ch;
+        font-size: 13px;
+        margin-top: -1px;
+    }
+    .p-ultimo{
+        max-width: 55ch;
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 737px) and (max-width: 1024px){
+    /* tablets grandes/notebook */
+    .motor-oleo{
+        margin: 0 auto;
+        gap: 20px;
+    }
+    .motor-oleo p{
+        font-size: 14px;
+        width: 36ch;
+    }
+    .motor-oleo img{
+        width: 260px;
+        margin-top: 10px;
+    }
+    .h33{
+        font-size: 21px;
+        width: max-content;
+        margin: 0 auto;
+    }
+    .protecao h3{
+        font-size: 21px;
+    }
+    .protecao p{
+        font-size: 15px;
+        max-width: 40ch;
+    }
+    .protecao-motor{
+        align-items: center;
+        gap: 20px;
+    }
+    .protecao-motor img{
+        width: 180px;
+        height: 100%;
+    }
+    .artic p{
+        max-width: 60ch;
+        font-size: 15px;
+    }
+    .conveniencia-main h3{
+        margin-left: 15%;
+    }
+    .conveniencia-main p{
+        max-width: 60ch;
+        font-size: 15px;
+    }
+    .after::after{
+        right: 64.2%;
+    }
+    .conveniencia-flex{
+        gap: 20px;
+    }
+    #conveniencia-f img{
+        width: 285px;
+        height: 100%;
+    }
+    #conveniencia-f p{
+        max-width: 26ch;
+        font-size: 14px;
+        margin-top: 6px;
+    }
+    .p-ultimo{
+        max-width: 60ch;
+        font-size: 15px;
+    }
+}
+
+
+
+@media (min-width: 2025px){
+
+}

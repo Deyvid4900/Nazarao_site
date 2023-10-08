@@ -15,7 +15,7 @@ main{
 .motor-oleo{
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     gap: 40px;
 }
 .span-text h3{
