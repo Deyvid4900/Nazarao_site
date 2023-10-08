@@ -1,0 +1,316 @@
+
+@media (max-width: 340px){
+    .container{
+        padding: 0;
+    }
+    .fc-titulo h1{
+        font-size: 30px;
+        width: max-content;
+        margin-right: auto;
+        margin-left: -40px;
+    }
+    .contato{
+        grid-template-columns: 1fr;
+        margin-left: 0;
+    }
+    .contato-dado{
+        margin-bottom: 0;
+        box-shadow: none;
+        width: 160px;
+        margin: 0 auto;
+        border-radius: 8px 8px 0 0 ;
+    }
+    .contato-dado h3{
+        font-size: 18px;
+        justify-content: center;
+    }
+    .contato-endereco p{
+        font-size: 12px;
+        margin-left: -20px;
+    }
+    .contato-endereco{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .contato-meios{
+        font-size: 12px;
+        margin-left: -20px;
+    }
+    .form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-left: -22px;
+    }
+    .form .col-2{
+        grid-column: 1;
+    }
+    .contato-formulario {
+        border-radius: 0 0 8px 8px;
+        width: 160px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+        padding: 40px 60px 40px 60px;
+    }
+    .input-radio {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 24px;
+        padding-top: 0px;
+        margin-left: -4px;
+    }
+    .botao{
+        margin-left:  auto;
+        margin-right: auto;
+        font-size: 14px;
+        padding: 8px;
+    }
+    .form input[type="text"], .form input[type="email"], .form textarea {
+        width: 100%;
+    }
+    .inputt{
+        width: 180px;
+    }
+}
+
+@media (min-width: 340px) and (max-width: 490px){
+    
+
+    .container{
+        padding: 0;
+    }
+    .fc-titulo h1{
+        font-size: 34px;
+        width: max-content;
+        margin-right: auto;
+        margin-left: -40px;
+    }
+    .contato{
+        grid-template-columns: 1fr;
+        margin-left: 0;
+    }
+    .contato-dado{
+        margin-bottom: 0;
+        box-shadow: none;
+        width: 220px;
+        margin: 0 auto;
+        border-radius: 8px 8px 0 0 ;
+    }
+    .contato-dado h3{
+        font-size: 20px;
+        justify-content: center;
+    }
+    .contato-endereco p{
+        font-size: 14px;
+    }
+    .contato-endereco{
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .contato-meios{
+        font-size: 14px;
+    }
+    .form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .form .col-2{
+        grid-column: 1;
+    }
+    .contato-formulario {
+        border-radius: 0 0 8px 8px;
+        width: 220px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+    }
+    .input-radio {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 24px;
+        padding-top: 0px;
+        margin-left: -4px;
+    }
+    .botao{
+        margin-left: -3px;
+    }
+    .form input[type="text"], .form input[type="email"], .form textarea {
+        width: 100%;
+    }
+    .inputt{
+        width: 200px;
+    }
+}
+
+@media (min-width: 490px) and (max-width: 665px){
+
+    .fc-titulo h1{
+        font-size: 36px;
+        max-width: max-content;
+        margin-left: -18%;
+    }
+    .contato{
+        grid-template-columns: 1fr;
+        margin-left: 0;
+    }
+    .contato-dado{
+        margin-bottom: 0;
+        box-shadow: none;
+        width: 350px;
+        margin: 0 auto;
+        border-radius: 8px 8px 0 0 ;
+    }
+    .contato-dado h3{
+        justify-content: center;
+    }
+    .form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .form .col-2{
+        grid-column: 1;
+    }
+    .contato-formulario {
+        border-radius: 0 0 8px 8px;
+        width: 350px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+    }
+    .input-radio {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 24px;
+        padding-top: 0px;
+        margin-left: -4px;
+    }
+    .botao{
+        margin-left: -3px;
+    }
+    .form input[type="text"], .form input[type="email"], .form textarea {
+        width: 80%;
+    }
+    .inputt{
+        width: 265px;
+    }
+
+}
+
+
+@media (min-width: 666px) and (max-width: 800px){
+
+
+    .fc-titulo h1{
+        font-size: 36px;
+        max-width: max-content;
+        margin-left: -18%;
+    }
+    .contato{
+        grid-template-columns: 1fr;
+        margin-left: 0;
+    }
+    .contato-dado{
+        margin-bottom: 0;
+        box-shadow: none;
+        width: 500px;
+        margin: 0 auto;
+        border-radius: 8px 8px 0 0 ;
+    }
+    .form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .form .col-2{
+        grid-column: 1;
+    }
+    .contato-formulario {
+        border-radius: 0 0 8px 8px;
+        width: 500px;
+        margin: 0 auto;
+        margin-bottom: 100px;
+    }
+    .input-radio {
+        display: flex;
+        gap: 0 38px;
+        padding-bottom: 24px;
+        padding-top: 0px;
+        margin-left: -4px;
+    }
+    .botao{
+        margin-left: -3px;
+    }
+
+}
+
+@media (min-width: 800px) and (max-width: 1024px){
+    
+    .contato-dado {
+        background-color: #0669AC;
+        padding: 20px 9px 60px 17px;
+        margin-bottom: 200px;
+        border-radius: 8px 0 0 8px;
+    }
+    .contato-endereco {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .contato-endereco p{
+        font-size: 14px;
+    }
+    .contato-meios a{
+        font-size: 14px;
+    }
+    .form {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .contato-formulario{
+        padding: 40px 40px;
+    }
+    .form .col-2{
+        grid-column: 1;
+    }
+    .form input[type="text"], .form input[type="email"], .form textarea {
+        width: 90%;
+        font-weight: 400px;
+        border: 1px solid #ededed;
+        background-color: #f7f7f7;
+        font-family: "Roboto", sans-serif;
+        padding: 14px;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .container{
+        padding: 0;
+    } 
+    .contato-formulario {
+        border-radius: 0 8px 8px 0;
+        width: 400px;
+    }
+    .input-radio {
+        display: flex;
+        gap: 0 38px;
+        padding-bottom: 24px;
+        padding-top: 0px;
+        margin-left: -4px;
+    }
+    .contato {
+        display: grid;
+        grid-template-columns: 3fr 5fr;
+        margin-left: 40px;
+    }
+    .inputt{
+        width: 130px;
+    }
+    .botao{
+        margin-left: -3px;
+    }
+    
+}
+
+@media (min-width: 2025px){}
