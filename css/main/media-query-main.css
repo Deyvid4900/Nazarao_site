@@ -263,18 +263,24 @@
 
 
 @media (min-width: 1025px) {
+  
   /* tablets grandes/notebook */
+
+  .img-nazarao {
+    min-width: 260px;
+    justify-content: center;
+}
+.cartao-nazarao {
+  height: auto;
+  width: 100%;
+}
   .content_Painel{
     width: 100%;
   }
-  .img-nazarao{
-    min-width: 500px;
-    justify-content: center;
-    
-  }
+  
   .grid-text{
     flex-wrap: nowrap;
-    margin: 30px 10%;
+    margin: 30px 8%;
   }
   .text-text{
     display: flex;
@@ -301,5 +307,19 @@
   }
   
   
+  
+}
+@media (min-width: 1750px) {
+  .cartao-nazarao {
+    width: 70%;
+  }
+  .text-text {
+    display: flex;
+    align-items: center;
+  
+  }
+  .Tlt{
+    text-align: center;
+  }
   
 }
