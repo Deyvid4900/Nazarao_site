@@ -1,4 +1,4 @@
-@media (max-width: 460px){
+@media (min-width: 200px) and (max-width: 460px){
     .inov-info h1{
         font-size: 20px;
     }
