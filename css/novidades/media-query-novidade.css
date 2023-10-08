@@ -1,0 +1,287 @@
+@media (max-width: 460px){
+
+    .sobre-card{
+        width: 90%;
+        height: 494px;
+
+    }
+    .sobre-card h1{
+        font-size: 26px;
+        /* width: max-content; */
+        margin: 0 auto;
+    }
+    .flex-mao{
+        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+    }
+    .flex-mao img{
+        order: 2;
+    }
+    .mao-media{
+        display: none;
+    }
+    #maooo{
+        display: block;
+        width: 92%;
+        margin-top: 24px;
+        padding: 0;
+    }
+    .flex-mao p{
+        display: flex;
+        order: 1;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 44ch;
+        font-size: 14px;
+        font-weight: 500;
+        padding-top: 30px;
+    }
+    .flex-beneficios{
+        gap: 10px;
+        flex-direction: column;
+        padding-left: 0;
+        justify-content: center;
+        align-items: start;
+    }
+    .flex-beneficios img{
+        order: 2;
+        margin: 0 auto;
+    }
+    .img-media{
+        width: 160px
+    }
+    .p-mediaQ{
+        margin-left: 20px;
+        width: 22ch;
+    }
+    .beneficios-bg h1{
+        font-size: 28px;
+    }
+   
+    .beneficio-Media{
+        margin-left: 18px;
+    }
+    .beneficio-Media h3{
+        margin-left: 18px;
+    }
+    #imgMediaQry{
+        
+        margin: 0 auto;
+        width: 200px;
+    }
+    .textMediaQury{
+        padding-left: 0px;
+        margin-left: 40px;
+        width: 20ch;
+    }
+    .text-beneficios h3{
+        font-size: 18px;
+        width: 20ch;
+    }
+    .text-beneficios p{
+        font-size: 15px;
+        max-width: max-content;
+        width: 30ch;
+    }
+    .experimente{
+        margin: 0 auto;
+        padding-top: 60px;
+        max-width: 40ch;
+        text-align: center;
+        font-size: 13px;
+    }
+
+}
+
+@media (min-width: 460px) and (max-width: 665px){
+
+    .sobre-card{
+        width: 90%;
+        height: 494px;
+
+    }
+    .sobre-card h1{
+        font-size: 28px;
+    }
+    .flex-mao{
+        justify-content: center;
+        flex-direction: column;
+        gap: 0;
+    }
+    .flex-mao img{
+        order: 2;
+    }
+    .mao-media{
+
+        display: none;
+
+    }
+    #maooo{
+        display: block;
+        width: 360px;
+        margin-top: 24px;
+        padding: 0;
+    }
+    .flex-mao p{
+        display: flex;
+        order: 1;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 44ch;
+        font-size: 14px;
+        font-weight: 500;
+        padding-top: 30px;
+    }
+    .flex-beneficios{
+        gap: 10px;
+    }
+    .img-media{
+        width: 160px
+    }
+    .p-mediaQ{
+        margin-left: 20px;
+        width: 22ch;
+    }
+    .beneficios-bg h1{
+        font-size: 28px;
+    }
+    /* .beneficio-Media{
+        padding-right: 60px;
+        padding-left: 0px;
+    } */
+    .lalau{
+    margin-left: -40px;
+    }
+    .beneficio-Media h3{
+        margin-left: 18px;
+    }
+    #imgMediaQry{
+        margin-left: 20px;
+        margin-right: 0px;
+        width: 200px;
+    }
+    .textMediaQury{
+        padding-left: 0px;
+        margin-left: 40px;
+        width: 20ch;
+    }
+    .text-beneficios h3{
+        font-size: 18px;
+    }
+    .text-beneficios p{
+        max-width: 40ch;
+        font-size: 14px;
+    }
+    .experimente{
+        margin: 0 auto;
+        padding-top: 60px;
+        max-width: 44ch;
+        text-align: center;
+        font-size: 14px;
+    }
+
+}
+
+@media (min-width: 666px) and (max-width: 736px){
+    
+    .sobre-card{
+        width: 90%;
+        height: 539px;
+    }
+    #maooo{
+        display: none;
+    }
+    .sobre-card h1{
+        font-size: 28px;
+    }
+    .flex-mao{
+        gap: 40px;
+        align-items: center;
+    }
+    .flex-mao img{
+        width: 340px;
+    }
+    .flex-mao p{
+        margin-top: 0;
+        margin-left: 0;
+        max-width: 36ch;
+        font-size: 16px;
+        margin-right: 40px;
+        padding-top: 80px;
+    }
+    .flex-beneficios{
+        gap: 40px;
+    }
+    .img-media{
+        width: 180px
+    }
+    .p-mediaQ{
+        margin-left: 20px;
+    }
+    .beneficio-Media{
+        padding-right: 60px;
+        padding-left: 0px;
+    }
+    .beneficio-Media h3{
+        margin-left: 20px;
+    }
+    #imgMediaQry{
+        /* margin-left: 40px; */
+        margin-right: 0px;
+        width: 240px;
+    }
+    .textMediaQury{
+        padding-left: 0px;
+        margin-left: 40px;
+    }
+    .text-beneficios h3{
+        font-size: 19px;
+    }
+    .text-beneficios p{
+        max-width: 30ch;
+        font-size: 16px;
+    }
+    .experimente{
+        margin: 0 auto;
+        max-width: 57ch;
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 737px) and (max-width: 1024px){
+    .sobre-card{
+        width: 90%;
+    }
+    .flex-mao{
+        gap: 50px;
+    }
+    .maoMediaCanva{
+        display: none;
+    }
+    .flex-mao p{
+        margin-top: 0;
+        margin-left: 0;
+        max-width: 30ch;
+        font-size: 18px;
+        margin-right: 40px;
+    }
+    .flex-beneficios{
+        gap: 80px;
+    }
+    .text-beneficios p{
+        max-width: 40ch;
+    }
+    .experimente{
+        margin: 0 auto;
+        max-width: 71ch;
+        text-align: center;
+    }
+}
+
+@media (min-width: 2025px){
+    .maoMediaCanva{
+        display: none;
+    }
+}

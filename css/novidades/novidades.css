@@ -19,7 +19,11 @@
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.30);
     margin-top: 60px;
 }
-
+#maooo{
+    display: none;
+    padding-top: 95px;
+    width: 50px;
+}
 .flex-mao{
     display: flex;
     align-items: center;
@@ -29,11 +33,12 @@
 .flex-mao p{
     max-width: 36ch;
     margin-left: 60px;
-    margin-top: -80px;
-    font-size: 20px;
+    margin-top: 0px;
+    margin-right: 40px;
+    font-size: 22px;
     color: #282828;
 }
-.flex-mao img{
+.mao-media{
     padding-top: 95px;
     width: 392px;
 }
@@ -63,13 +68,15 @@
     color: #00192A;    
 }
 .text-beneficios p{
-    width: 600px;
+    max-width: 50ch;
     color: #8F8F8F;
     font-size: 20px;
 }
 
 .experimente{
-    width: 1050px;
+    display: flex;
+    max-width: 80ch;
+    text-align: center;
     max-width: max-content;
     margin: auto;
     padding-top: 140px;
