@@ -25,6 +25,7 @@
         gap: 30px;
         overflow: scroll;
         padding-left: 160px;
+        padding-bottom: 30px;
     }
     .img-eco img{
         width: 150px;
@@ -143,7 +144,7 @@
     }
     .titulo-iniciativa{
         font-size: 22px;
-        margin-left: 11.4%;
+        margin-left: 8.7%;
     }
     .primeiro-p, .segundo-p{
         font-size: 15px;
@@ -165,7 +166,7 @@
         font-size: 22px;
         width: max-content;
         margin: auto;
-        margin-left: 10%;
+        margin-left: 8.7%;
         /* padding-left: 64px; */
         padding-bottom: 40px;
     }
@@ -190,6 +191,64 @@
 
 
 @media (min-width: 737px) and (max-width: 1024px){
+
+    .inov-info h1{
+        font-size: 28px;
+    }
+    .inov-info img{
+        width: 32px;
+    }
+    .inov-p{
+        max-width: 65ch;
+    }
+    .inov-p-2{
+        font-size: 16px;
+        max-width: 74ch;
+    }
+    .titulo-iniciativa{
+        font-size: 24px;
+        margin-left: 11.4%;
+    }
+    .primeiro-p, .segundo-p{
+        font-size: 16px;
+        width: 74ch;
+    }
+    .img-eco{
+        gap: 30px;
+    }
+    .img-eco img{
+        width: 200px;
+    }
+    .ricicle-h3{
+        font-size: 24px;
+        padding-bottom: 40px;
+        margin-left: -0%;
+        padding-left: 120px;
+    }
+    .compromisso {
+        font-size: 24px;
+        width: max-content;
+        margin: auto;
+        margin-left: 11.4%;
+        /* padding-left: 64px; */
+        padding-bottom: 40px;
+    }
+    .compromisso-p{
+        width: 74ch;
+        font-size: 16px;
+    }
+    .ultimo{
+        gap: 30px;
+        align-items: center;
+    }
+    .ultimo img {
+        width: 270px;
+    }
+    .ultimo-p p{
+        font-size: 16px;
+        max-width: 38ch;
+    }
+    
 }
 
 @media (min-width: 2025px){}
