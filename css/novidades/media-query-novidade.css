@@ -23,8 +23,8 @@
     }
     #maooo{
         display: block;
-        width: 92%;
-        margin-top: 24px;
+        width: 280px;
+        margin-top: 20px;
         padding: 0;
     }
     .flex-mao p{
@@ -111,6 +111,7 @@
     }
     .flex-mao img{
         order: 2;
+        max-width: max-conte;
     }
     .mao-media{
 
@@ -119,8 +120,8 @@
     }
     #maooo{
         display: block;
-        width: 360px;
-        margin-top: 24px;
+        width: 350px;
+        margin-top: -15px;
         padding: 0;
     }
     .flex-mao p{
