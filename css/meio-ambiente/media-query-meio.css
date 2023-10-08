@@ -1,0 +1,196 @@
+@media (max-width: 460px){
+    .inov-info h1{
+        font-size: 20px;
+    }
+    .inov-info img{
+        width: 24px;
+    }
+    .inov-p{
+        max-width: 40ch;
+        font-size: 15px;
+    }
+    .inov-p-2{
+        font-size: 14px;
+        max-width: 40ch;
+    }
+    .titulo-iniciativa{
+        font-size: 18px;
+        margin-left: 11.4%;
+    }
+    .primeiro-p, .segundo-p{
+        font-size: 14px;
+        width: 40ch;
+    }
+    .img-eco{
+        gap: 30px;
+        overflow: scroll;
+        padding-left: 160px;
+    }
+    .img-eco img{
+        width: 150px;
+    }
+    .ricicle-h3{
+        font-size: 22px;
+        padding-bottom: 40px;
+        margin-left: -0%;
+        width: 20ch;
+        padding-left: 40px;
+    }
+    .compromisso {
+        font-size: 22px;
+        width: max-content;
+        width: 24ch;
+        margin: 0 auto;
+        margin-left: 0;
+        padding-left: 40px;
+        padding-bottom: 40px;
+    }
+    .compromisso-p{
+        width: 40ch;
+        font-size: 14px;
+    }
+    .ultimo{
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding-top: 40px;
+    }
+    .ultimo img {
+        width: 290px;
+    }
+    .ultimo-p p{
+        font-size: 14px;
+        max-width: 40ch;
+    } 
+}
+
+@media (min-width: 460px) and (max-width: 665px){
+    .inov-info h1{
+        font-size: 24px;
+    }
+    .inov-info img{
+        width: 30px;
+    }
+    .inov-p{
+        max-width: 52ch;
+        font-size: 15px;
+    }
+    .inov-p-2{
+        font-size: 14px;
+        max-width: 56ch;
+    }
+    .titulo-iniciativa{
+        font-size: 22px;
+        margin-left: 11.4%;
+    }
+    .primeiro-p, .segundo-p{
+        font-size: 14px;
+        width: 56ch;
+    }
+    .img-eco{
+        gap: 15px;
+    }
+    .img-eco img{
+        width: 150px;
+    }
+    .ricicle-h3{
+        font-size: 22px;
+        padding-bottom: 40px;
+        margin-left: -0%;
+        width: 20ch;
+        padding-left: 40px;
+    }
+    .compromisso {
+        font-size: 22px;
+        width: max-content;
+        width: 24ch;
+        margin: 0 auto;
+        margin-left: 0;
+        padding-left: 40px;
+        padding-bottom: 40px;
+    }
+    .compromisso-p{
+        width: 56ch;
+        font-size: 14px;
+    }
+    .ultimo{
+        gap: 20px;
+        align-items: center;
+        padding-top: 40px;
+    }
+    .ultimo img {
+        width: 160px;
+    }
+    .ultimo-p p{
+        font-size: 13px;
+        max-width: 38ch;
+    }
+}
+
+@media (min-width: 666px) and (max-width: 736px){
+
+    .inov-info h1{
+        font-size: 24px;
+    }
+    .inov-info img{
+        width: 32px;
+    }
+    .inov-p{
+        max-width: 56ch;
+    }
+    .inov-p-2{
+        font-size: 15px;
+        max-width: 61ch;
+    }
+    .titulo-iniciativa{
+        font-size: 22px;
+        margin-left: 11.4%;
+    }
+    .primeiro-p, .segundo-p{
+        font-size: 15px;
+        width: 61ch;
+    }
+    .img-eco{
+        gap: 15px;
+    }
+    .img-eco img{
+        width: 180px;
+    }
+    .ricicle-h3{
+        font-size: 22px;
+        padding-bottom: 40px;
+        margin-left: -0%;
+        padding-left: 63px;
+    }
+    .compromisso {
+        font-size: 22px;
+        width: max-content;
+        margin: auto;
+        margin-left: 10%;
+        /* padding-left: 64px; */
+        padding-bottom: 40px;
+    }
+    .compromisso-p{
+        width: 61ch;
+        font-size: 15px;
+    }
+    .ultimo{
+        gap: 20px;
+    }
+    .ultimo img {
+        width: 210px;
+    }
+    .ultimo-p p{
+        font-size: 13px;
+        max-width: 38ch;
+    }
+}
+
+
+
+
+
+@media (min-width: 737px) and (max-width: 1024px){
+}
+
+@media (min-width: 2025px){}
