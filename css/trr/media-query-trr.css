@@ -1,0 +1,126 @@
+@media (max-width: 460px){
+    .trr-img{
+        padding-bottom: 40px;
+    }
+    .sep-pad {
+        padding-bottom: 60px;
+    }
+    .trr-sec h1{
+        font-size: 21px;
+    }
+    .trr-sec p{
+        margin: 0 auto;
+        width: 38ch;
+        font-size: 13px;
+    }
+    .trr-sec2 h3 {
+        font-size: 20px;
+        max-width: max-content;
+    }
+    .trr-sec2 p{
+        margin: 0 auto;
+        width: 34ch;
+        font-size: 14px;
+    }
+    .pedir h3{
+        font-size: 20px;
+        max-width: max-content;
+    }
+    .pedir p{
+        margin: 0 auto;
+        width: 38ch;
+        font-size: 13px;
+    }
+    .link-trr a{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 460px) and (max-width: 665px){
+
+    .sep-pad {
+        padding-bottom: 60px;
+    }
+    .trr-sec h1{
+        font-size: 24px;
+    }
+    .trr-sec p{
+        margin: 0 auto;
+        width: 56ch;
+        font-size: 13px;
+    }
+    .trr-sec2 h3 {
+        font-size: 21px;
+        max-width: max-content;
+    }
+    .trr-sec2 p{
+        margin: 0 auto;
+        width: 52ch;
+        font-size: 14px;
+    }
+    .pedir h3{
+        font-size: 21px;
+        max-width: max-content;
+    }
+    .pedir p{
+        margin: 0 auto;
+        width: 56ch;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 666px) and (max-width: 736px){
+    .sep-pad {
+        padding-bottom: 60px;
+    }
+    .trr-sec h1{
+        font-size: 29px;
+    }
+    .trr-sec p{
+        margin: 0 auto;
+        width: 60ch;
+        font-size: 14px;
+    }
+    .trr-sec2 h3 {
+        font-size: 27px;
+        max-width: max-content;
+    }
+    .trr-sec2 p{
+        margin: 0 auto;
+        width: 57ch;
+        font-size: 15px;
+    }
+    .pedir h3{
+        font-size: 27px;
+        max-width: max-content;
+    }
+    .pedir p{
+        margin: 0 auto;
+        width: 60ch;
+        font-size: 14px;
+    }
+
+
+}
+
+@media (min-width: 737px) and (max-width: 1024px){
+
+    .trr-sec p{
+        margin: 0 auto;
+        width: 80ch;
+        font-size: 14px;
+    }
+    .trr-sec2 p{
+        margin: 0 auto;
+        width: 76ch;
+        font-size: 15px;
+    }
+    .pedir p{
+        margin: 0 auto;
+        width: 80ch;
+        font-size: 14px;
+    }
+
+}
+
+@media (min-width: 2025px){}
