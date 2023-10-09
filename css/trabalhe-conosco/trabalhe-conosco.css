@@ -80,13 +80,14 @@
 }
 .diversidade h3{
     font-size: 28px;
-    margin-left: 80px;
+    padding-left: 10%;
 }
 .diversidade p{
     color: #282828;
-    max-width: 100ch;
+    /* width: 100ch; */
+    width: 90ch;
     font-weight: 400px;
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 80px;
 }
 
@@ -100,6 +101,7 @@
     border-radius: 12px;
     background: var(--c15, #FCFCFC);
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.30);
+    margin-left: 1%;
 }
 
 .square-info p{
@@ -111,6 +113,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 .tudo-info p{
     margin-left: 60px;
@@ -151,9 +154,10 @@
     font-size: 18px;
 }
 
+
 .topics-info p{
-    font-size: 20px;
-    width: 1000px;
+    font-size: 18px;
+    width: 80ch;
     max-width: max-content;
     margin-left: 80px;
     margin-top: 60px;

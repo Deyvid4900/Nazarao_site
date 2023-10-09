@@ -1,0 +1,237 @@
+@media (max-width: 449px){
+
+    .conosco-trab h1{
+        font-size: 32px;
+        padding-top: 70px;
+    }
+    .conosco-trab p{
+        width: 34ch;
+        padding-top: 20px;
+        font-size: 15px;
+    }
+    .diversidade p{
+        max-width: max-content;
+        width: 34ch;
+        font-size: 15px;
+        margin: 0 auto;
+    }
+    .diversidade h3 {
+        font-size: 28px;
+        margin-left: 0%;
+        max-width: max-content;
+    }
+    .tudo-info{
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
+    }
+    .tudo-info img {
+        order: 1;
+        width: 220px;
+        margin-top: 30px;
+    }
+    .tudo-info p{
+        order: 2;
+        margin: 0;
+        margin-top: 30px;
+        font-weight: 600;
+        font-size: 16px;
+        margin-left: -30px;
+        /* margin-top: 100px; */
+    }
+    .square-info {
+        height: 340px;
+        width: 300px;
+        margin: 40px auto;
+    }
+    .cultura p {
+        max-width: 32ch;
+        margin: 0 auto;
+        font-size: 15px;
+    }
+    .cultura h3{
+        font-size: 26px;
+        margin-left: 50px;
+        padding-left: 0px;
+    }
+    .topics-info p {
+        max-width: 32ch;
+        width: max-content;
+        font-size: 15px;
+        margin: 40px auto;
+    }
+    .dec-line-1::after{
+        margin-left: 56px;
+    }
+
+
+}
+
+@media (min-width: 450px) and (max-width: 660px){
+
+    .conosco-trab h1{
+        font-size: 36px;
+        padding-top: 70px;
+    }
+    .conosco-trab p{
+        width: 40ch;
+        font-size: 16px;
+    }
+    .diversidade p{
+        max-width: max-content;
+        width: 48ch;
+        font-size: 15px;
+        margin: 0 auto;
+    }
+    .diversidade h3 {
+        font-size: 28px;
+        padding-left:20px;
+        max-width: max-content;
+    }
+    .tudo-info{
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 40px;
+    }
+    .tudo-info img {
+        order: 1;
+        width: 290px;
+        margin-top: 30px;
+    }
+    .tudo-info p{
+        order: 2;
+        margin: 0;
+        margin-top: 30px;
+        font-weight: 600;
+        font-size: 16px;
+        margin-left: -30px;
+        /* margin-top: 100px; */
+    }
+    .square-info {
+        height: 380px;
+        width: 440px;
+        margin: 40px auto;
+    }
+    .cultura p {
+        max-width: 44ch;
+        margin: 0 auto;
+        font-size: 15px;
+    }
+    .cultura h3{
+        margin-left: 0;
+        padding-left: 0px;
+    }
+    .topics-info p {
+        max-width: 42ch;
+        width: max-content;
+        font-size: 16px;
+        margin: 40px auto;
+    }
+    .dec-line-1::after{
+        margin-left: 56px;
+    }
+
+}
+
+@media (min-width: 660px) and (max-width: 739px){
+    
+    .conosco-trab h1{
+        font-size: 36px;
+        padding-top: 70px;
+    }
+    .conosco-trab p{
+        width: 47ch;
+    }
+    .diversidade p{
+        max-width: max-content;
+        width: 57ch;
+        font-size: 16px;
+        margin: 0 auto;
+    }
+    .diversidade h3 {
+        font-size: 28px;
+        /* padding-left: ; */
+        max-width: max-content;
+    }
+    .tudo-info{
+        justify-content: center;
+        gap: 60px;
+        /* margin-left: -80px; */
+    }
+    .tudo-info img {
+        width: 200px;
+        margin-top: 100px;
+    }
+    .tudo-info p{
+        margin-top: 100px;
+    }
+    .square-info {
+        height: 400px;
+        width: 550px;
+        margin: 40px auto;
+    }
+    .cultura p {
+        max-width: 61ch;
+        margin: 0 auto;
+        font-size: 15px;
+    }
+    .topics-info p {
+        max-width: 57ch;
+        width: max-content;
+        font-size: 16px;
+        margin: 40px auto;
+    }
+    .dec-line-1::after{
+        margin-left: 74px;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1024px){
+
+    .diversidade p{
+        max-width: max-content;
+        width: 75ch;
+        font-size: 16px;
+        margin: 0 auto;
+    }
+    .diversidade h3 {
+        font-size: 28px;
+        /* padding-left: ; */
+        max-width: max-content;
+    }
+    .tudo-info{
+        justify-content: center;
+        gap: 60px;
+        /* margin-left: -80px; */
+    }
+    .tudo-info img {
+        width: 300px;
+        margin-top: 100px;
+    }
+    .tudo-info p{
+        margin-top: 100px;
+    }
+    .square-info {
+        height: 400px;
+        width: 700px;
+        margin: 40px auto;
+    }
+    .cultura p {
+        max-width: 78ch;
+        margin: 0 auto;
+        font-size: 15px;
+    }
+    .topics-info p {
+        max-width: 70ch;
+        width: max-content;
+        font-size: 16px;
+        margin: 40px auto;
+    }
+
+}
+
+@media (min-width: 2025px){}
