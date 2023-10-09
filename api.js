@@ -146,7 +146,7 @@ const cordsPostos = [
     lat: -19.27893908396705, lng: -40.088102863076855, nome: "Jequitiba" },
 ];
 
-const image = "./img-svg/svg/logo-menor.svg";
+const imagem = "./img-svg/svg/logo-menor.svg";
 
 async function initMap() {
   // Request needed libraries.
@@ -155,7 +155,7 @@ async function initMap() {
     "marker"
   );
   const map = new Map(document.getElementById("map"), {
-    zoom: 7,
+    zoom: 10,
     center: { lat: -20.861831422377254, lng: -41.118637116638055 },
     mapId: "4504f8b37365c3d0",
   });
