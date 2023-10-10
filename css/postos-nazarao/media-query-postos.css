@@ -1,0 +1,42 @@
+@media (max-width: 459px){
+    
+    .textMapNaz{
+        margin-top: -1px;
+        padding-top: 25px;
+    }
+    .textMapNaz h1{
+        font-size: 22px; 
+        width: 21ch;
+     }
+     .textMapNaz p{
+         font-size: 13px;
+         padding-top: 8px;
+         width: 34ch;
+     }
+}
+
+@media (min-width: 460px) and (max-width: 665px){
+    .textMapNaz h1{
+       font-size: 30px; 
+    }
+    .textMapNaz p{
+        font-size: 15px;
+        padding-top: 8px;
+        width: 48ch;
+    }
+}
+
+@media (min-width: 666px) and (max-width: 736px){
+    
+    .textMapNaz h1{
+
+    }
+    .textMapNaz p{
+        padding-top: 8px;
+        width: 58ch;
+    }
+}
+
+@media (min-width: 737px) and (max-width: 1024px){}
+
+@media (min-width: 2025px){}
