@@ -58,6 +58,7 @@
             order: 2;
             margin-left: auto;
             margin-right: auto;
+            padding-left: 20px;
             margin-top: -40px;
         }
         .cards .card{
@@ -66,7 +67,7 @@
             padding-top: 40px;
         }
         .cards label{
-            margin-left: 120px;
+            margin-left: 100px;
             width: 250px;
         }
     
