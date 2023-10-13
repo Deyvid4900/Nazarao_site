@@ -1,0 +1,234 @@
+#poco-main{
+    font-family: "Poppins", sans-serif;
+}
+.poco-artesiano-bg, #poco-main section{
+    display: flex;
+}
+.poco-artesianoo{
+    margin: 0 auto;
+}
+.poco-artesianoo h1{
+    padding-top: 60px;
+    padding-bottom: 20px;
+    margin: auto auto;
+    font-size: 30px;
+    text-align: center;
+    width: 32ch;
+}
+.poco-artesianoo p{
+    max-width: 100ch;
+    text-align: center;
+    font-size: 15px;
+}
+.processo-flex{
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+.nosso-processo h3{
+    padding-top: 28px;
+    font-size: 27px;
+    width: max-content;
+}
+
+.nosso-processo-text p{
+    max-width: 100ch;
+    font-size: 15px;
+}
+
+/* .valores-bg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 70px;
+    padding-top: 40px;
+} */
+
+
+
+.sustentabilidadee-flexx{
+    margin: 0 auto;
+}
+
+.sustentabilidadee h3{
+    font-size: 27px;
+    width: max-content;
+}
+.sustentabilidadee-bgg{
+    display: flex;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+.sustentabilidadee p{
+    max-width: 103ch;
+    font-size: 15px;
+}
+
+.contratar-poco-bg{
+    display: flex;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.contratar-poco, .contratar-poco-flex{
+    margin: 0 auto;
+}
+
+.contratar-poco h3{
+    font-size: 28px;
+    width: max-content;
+}
+
+.contratar-poco p{
+    max-width: 103ch;
+    font-size: 15px;
+}
+
+.contratar-poco a{
+    color: #02436F;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+
+.post-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0C0C0C;
+    height: 680px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+
+}
+
+input{
+    display: none;
+}
+
+#s1:checked~.cards #slide2,
+#s2:checked~.cards #slide3,
+#s3:checked~.cards #slide1{
+
+    
+    transform: translate3d(-70%, 0, -220px);
+}
+
+#s1:checked~.cards #slide3,
+#s2:checked~.cards #slide1,
+#s3:checked~.cards #slide2{
+
+    
+    transform: translate3d(-35%, 0, -120px);
+}
+#s1:checked~.cards #slide1,
+#s2:checked~.cards #slide2,
+#s3:checked~.cards #slide3{
+
+    transform: translate3d(0, 0, 0px);
+}
+
+.post{
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 340px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    flex-direction: column;
+    margin-top: -200px;
+    margin-left: 150px;
+    margin-bottom: 80px;
+
+}
+
+.cards{
+    position: relative;
+    height: 500px;
+    width: 430px;
+    margin-bottom: 20px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.cards label{
+    position: absolute;
+    width: 430px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    transition: transform 0.55 ease;
+}
+
+.cards .card{
+    position: relative;
+    height: 100%;
+    border-radius: 10px;
+    padding: 30px 35px;
+}
+
+
+.cards .post-img img{
+    border-radius: 5px;
+    margin-top: 23px;
+    margin-left: 0px;
+    width: 82%;
+    transition: all 1s;
+}
+
+.cards .post-img img:hover{
+    transform: scale(1.05);
+}
+
+.cards .post-img .dots{
+    text-align: center;
+}
+
+.dots div{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.card .infos{
+    display: block;
+    text-align: end;
+    padding-top: 60px;
+}
+
+.card .infos span{
+    display: block;
+}
+
+
+.text-h3-post{
+    margin-top: -110px;
+    margin-left: -80px;
+}
+.text-h3-post h3{
+    color: white;
+
+}
+.text-h3-post h3{
+    width: 20ch;
+    font-size: 28px;
+}
+
+.text-h3-post p{
+    color: white;
+    width: 28ch;
+    font-size: 18px;
+}

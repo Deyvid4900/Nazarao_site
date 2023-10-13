@@ -1,0 +1,268 @@
+@media (max-width: 460px){
+    /*celular pequeno*/
+    
+    .poco-artesianoo h1{
+        padding-top: 44px;
+        font-size: 23px;
+        width: 20ch;
+    }
+    .poco-artesianoo p{
+        text-align: left;
+        max-width: 42ch;
+        font-size: 14px;
+    }
+    .nosso-processo h3{
+        font-size: 21px;
+        width: 22ch;
+    }
+        
+        .nosso-processo-text p{
+            max-width: 44ch;
+            font-size: 13px;
+        }
+    
+        .sustentabilidadee h3, .contratar-poco h3{
+            font-size: 21px;
+            width: 22ch;
+        }
+    
+        .sustentabilidadee p{
+            max-width: 44ch;
+            font-size: 13px;
+        }
+    
+        .contratar-poco p{
+            max-width: 44ch;
+            font-size: 13px;
+        }
+
+        .post-container{
+            flex-direction: column;
+        }
+        .text-h3-post{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -600px;
+        }
+        .text-h3-post h3{
+            font-size: 19px;
+            width: 20ch;
+        }
+        .text-h3-post p {
+            color: white;
+            width: 28ch;
+            font-size: 16px;
+        }
+        .cards .post-img img{
+            width: 84%;
+            order: 2;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -40px;
+        }
+        .cards .card{
+            width: 60%;
+            padding: 0;
+            padding-top: 40px;
+        }
+        .cards label{
+            margin-left: 120px;
+            width: 250px;
+        }
+    
+        .post-container{
+            height: 590px;
+        }
+    }
+    
+    @media (min-width: 460px) and (max-width: 665px){
+    /*celular grande*/
+    
+        .poco-artesianoo h1{
+            padding-top: 44px;
+            font-size: 23px;
+            width: 26ch;
+        }
+        .poco-artesianoo p{
+            max-width: 54ch;
+            font-size: 14px;
+        }
+        .nosso-processo h3{
+            font-size: 21px;
+            width: 24ch;
+        }
+        .nosso-processo-text p{
+            max-width: 50ch;
+            font-size: 15px;
+        }
+    
+        .sustentabilidadee h3, .contratar-poco h3{
+            font-size: 21px;
+            width: 24ch;
+        }
+    
+        .sustentabilidadee p{
+            max-width: 52ch;
+            font-size: 15px;
+        }
+    
+        .contratar-poco p{
+            max-width: 52ch;
+            font-size: 15px;
+        }
+
+        .post-container{
+            flex-direction: column;
+        }
+        .text-h3-post{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -680px;
+        }
+        .text-h3-post h3{
+            font-size: 22px;
+            width: 20ch;
+        }
+        .text-h3-post p {
+            color: white;
+            width: 28ch;
+            font-size: 18px;
+        }
+        .cards .post-img img{
+            width: 64%;
+            order: 2;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -100px;
+        }
+        .cards .card{
+            width: 80%;
+            padding: 0;
+            padding-top: 40px;
+        }
+        .cards label{
+            margin-left: 140px;
+        }
+    
+    
+    }
+    
+    @media (min-width: 666px) and (max-width: 736px){
+        /* tablets */
+        .poco-artesianoo h1{
+            padding-top: 40px;
+            font-size: 25px;
+        }
+        .poco-artesianoo p{
+            max-width: 68ch;
+            font-size: 13px;
+        }
+        .nosso-processo h3{
+            font-size: 24px;
+            width: 24ch;
+        }
+
+        .nosso-processo-text p{
+            max-width: 55ch;
+            font-size: 15px;
+        }
+        
+        .sustentabilidadee p{
+            max-width: 60ch;
+            font-size: 15px;
+        }
+    
+        .contratar-poco p{
+            max-width: 60ch;
+            font-size: 15px;
+        }
+    
+    
+        .post-container{
+            flex-direction: column;
+        }
+        .text-h3-post{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -680px;
+        }
+        .text-h3-post h3{
+            font-size: 22px;
+            width: 20ch;
+        }
+        .text-h3-post p {
+            color: white;
+            width: 28ch;
+            font-size: 18px;
+        }
+        .cards .post-img img{
+            width: 64%;
+            order: 2;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -100px;
+        }
+        .cards .card{
+            width: 79%;
+            padding: 0;
+            padding-top: 40px;
+        }
+        .cards label{
+            margin-left: 140px;
+        }
+    
+    
+    
+    
+    }
+    
+    @media (min-width: 737px) and (max-width: 1024px){
+        /* tablets grandes/notebook */
+        
+        .poco-artesianoo p{
+            max-width: 83ch;
+            font-size: 14px;
+        }
+        .nosso-processo h3{
+            /* padding-left: 70px; */
+            font-size: 27px;
+            width: max-content;
+        }
+        .nosso-processo-text p{
+            max-width: 78ch;
+            font-size: 15px;
+        }
+        .sustentabilidadee p{
+            max-width: 78ch;
+            font-size: 15px;
+        }
+        .contratar-poco p{
+            max-width: 78ch;
+            font-size: 15px;
+        }
+
+        .text-h3-post{
+            margin-left: -160px;
+        }
+        .text-h3-post h3{
+            font-size: 22px;
+            width: 20ch;
+        }
+        .text-h3-post p {
+            color: white;
+            width: 22ch;
+            font-size: 18px;
+        }
+        .cards .post-img img{
+            width: 68%;
+        }
+
+
+
+
+
+
+    }
+    
+    @media (min-width: 2025px){}
+    
