@@ -1,14 +1,14 @@
 // AIzaSyDzixHiJAmfIEYkFwc5ysW5xF0RmmoEFRU    api key
 // AIzaSyB46wG7bMX070nj2Avrb24R-R7F5ihAfwM
-// lat: -20.861831422377254, lng: -41.118637116638055
-// lat: -20.84100222644713, lng: -41.18210193771411
+const CepInput = document.getElementById("CepInput")
+const btnPesquisarCep = document.getElementById("btnPesquisarCep")
 
 const cordsPostos = [
   {
     lat: -20.861831422377254,
     lng: -41.118637116638055,
     nome: "Posto Avenida",
-    img:"" 
+    img: ""
   },
   {
     lat: -20.84100222644713,
@@ -142,62 +142,151 @@ const cordsPostos = [
     nome: "Auto Posto cariacica",
     img: " "
   },
-  { 
-    lat: -19.27893908396705, lng: -40.088102863076855, nome: "Jequitiba" },
+  {
+    lat: -19.27893908396705, lng: -40.088102863076855, nome: "Jequitiba"
+  },
 ];
 
-const imagem = "./img-svg/svg/logo-menor.svg";
+let geocoder;
+let directionsService;
+let directionsRenderer;
+// const directionsService = new google.maps.DirectionsService();
+// const directionsRenderer = new google.maps.DirectionsService({
+//   draggable: true
+// });
+if ("geolocation" in navigator) {
+  // O navegador suporta a Geolocation API
+  navigator.geolocation.getCurrentPosition(function (position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
 
-async function initMap() {
-  // Request needed libraries.
-  const { Map, InfoWindow } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
-    "marker"
-  );
-  const map = new Map(document.getElementById("map"), {
-    zoom: 10,
-    center: { lat: -20.861831422377254, lng: -41.118637116638055 },
-    mapId: "4504f8b37365c3d0",
+
+
+    let cordsLocal = {
+      lat: latitude,
+      lng: longitude
+    }
+
+
+    async function initMap() {
+      // Request needed libraries.
+
+      const { Map, InfoWindow } = await google.maps.importLibrary("maps");
+      const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
+        "marker"
+      );
+      const map = new Map(document.getElementById("map"), {
+        zoom: 10,
+        center: cordsLocal,
+        mapId: "4504f8b37365c3d0",
+      });
+
+
+
+      // Create an info window to share between markers.
+      const infoWindow = new InfoWindow(() => { });
+
+      // Create the markers.
+      cordsPostos.forEach((position, i) => {
+        const pin = new PinElement({});
+        const marker = new AdvancedMarkerElement({
+          position,
+          map,
+          content: pin.element,
+        });
+
+
+        // Add a click listener for each marker, and set up the info window.
+        marker.addListener("click", ({ domEvent, latLng }) => {
+          const { target } = domEvent;
+
+          //   content that show when you click em pin/markes
+          const contentString =
+            '<div style="height: 100%;">' +
+            "<h1>" +
+            position.nome +
+            "</h1>" +
+            "<img src=" +
+            +' alt="" style="width: 400px;">' +
+            "</div>";
+
+          infoWindow.setContent(contentString);
+          //   infoWindow.setIcon();
+
+          infoWindow.open({
+            anchor: marker,
+            map,
+          });
+        });
+      });
+      btnPesquisarCep.addEventListener("click", () => {
+        geocoder = new google.maps.Geocoder();
+        directionsService = new google.maps.DirectionsService();
+        directionsRenderer = new google.maps.DirectionsRenderer({ map });
+        let cep = CepInput.value
+
+        function focusOnLocation(cep) {
+          geocoder.geocode({ address: cep }, function (results, status) {
+            if (status === "OK" && results[0]) {
+              const location = results[0].geometry.location;
+              map.setCenter(location);
+              findClosestMarker(location);
+            } else {
+              alert("CEP não encontrado. Verifique o CEP e tente novamente.");
+            }
+          });
+        }
+        focusOnLocation(cep);
+        google.maps.event.addDomListener(window, "load", initializeMap);
+      })
+
+    }
+
+    initMap();
+
+    window.initMap = initMap();
+
+  });
+} else {
+  // O navegador não suporta a Geolocation API
+  console.log("Geolocalização não suportada neste navegador.");
+}
+
+function findClosestMarker(userLocation) {
+  let closestMarker = null;
+  let closestDistance = Infinity;
+
+  cordsPostos.forEach((position) => {
+    const markerLocation = new google.maps.LatLng(position.lat, position.lng);
+    const distance = google.maps.geometry.spherical.computeDistanceBetween(
+      userLocation,
+      markerLocation
+    );
+
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestMarker = position;
+    }
   });
 
-  // Create an info window to share between markers.
-  const infoWindow = new InfoWindow(() => {});
+  if (closestMarker) {
+    calculateAndDisplayRoute(userLocation, closestMarker);
+  }
+}
 
-  // Create the markers.
-  cordsPostos.forEach((position, i) => {
-    const pin = new PinElement({});
-    const marker = new AdvancedMarkerElement({
-      position,
-      map,
-      content: pin.element,
-    });
-    console.log(position.nome);
+function calculateAndDisplayRoute(start, end) {
+  const request = {
+    origin: start,
+    destination: new google.maps.LatLng(end.lat, end.lng),
+    travelMode: google.maps.TravelMode.DRIVING,
+  };
 
-    // Add a click listener for each marker, and set up the info window.
-    marker.addListener("click", ({ domEvent, latLng }) => {
-      const { target } = domEvent;
-
-      //   content that show when you click em pin/markes
-      const contentString =
-        '<div style="height: 100%;">' +
-        "<h1>" +
-        position.nome +
-        "</h1>" +
-        "<img src=" +
-        +' alt="" style="width: 400px;">' +
-        "</div>";
-
-      infoWindow.setContent(contentString);
-      //   infoWindow.setIcon();
-
-      infoWindow.open({
-        anchor: marker,
-        map,
-      });
-    });
+  directionsService.route(request, function (result, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsRenderer.setDirections(result);
+    }
   });
 }
 
-initMap();
 
-window.initMap = initMap();
+

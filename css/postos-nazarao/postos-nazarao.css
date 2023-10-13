@@ -42,3 +42,27 @@
     width: 22ch;
     text-align: center;
   }
+
+
+  .box-pesquisa{
+    padding: 20px;
+    width: 35%;
+    /*  */
+    height: auto;
+    background-color: #ffffffa0;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 99;
+    top: 550px;
+    left: 90px;
+  }
+  .box-pesquisa input{
+    width: 99%;
+    height: 29px;
+    margin: 0px auto;
+    
+  }
+  .box-pesquisa button{
+    margin-top: 10px;
+    float: right;
+  }
