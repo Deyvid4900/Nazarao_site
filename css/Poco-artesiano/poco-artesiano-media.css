@@ -74,6 +74,9 @@
         .post-container{
             height: 590px;
         }
+        #poco-email{
+            font-size: 14.5px;
+        }
     }
     
     @media (min-width: 460px) and (max-width: 665px){
