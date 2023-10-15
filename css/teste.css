@@ -1,0 +1,114 @@
+.cepText{
+    font-family: "Poppins", sans-serif;
+}
+.cepText h2{
+    margin: 0;
+}
+.cepText p{
+    width: 28ch;
+    margin: 0;
+}
+.teste-Flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.cepInpt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.cepInpt input {
+    font-size: 14px;
+    width: 140px;
+    height: 22px;
+    border-radius: 4px;
+    border: 1px solid  #C8C8C8;
+    background:  #E3E3E3;
+}
+.cepInpt input::placeholder{
+    padding-left: 5px;
+    font-family: "Poppins", sans-serif;
+}
+.cepInpt input:focus{
+    outline: none;
+    border: 2px solid  #C8C8C8;
+    background:  #E3E3E3;
+}
+.lineInfo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.lineInfo{
+    margin:  0 auto;
+    border: 2px solid #B0B0B0;
+    border-radius: 4px;
+    width: 900px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.foto{
+    background-color: #ccc;
+    width: 240px;
+    height: 160px;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+}
+.infoPostosPetrobras, .infoPostosShell, .infoPostosIpiranga, .infoPostosComum {
+    font-family: "Poppins", sans-serif;
+}
+.infoPostosPetrobras h2, .infoPostosShell h2, .infoPostosIpiranga h2, .infoPostosComum h2{
+    margin-top: 0;
+    width: max-content;
+}
+.infoPostosPetrobras h2::after, .infoPostosShell h2:after, .infoPostosIpiranga h2::after, .infoPostosComum h2::after{
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #012C4A;
+
+}
+.infoPostosPetrobras p, .infoPostosShell p, .infoPostosIpiranga p, .infoPostosComum p{
+    margin-bottom: 4px;
+}
+.infoPostosPetrobras ul, .infoPostosShell ul, .infoPostosIpiranga ul, .infoPostosComum ul{
+    margin-top: -6px;
+    margin-bottom: 0;
+    padding: 0;
+}
+.infoPostosPetrobras a{
+    margin-top: -5px;
+    padding: 2px 40px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: white;
+    background-color: #1B965F;
+}
+.infoPostosShell a{
+    margin-top: -5px;
+    padding: 2px 40px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: white;
+    background-color: #F51D21;
+}
+.infoPostosIpiranga a{
+    margin-top: -5px;
+    padding: 2px 40px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: white;
+    background-color: #1278E8;
+}
+
+.infoPostosComum a{
+    margin-top: -5px;
+    padding: 2px 40px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: white;
+    background-color: #02436F;
+}
