@@ -5,7 +5,7 @@ let pontoMaisProximo = null;
 let menorDistancia = Infinity;
 
 const options = {
-    enableHighAccuracy: true, // Reduz a precisão
+    enableHighAccuracy: false, // Reduz a precisão
     timeout: 10000, // Tempo limite em milissegundos
     maximumAge: 0 // Não usar cache
 };

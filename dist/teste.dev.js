@@ -12,7 +12,7 @@ var CardPosto = document.getElementById("CardPosto");
 var pontoMaisProximo = null;
 var menorDistancia = Infinity;
 var options = {
-  enableHighAccuracy: true,
+  enableHighAccuracy: false,
   // Reduz a precisão
   timeout: 10000,
   // Tempo limite em milissegundos
