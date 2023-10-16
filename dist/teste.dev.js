@@ -122,7 +122,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
       a.classList.add("infoPostosComum");
     }
 
-    a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng + ""; // a.setAttribute("target","_blank")
+    a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng + "&output=embed"; // a.setAttribute("target","_blank")
 
     a.setAttribute("class", "btnLinkMaps");
     a.textContent = "Ver Mapa";
