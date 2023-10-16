@@ -121,9 +121,11 @@ navigator.geolocation.getCurrentPosition(function (position) {
         }else{
             a.classList.add("infoPostosComum")
         }
+        a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
 
-        a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng +"&output=embed&web=1";
+        // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
         // a.setAttribute("target","_blank")
+        
         a.setAttribute("class","btnLinkMaps")
         a.textContent = "Ver Mapa";
 
