@@ -145,12 +145,3 @@
     color: white;
     background-color: #02436F;
 }
-.ulist{
-    /* Defina o número de colunas desejado */
-  column-count: 3;
-  /* Opcional: ajuste a largura da coluna */
-  column-width: 100px;
-  /* Opcional: ajuste o espaço entre as colunas */
-  column-gap:15px;
-  
-}

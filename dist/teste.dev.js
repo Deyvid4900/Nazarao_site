@@ -14,7 +14,7 @@ var menorDistancia = Infinity;
 var options = {
   enableHighAccuracy: true,
   // Reduz a precisão
-  timeout: 5000,
+  timeout: 10000,
   // Tempo limite em milissegundos
   maximumAge: 0 // Não usar cache
 
@@ -124,7 +124,21 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
     a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
     a.setAttribute("target", "_blank");
-    a.textContent = "Ver Mapa"; // Adicione todos os elementos criados à estrutura do DOM
+    a.setAttribute("class", "btnLinkMaps");
+    a.textContent = "Ver Mapa";
+    a.addEventListener("click", function (event) {
+      event.preventDefault(); // Impede o comportamento padrão do link
+
+      window.open(a.href, "_blank"); // Abre a URL em uma nova guia
+    }); // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
+    // btnLinkMaps.map((e)=>{
+    //     console.log(e)
+    //     e.addEventListener("click",()=>{
+    //         // Impede o comportamento padrão do link
+    //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
+    //     })
+    // })
+    // Adicione todos os elementos criados à estrutura do DOM
 
     divInfoPostos.appendChild(h2);
     divInfoPostos.appendChild(p);
