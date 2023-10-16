@@ -5,8 +5,8 @@ let pontoMaisProximo = null;
 let menorDistancia = Infinity;
 
 const options = {
-    enableHighAccuracy: false, // Reduz a precisão
-    timeout: 10000, // Tempo limite em milissegundos
+    enableHighAccuracy: true, // Reduz a precisão
+    timeout: 15000, // Tempo limite em milissegundos
     maximumAge: 0 // Não usar cache
 };
 navigator.geolocation.getCurrentPosition(function (position) {
@@ -122,7 +122,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
             a.classList.add("infoPostosComum")
         }
 
-        a.href = "https://www.google.com/maps?daddr=" + element.lat + "," + element.lng +"";
+        a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng +"";
         // a.setAttribute("target","_blank")
         a.setAttribute("class","btnLinkMaps")
         a.textContent = "Ver Mapa";
