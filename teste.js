@@ -3,6 +3,7 @@ import { cordsPostos } from "./postos.js";
 const CardPosto = document.getElementById("CardPosto")
 let pontoMaisProximo = null;
 let menorDistancia = Infinity;
+let shouldStop = false
 
 const options = {
     enableHighAccuracy: true, // Reduz a precisão
@@ -62,7 +63,11 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
     console.log("Array ordenado:", postosOrdenados);
 
-    cordsPostos.forEach(element => {
+
+    cordsPostos.map((element, i) => {
+        if (shouldStop) return;
+        
+        console.log(i);
         // Crie um elemento div com a classe "lineInfo"
         var divLineInfo = document.createElement("div");
         divLineInfo.classList.add("lineInfo");
@@ -90,46 +95,46 @@ navigator.geolocation.getCurrentPosition(function (position) {
         var ul = document.createElement("ul");
         ul.classList.add('ulist')
 
-         // Crie elementos li e adicione texto a eles
-         if (element.possui!=0 || element.possui!="") {
+        // Crie elementos li e adicione texto a eles
+        if (element.possui != 0 || element.possui != "") {
             element.possui.map((e, i) => {
                 var li = document.createElement("li");
                 li.textContent = element.possui[i];
                 // Adicione os elementos li à lista ul
                 ul.appendChild(li);
             })
-            
+
         }
-      
+
 
         // Crie um elemento de âncora (a) com o link para o Google Maps
         var a = document.createElement("a");
         if (element.tipo == "PostosPetrobras") {
             a.classList.add("infoPostosPetrobras")
-        }else{
+        } else {
             a.classList.add("infoPostosComum")
         }
 
         if (element.tipo == "PostosShell") {
             a.classList.add("infoPostosShell")
-        }else{
+        } else {
             a.classList.add("infoPostosComum")
         }
 
         if (element.tipo == "PostosIpiranga") {
             a.classList.add("infoPostosIpiranga")
-        }else{
+        } else {
             a.classList.add("infoPostosComum")
         }
         a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
 
         // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
         // a.setAttribute("target","_blank")
-        
-        a.setAttribute("class","btnLinkMaps")
+
+        a.setAttribute("class", "btnLinkMaps")
         a.textContent = "Ver Mapa";
 
-        a.addEventListener("click",(event)=>{
+        a.addEventListener("click", (event) => {
             a.preventDefault(); // Impede o comportamento padrão do link
             window.open(a.href, "_blank"); // Abre a URL em uma nova guia
         })
@@ -141,7 +146,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
         //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
         //     })
         // })
-       
+
 
         // Adicione todos os elementos criados à estrutura do DOM
         divInfoPostos.appendChild(h2);
@@ -155,12 +160,23 @@ navigator.geolocation.getCurrentPosition(function (position) {
         // Agora você pode adicionar divLineInfo ao documento, por exemplo:
 
         CardPosto.appendChild(divLineInfo)
+
+        
+
+
+
+        if (i === 4) {
+            shouldStop = true;
+        }
+
+
     });
 
 }, function (error) {
     // Função de erro
     console.error(`Erro ao obter a localização: ${error.message}`);
     alert("Não foi possivel ajustar os Postos mais proximos")
+
     cordsPostos.forEach(element => {
         // Crie um elemento div com a classe "lineInfo"
         var divLineInfo = document.createElement("div");
@@ -189,42 +205,58 @@ navigator.geolocation.getCurrentPosition(function (position) {
         var ul = document.createElement("ul");
         ul.classList.add('ulist')
 
-         // Crie elementos li e adicione texto a eles
-         if (element.possui!=0 || element.possui!="") {
+        // Crie elementos li e adicione texto a eles
+        if (element.possui != 0 || element.possui != "") {
             element.possui.map((e, i) => {
                 var li = document.createElement("li");
                 li.textContent = element.possui[i];
                 // Adicione os elementos li à lista ul
                 ul.appendChild(li);
             })
-            
+
         }
-      
+
 
         // Crie um elemento de âncora (a) com o link para o Google Maps
         var a = document.createElement("a");
         if (element.tipo == "PostosPetrobras") {
             a.classList.add("infoPostosPetrobras")
-        }else{
+        } else {
             a.classList.add("infoPostosComum")
         }
 
         if (element.tipo == "PostosShell") {
             a.classList.add("infoPostosShell")
-        }else{
+        } else {
             a.classList.add("infoPostosComum")
         }
 
         if (element.tipo == "PostosIpiranga") {
             a.classList.add("infoPostosIpiranga")
-        }else{
+        } else {
             a.classList.add("infoPostosComum")
         }
         a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
 
         // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
-        
+        // a.setAttribute("target","_blank")
+
+        a.setAttribute("class", "btnLinkMaps")
         a.textContent = "Ver Mapa";
+
+        a.addEventListener("click", (event) => {
+            a.preventDefault(); // Impede o comportamento padrão do link
+            window.open(a.href, "_blank"); // Abre a URL em uma nova guia
+        })
+        // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
+        // btnLinkMaps.map((e)=>{
+        //     console.log(e)
+        //     e.addEventListener("click",()=>{
+        //         // Impede o comportamento padrão do link
+        //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
+        //     })
+        // })
+
 
         // Adicione todos os elementos criados à estrutura do DOM
         divInfoPostos.appendChild(h2);
@@ -239,6 +271,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
         CardPosto.appendChild(divLineInfo)
     });
+
 }, options);
 
 

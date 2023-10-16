@@ -11,6 +11,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var CardPosto = document.getElementById("CardPosto");
 var pontoMaisProximo = null;
 var menorDistancia = Infinity;
+var shouldStop = false;
 var options = {
   enableHighAccuracy: true,
   // Reduz a precisão
@@ -69,8 +70,10 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
   console.log("Array ordenado:", postosOrdenados);
 
-  _postos.cordsPostos.forEach(function (element) {
-    // Crie um elemento div com a classe "lineInfo"
+  _postos.cordsPostos.map(function (element, i) {
+    if (shouldStop) return;
+    console.log(i); // Crie um elemento div com a classe "lineInfo"
+
     var divLineInfo = document.createElement("div");
     divLineInfo.classList.add("lineInfo"); // Crie um elemento div com a classe "foto"
 
@@ -149,6 +152,10 @@ navigator.geolocation.getCurrentPosition(function (position) {
     divLineInfo.appendChild(divInfoPostos); // Agora você pode adicionar divLineInfo ao documento, por exemplo:
 
     CardPosto.appendChild(divLineInfo);
+
+    if (i === 4) {
+      shouldStop = true;
+    }
   });
 }, function (error) {
   // Função de erro
@@ -209,8 +216,23 @@ navigator.geolocation.getCurrentPosition(function (position) {
     }
 
     a.href = "https://www.google.com/maps/search/?api=1&query=".concat(element.lat, ",").concat(element.lng, "&query_place=").concat(element.nome); // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
+    // a.setAttribute("target","_blank")
 
-    a.textContent = "Ver Mapa"; // Adicione todos os elementos criados à estrutura do DOM
+    a.setAttribute("class", "btnLinkMaps");
+    a.textContent = "Ver Mapa";
+    a.addEventListener("click", function (event) {
+      a.preventDefault(); // Impede o comportamento padrão do link
+
+      window.open(a.href, "_blank"); // Abre a URL em uma nova guia
+    }); // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
+    // btnLinkMaps.map((e)=>{
+    //     console.log(e)
+    //     e.addEventListener("click",()=>{
+    //         // Impede o comportamento padrão do link
+    //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
+    //     })
+    // })
+    // Adicione todos os elementos criados à estrutura do DOM
 
     divInfoPostos.appendChild(h2);
     divInfoPostos.appendChild(p);
