@@ -21,6 +21,7 @@
     
     #CardPosto{
         width: 100%;
+        height: 800px;
         overflow: auto;
     }
     #CardPosto::-webkit-scrollbar {
@@ -62,6 +63,7 @@
     
     #CardPosto{
         width: 100%;
+        height: 800px;
         overflow: auto;
     }
     #CardPosto::-webkit-scrollbar {

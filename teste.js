@@ -5,8 +5,8 @@ let pontoMaisProximo = null;
 let menorDistancia = Infinity;
 
 const options = {
-    enableHighAccuracy: false, // Reduz a precisão
-    timeout: 1000, // Tempo limite em milissegundos
+    enableHighAccuracy: true, // Reduz a precisão
+    timeout: 5000, // Tempo limite em milissegundos
     maximumAge: 0 // Não usar cache
 };
 navigator.geolocation.getCurrentPosition(function (position) {
@@ -50,8 +50,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
     function compararDistancia(a, b) {
         const distanciaA = calcularDistancia(lat, lng, a.lat, a.lng);
         const distanciaB = calcularDistancia(lat, lng, b.lat, b.lng);
-        console.log(lat)
-        return distanciaA - distanciaB;
+        return (distanciaA - distanciaB)
     }
 
     // Ordene o array com base na distância
@@ -158,7 +157,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
         // Crie um elemento div com a classe "infoPostosPetrobras"
         var divInfoPostos = document.createElement("div");
-        divInfoPostos.classList.add("infoPostosPetrobras");
+        divInfoPostos.classList.add("infoPostosComum");
 
         // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
         var h2 = document.createElement("h2");
@@ -170,28 +169,39 @@ navigator.geolocation.getCurrentPosition(function (position) {
 
         // Crie uma lista não ordenada (ul)
         var ul = document.createElement("ul");
+        ul.classList.add('ulist')
 
-       
-          // Crie elementos li e adicione texto a eles
-          var li1 = document.createElement("li");
-          li1.textContent = element.possui[0];
-          var li2 = document.createElement("li");
-          li2.textContent = element.possui[1];
-  
-  
-          // Adicione os elementos li à lista ul
-          ul.appendChild(li1);
-          ul.appendChild(li2);
-
-
+         // Crie elementos li e adicione texto a eles
+         if (element.possui!=0 || element.possui!="") {
+            element.possui.map((e, i) => {
+                var li = document.createElement("li");
+                li.textContent = element.possui[i];
+                // Adicione os elementos li à lista ul
+                ul.appendChild(li);
+            })
+            
+        }
+      
 
         // Crie um elemento de âncora (a) com o link para o Google Maps
         var a = document.createElement("a");
-        element.tipo == "PostosPetrobras" ? a.classList.add("infoPostosPetrobras") : a.classList.add("infoPostosComum")
+        if (element.tipo == "PostosPetrobras") {
+            a.classList.add("infoPostosPetrobras")
+        }else{
+            a.classList.add("infoPostosComum")
+        }
 
-        element.tipo == "PostosShell" ? a.classList.add("infoPostosShell") : a.classList.add("infoPostosComum")
+        if (element.tipo == "PostosShell") {
+            a.classList.add("infoPostosShell")
+        }else{
+            a.classList.add("infoPostosComum")
+        }
 
-        element.tipo == "PostosIpiranga" ? a.classList.add("infoPostosIpiranga") : a.classList.add("infoPostosComum")
+        if (element.tipo == "PostosIpiranga") {
+            a.classList.add("infoPostosIpiranga")
+        }else{
+            a.classList.add("infoPostosComum")
+        }
 
         a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
         a.textContent = "Ver Mapa";
