@@ -122,13 +122,13 @@ navigator.geolocation.getCurrentPosition(function (position) {
             a.classList.add("infoPostosComum")
         }
 
-        a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng +"&output=embed";
-        a.setAttribute("target","_blank")
+        a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng +"";
+        // a.setAttribute("target","_blank")
         a.setAttribute("class","btnLinkMaps")
         a.textContent = "Ver Mapa";
 
         a.addEventListener("click",(event)=>{
-            event.preventDefault(); // Impede o comportamento padrão do link
+            a.preventDefault(); // Impede o comportamento padrão do link
             window.open(a.href, "_blank"); // Abre a URL em uma nova guia
         })
         // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
