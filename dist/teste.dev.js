@@ -123,6 +123,7 @@ navigator.geolocation.getCurrentPosition(function (position) {
     }
 
     a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
+    a.setAttribute("target", "_blank");
     a.textContent = "Ver Mapa"; // Adicione todos os elementos criados à estrutura do DOM
 
     divInfoPostos.appendChild(h2);
