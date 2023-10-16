@@ -1,0 +1,123 @@
+@media (max-width: 425px){
+    .textMapNaz h1 {
+        font-size: 20px;
+        width: 17ch;
+    }
+    .textMapNaz p {
+        font-size: 12px;
+        padding-top: 8px;
+        width: 31ch;
+    }
+    .teste-Flex{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .cepText p {
+        width: 26ch;
+        margin: 0;
+    }
+    
+    #CardPosto{
+        width: 100%;
+        overflow: auto;
+    }
+    #CardPosto::-webkit-scrollbar {
+        width: 0;
+      }
+    #CardPosto::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
+    .lineInfo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: auto;
+        height: auto;
+        margin: 10px auto;
+        padding: 10px 0px;
+    }  
+    .foto{
+        margin: 0px;
+    }
+    .infoPostosPetrobras h2, .infoPostosShell h2, .infoPostosIpiranga h2, .infoPostosComum h2 {
+        margin: 0px auto;
+        font-size: inherit;   
+    }
+    .infoPostosPetrobras, .infoPostosShell, .infoPostosIpiranga, .infoPostosComum {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 427px) and (max-width: 665px){
+    .teste-Flex{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    #CardPosto{
+        width: 100%;
+        overflow: auto;
+    }
+    #CardPosto::-webkit-scrollbar {
+        width: 0;
+      }
+    #CardPosto::-webkit-scrollbar-thumb {
+        background: transparent;
+      }
+    .lineInfo{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: auto;
+        margin-top: 10px;
+        padding: 30px 0px;
+
+    }  
+    .foto{
+        margin: 0px;
+    }
+    .infoPostosPetrobras h2, .infoPostosShell h2, .infoPostosIpiranga h2, .infoPostosComum h2 {
+        margin: 0px auto; 
+    }
+    .infoPostosPetrobras, .infoPostosShell, .infoPostosIpiranga, .infoPostosComum {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+    }
+}
+
+@media (min-width: 666px) and (max-width: 736px){
+    #CardPosto{
+        width: 90%;
+        overflow: auto;
+    }
+    .lineInfo{
+        width: 500px;
+    }  
+    .infoPostosPetrobras h2, .infoPostosShell h2, .infoPostosIpiranga h2, .infoPostosComum h2 {
+        margin: 0px auto; 
+    }
+}
+
+@media (min-width: 737px) and (max-width: 1024px){
+    #CardPosto{
+        width: 90%;
+        overflow: auto;
+    }
+    .lineInfo{
+        width: 600px;
+    }  .infoPostosPetrobras h2, .infoPostosShell h2, .infoPostosIpiranga h2, .infoPostosComum h2 {
+        margin: 0px auto; 
+    }
+}
+
+@media (min-width: 1025px){
+    .lineInfo{
+        width: 80%;
+    }  
+}

@@ -1,3 +1,10 @@
+
+#CardPosto{
+    height: 600px;
+    width: 70%;
+    margin: 20px auto;
+    overflow-y: auto;
+}
 .cepText{
     font-family: "Poppins", sans-serif;
 }
@@ -56,14 +63,14 @@
     /* margin-top: 20px; */
     margin-left: 20px;
 }
-.infoPostosPetrobras, .infoPostosShell, .infoPostosIpiranga, .infoPostosComum {
+.infoPostos, .infoPostosShell, .infoPostosIpiranga, .infoPostosComum {
     font-family: "Poppins", sans-serif;
 }
-.infoPostosPetrobras h2, .infoPostosShell h2, .infoPostosIpiranga h2, .infoPostosComum h2{
+.infoPostos h2, .infoPostosShell h2, .infoPostosIpiranga h2, .infoPostosComum h2{
     margin-top: 0;
     width: max-content;
 }
-.infoPostosPetrobras h2::after, .infoPostosShell h2:after, .infoPostosIpiranga h2::after, .infoPostosComum h2::after{
+.infoPostos h2::after, .infoPostosShell h2:after, .infoPostosIpiranga h2::after, .infoPostosComum h2::after{
     content: '';
     display: block;
     height: 2px;
@@ -71,13 +78,22 @@
     background-color: #012C4A;
 
 }
-.infoPostosPetrobras p, .infoPostosShell p, .infoPostosIpiranga p, .infoPostosComum p{
+.infoPostos p, .infoPostosShell p, .infoPostosIpiranga p, .infoPostosComum p{
     margin-bottom: 4px;
 }
-.infoPostosPetrobras ul, .infoPostosShell ul, .infoPostosIpiranga ul, .infoPostosComum ul{
+.infoPostos ul, .infoPostosShell ul, .infoPostosIpiranga ul, .infoPostosComum ul{
     margin-top: -6px;
     margin-bottom: 0;
     padding: 0;
+}
+
+.infoPostosPetrobras{
+    margin-top: -5px;
+    padding: 2px 40px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: white;
+    background-color: #1B965F !important;
 }
 .infoPostosPetrobras a{
     margin-top: -5px;
@@ -85,15 +101,32 @@
     border-radius: 2px;
     font-size: 14px;
     color: white;
-    background-color: #1B965F;
+    background-color: #1B965F !important;
 }
+
 .infoPostosShell a{
     margin-top: -5px;
     padding: 2px 40px;
     border-radius: 2px;
     font-size: 14px;
     color: white;
-    background-color: #F51D21;
+    background-color: #F51D21 !important;
+}
+.infoPostosShell {
+    margin-top: -5px;
+    padding: 2px 40px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: white;
+    background-color: #F51D21 !important;
+}
+.infoPostosIpiranga {
+    margin-top: -5px;
+    padding: 2px 40px;
+    border-radius: 2px;
+    font-size: 14px;
+    color: white;
+    background-color: #1278E8 !important;
 }
 .infoPostosIpiranga a{
     margin-top: -5px;
@@ -101,7 +134,7 @@
     border-radius: 2px;
     font-size: 14px;
     color: white;
-    background-color: #1278E8;
+    background-color: #1278E8 !important;
 }
 
 .infoPostosComum a{
@@ -111,4 +144,13 @@
     font-size: 14px;
     color: white;
     background-color: #02436F;
+}
+.ulist{
+    /* Defina o número de colunas desejado */
+  column-count: 3;
+  /* Opcional: ajuste a largura da coluna */
+  column-width: 100px;
+  /* Opcional: ajuste o espaço entre as colunas */
+  column-gap:15px;
+  
 }
