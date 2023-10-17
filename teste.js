@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 // Crie um elemento div com a classe "foto"
                                 var divFoto = document.createElement("div");
                                 divFoto.classList.add("foto");
-                                divFoto.style.backgroundImage = `url(${element.img})`
+                                divFoto.style.backgroundImage = `url(${posto.img})`
 
                                 // Crie um elemento div com a classe "infoPostosPetrobras"
                                 var divInfoPostos = document.createElement("div");
@@ -394,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                 // Crie um elemento de âncora (a) com o link para o Google Maps
                                 var a = document.createElement("a");
-                                if (element.tipo == "PostosPetrobras") {
+                                if (posto.tipo == "PostosPetrobras") {
                                     a.style.marginTop = "-5px";
                                     a.style.padding = "2px 40px";
                                     a.style.borderRadius = "2px";
@@ -405,7 +405,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     a.classList.add("infoPostosComum")
                                 }
                     
-                                if (element.tipo == "PostosShell") {
+                                if (posto.tipo == "PostosShell") {
                                     a.style.marginTop = "-5px";
                                     a.style.padding = "2px 40px";
                                     a.style.borderRadius = "2px";
@@ -416,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     a.classList.add("infoPostosComum")
                                 }
                     
-                                if (element.tipo == "PostosIpiranga") {
+                                if (posto.tipo == "PostosIpiranga") {
                                     a.style.marginTop = "-5px";
                                     a.style.padding = "2px 40px";
                                     a.style.borderRadius = "2px";

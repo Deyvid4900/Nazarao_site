@@ -322,7 +322,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var divFoto = document.createElement("div");
             divFoto.classList.add("foto");
-            divFoto.style.backgroundImage = "url(".concat(element.img, ")"); // Crie um elemento div com a classe "infoPostosPetrobras"
+            divFoto.style.backgroundImage = "url(".concat(posto.img, ")"); // Crie um elemento div com a classe "infoPostosPetrobras"
 
             var divInfoPostos = document.createElement("div");
             divInfoPostos.classList.add("infoPostosComum"); // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
@@ -348,7 +348,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var a = document.createElement("a");
 
-            if (element.tipo == "PostosPetrobras") {
+            if (posto.tipo == "PostosPetrobras") {
               a.style.marginTop = "-5px";
               a.style.padding = "2px 40px";
               a.style.borderRadius = "2px";
@@ -359,7 +359,7 @@ document.addEventListener("DOMContentLoaded", function () {
               a.classList.add("infoPostosComum");
             }
 
-            if (element.tipo == "PostosShell") {
+            if (posto.tipo == "PostosShell") {
               a.style.marginTop = "-5px";
               a.style.padding = "2px 40px";
               a.style.borderRadius = "2px";
@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
               a.classList.add("infoPostosComum");
             }
 
-            if (element.tipo == "PostosIpiranga") {
+            if (posto.tipo == "PostosIpiranga") {
               a.style.marginTop = "-5px";
               a.style.padding = "2px 40px";
               a.style.borderRadius = "2px";
