@@ -6,8 +6,8 @@ export const cordsPostos = [
         lat: -20.861831422377254,
         lng: -41.118637116638055,
         nome: "Posto Avenida",
-        img: '',
-        tipo: "",
+        img: './img-svg/postos/posto.jpg',
+        tipo: "PostosPetrobras",
         possui: ["Conveniencia","Troca de oleo"],
         
         ajuda:""  
