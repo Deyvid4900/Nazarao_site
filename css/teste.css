@@ -62,6 +62,7 @@
     height: 160px;
     /* margin-top: 20px; */
     margin-left: 20px;
+    background-size: cover;
 }
 .infoPostos, .infoPostosShell, .infoPostosIpiranga, .infoPostosComum {
     font-family: "Poppins", sans-serif;
