@@ -19,7 +19,7 @@ export const cordsPostos = [
         nome: "Uniposto Derivados",
         img: " ",
         tipo: "",
-        possui: ["Conveniencia","Troca de oleo"],
+        possui: ["Conveniencia","Troca de Óleo"],
 
         ajuda:""
         
@@ -27,19 +27,19 @@ export const cordsPostos = [
     {
         lat: -20.84289295305546,
         lng: -41.12330964952382,
-        nome: "São judas tadeu",
-        img: " ",
-        tipo: "",
-        possui: ["", ""],
+        nome: "São Judas Tadeu",
+        img: "./img-svg/postos/sao-judas.jpg",
+        tipo: "PostosShell",
+        possui: ["Conveniencia", "Troca de Óleo"],
 
         ajuda:""
     },
     {
         lat: -20.84888877517764,
         lng: -41.141356476512534,
-        nome: "Posto rainha",
-        img: " ",
-        tipo: "",
+        nome: "Posto Rainha BR Petrobrás",
+        img: "./img-svg/postos/rainha2.jpg",
+        tipo: "PostosPetrobras",
         possui: ["", ""],
 
         ajuda:""
@@ -67,7 +67,7 @@ export const cordsPostos = [
     {
         lat: -20.678359003705445,
         lng: -41.349042080157936,
-        nome: "Pedra da ema",
+        nome: "Pedra da Ema",
         img: " ",
         tipo: "",
         possui: ["", ""],
@@ -117,7 +117,7 @@ export const cordsPostos = [
     {
         lat: -20.562696620673,
         lng: -41.82431129186433,
-        nome: "Auto Posto pedra menina",
+        nome: "Auto Posto Pedra Menina",
         img: " ",
         tipo: "",
         possui: ["", ""],
@@ -138,9 +138,9 @@ export const cordsPostos = [
         lat: -20.85175905869883,
         lng: -41.094232307817414,
         nome: "Posto Coronel Borges",
-        img: "",
-        tipo: "",
-        possui: ["", ""],
+        img: "./img-svg/postos/coronel.png",
+        tipo: "PostosIpiranga",
+        possui: ["Conveniencia", "Troca de Óleo"],
 
         ajuda:""
     },
@@ -148,9 +148,9 @@ export const cordsPostos = [
         lat: -20.857203590992768,
         lng: -41.10262594583081,
         nome: "Posto Baiminas",
-        img: " ",
+        img: "./img-svg/postos/baiminas.png",
         tipo: "",
-        possui: ["", ""],
+        possui: ["Conveniencia", "Troca de Óleo"],
 
         ajuda:""
     },
@@ -167,17 +167,17 @@ export const cordsPostos = [
     {
         lat: -20.85407148702786,
         lng: -41.11774863233659,
-        nome: "Posto Ita",
-        img: " ",
-        tipo: "",
-        possui: ["", ""],
+        nome: "Posto Ita BR Petrobrás",
+        img: "./img-svg/postos/ita.jpg",
+        tipo: "PostosPetrobras",
+        possui: ["Conveniencia", "Troca de Óleo"],
 
         ajuda:""
     },
     {
         lat: -20.84389240243609,
         lng: -41.12881863217908,
-        nome: "Posto alvorada",
+        nome: "Posto Alvorada",
         img: " ",
         tipo: "",
         possui: ["", ""],
@@ -187,7 +187,7 @@ export const cordsPostos = [
     {
         lat: -20.868121929400584,
         lng: -41.02589251884142,
-        nome: "Auto posto Dantas",
+        nome: "Auto Posto Dantas",
         img: " ",
         tipo: "",
         possui: ["", ""],
@@ -197,7 +197,7 @@ export const cordsPostos = [
     {
         lat: -20.832372559575184,
         lng: -42.15383419185384,
-        nome: "Posto douradense",
+        nome: "Posto Douradense",
         img: " ",
         tipo: "",
         possui: ["", ""],
@@ -207,7 +207,7 @@ export const cordsPostos = [
     {
         lat: -18.52727635721204,
         lng: -39.84128619640968,
-        nome: "Posto diamante negro",
+        nome: "Posto Diamante Negro",
         img: " ",
         tipo: "",
         possui: ["", ""],
@@ -227,7 +227,7 @@ export const cordsPostos = [
     {
         lat: -20.25150666926673,
         lng: -40.37321644585403,
-        nome: "Auto Posto cariacica",
+        nome: "Auto Posto Cariacica",
         img: " ",
         tipo: "",
         possui: ["", ""],
