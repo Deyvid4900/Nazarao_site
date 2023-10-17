@@ -138,7 +138,7 @@ export const cordsPostos = [
         lat: -20.85175905869883,
         lng: -41.094232307817414,
         nome: "Posto Coronel Borges",
-        img: " ",
+        img: "",
         tipo: "",
         possui: ["", ""],
 

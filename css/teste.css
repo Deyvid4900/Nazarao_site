@@ -1,6 +1,6 @@
 
 #CardPosto{
-    height: 600px;
+    height: 1200px;
     width: 70%;
     margin: 20px auto;
     overflow-y: auto;
@@ -87,14 +87,7 @@
     padding: 0;
 }
 
-.infoPostosPetrobras{
-    margin-top: -5px;
-    padding: 2px 40px;
-    border-radius: 2px;
-    font-size: 14px;
-    color: white;
-    background-color: #1B965F !important;
-}
+
 .infoPostosPetrobras a{
     margin-top: -5px;
     padding: 2px 40px;
@@ -145,3 +138,4 @@
     color: white;
     background-color: #02436F;
 }
+

@@ -78,9 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // Crie um elemento div com a classe "foto"
             var divFoto = document.createElement("div");
             divFoto.classList.add("foto");
-            // var foto = document.createElement("img")
-            // foto.setAttribute("src",element.img)
-            // foto.appendChild(divFoto)
+            divFoto.style.backgroundImage = `url(${element.img})`
+
+
 
             // Crie um elemento div com a classe "infoPostosPetrobras"
             var divInfoPostos = document.createElement("div");
@@ -112,27 +112,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Crie um elemento de âncora (a) com o link para o Google Maps
             var a = document.createElement("a");
+            console.log(element.tipo)
             if (element.tipo == "PostosPetrobras") {
-                a.classList.add("infoPostosPetrobras")
+                a.style.marginTop = "-5px";
+                a.style.padding = "2px 40px";
+                a.style.borderRadius = "2px";
+                a.style.fontSize = "14px";
+                a.style.color = "white";
+                a.style.backgroundColor = "#1B965F";
             } else {
                 a.classList.add("infoPostosComum")
             }
 
             if (element.tipo == "PostosShell") {
-                a.classList.add("infoPostosShell")
+                a.style.marginTop = "-5px";
+                a.style.padding = "2px 40px";
+                a.style.borderRadius = "2px";
+                a.style.fontSize = "14px";
+                a.style.color = "white";
+                a.style.backgroundColor = "#F51D21 ";
             } else {
                 a.classList.add("infoPostosComum")
             }
 
             if (element.tipo == "PostosIpiranga") {
-                a.classList.add("infoPostosIpiranga")
+                a.style.marginTop = "-5px";
+                a.style.padding = "2px 40px";
+                a.style.borderRadius = "2px";
+                a.style.fontSize = "14px";
+                a.style.color = "white";
+                a.style.backgroundColor = "#1278E8 ";
             } else {
                 a.classList.add("infoPostosComum")
             }
             a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
 
-            // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
-            // a.setAttribute("target","_blank")
+
 
             a.setAttribute("class", "btnLinkMaps")
             a.textContent = "Ver Mapa";
@@ -141,14 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 a.preventDefault(); // Impede o comportamento padrão do link
                 window.open(a.href, "_blank"); // Abre a URL em uma nova guia
             })
-            // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
-            // btnLinkMaps.map((e)=>{
-            //     console.log(e)
-            //     e.addEventListener("click",()=>{
-            //         // Impede o comportamento padrão do link
-            //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
-            //     })
-            // })
 
 
             // Adicione todos os elementos criados à estrutura do DOM
@@ -188,9 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Crie um elemento div com a classe "foto"
             var divFoto = document.createElement("div");
             divFoto.classList.add("foto");
-            // var foto = document.createElement("img")
-            // foto.setAttribute("src",element.img)
-            // foto.appendChild(divFoto)
+            divFoto.style.backgroundImage = `url(${element.img})`
 
             // Crie um elemento div com a classe "infoPostosPetrobras"
             var divInfoPostos = document.createElement("div");
@@ -223,26 +228,38 @@ document.addEventListener("DOMContentLoaded", function () {
             // Crie um elemento de âncora (a) com o link para o Google Maps
             var a = document.createElement("a");
             if (element.tipo == "PostosPetrobras") {
-                a.classList.add("infoPostosPetrobras")
+                a.style.marginTop = "-5px";
+                a.style.padding = "2px 40px";
+                a.style.borderRadius = "2px";
+                a.style.fontSize = "14px";
+                a.style.color = "white";
+                a.style.backgroundColor = "#1B965F";
             } else {
                 a.classList.add("infoPostosComum")
             }
 
             if (element.tipo == "PostosShell") {
-                a.classList.add("infoPostosShell")
+                a.style.marginTop = "-5px";
+                a.style.padding = "2px 40px";
+                a.style.borderRadius = "2px";
+                a.style.fontSize = "14px";
+                a.style.color = "white";
+                a.style.backgroundColor = "#F51D21 ";
             } else {
                 a.classList.add("infoPostosComum")
             }
 
             if (element.tipo == "PostosIpiranga") {
-                a.classList.add("infoPostosIpiranga")
+                a.style.marginTop = "-5px";
+                a.style.padding = "2px 40px";
+                a.style.borderRadius = "2px";
+                a.style.fontSize = "14px";
+                a.style.color = "white";
+                a.style.backgroundColor = "#1278E8 ";
             } else {
                 a.classList.add("infoPostosComum")
             }
             a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
-
-            // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
-            // a.setAttribute("target","_blank")
 
             a.setAttribute("class", "btnLinkMaps")
             a.textContent = "Ver Mapa";
@@ -251,14 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 a.preventDefault(); // Impede o comportamento padrão do link
                 window.open(a.href, "_blank"); // Abre a URL em uma nova guia
             })
-            // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
-            // btnLinkMaps.map((e)=>{
-            //     console.log(e)
-            //     e.addEventListener("click",()=>{
-            //         // Impede o comportamento padrão do link
-            //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
-            //     })
-            // })
+
 
 
             // Adicione todos os elementos criados à estrutura do DOM
@@ -318,17 +328,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             function calcularDistancia(lat1, lon1, lat2, lon2) {
                                 const raio = 6371; // Raio médio da Terra em quilômetros
-                    
+
                                 const dLat = (lat2 - lat1) * (Math.PI / 180);
                                 const dLon = (lon2 - lon1) * (Math.PI / 180);
-                    
+
                                 const a =
                                     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
                                     Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
                                     Math.sin(dLon / 2) * Math.sin(dLon / 2);
-                    
+
                                 const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-                    
+
                                 const distancia = raio * c; // Distância em quilômetros
                                 return distancia;
                             }
@@ -348,30 +358,28 @@ document.addEventListener("DOMContentLoaded", function () {
                             cordsPostos.slice(0, 5).forEach((posto, i) => {
                                 var divLineInfo = document.createElement("div");
                                 divLineInfo.classList.add("lineInfo");
-                    
+
                                 // Crie um elemento div com a classe "foto"
                                 var divFoto = document.createElement("div");
                                 divFoto.classList.add("foto");
-                                // var foto = document.createElement("img")
-                                // foto.setAttribute("src",element.img)
-                                // foto.appendChild(divFoto)
-                    
+                                divFoto.style.backgroundImage = `url(${element.img})`
+
                                 // Crie um elemento div com a classe "infoPostosPetrobras"
                                 var divInfoPostos = document.createElement("div");
                                 divInfoPostos.classList.add("infoPostosComum");
-                    
+
                                 // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
                                 var h2 = document.createElement("h2");
                                 h2.textContent = posto.nome;
-                    
+
                                 // Crie um elemento p com o texto "O que possui:"
                                 var p = document.createElement("p");
                                 p.textContent = "O que possui:";
-                    
+
                                 // Crie uma lista não ordenada (ul)
                                 var ul = document.createElement("ul");
                                 ul.classList.add('ulist')
-                    
+
                                 // Crie elementos li e adicione texto a eles
                                 if (posto.possui != 0 || posto.possui != "") {
                                     posto.possui.map((e, i) => {
@@ -380,59 +388,73 @@ document.addEventListener("DOMContentLoaded", function () {
                                         // Adicione os elementos li à lista ul
                                         ul.appendChild(li);
                                     })
-                    
+
                                 }
-                    
-                    
+
+
                                 // Crie um elemento de âncora (a) com o link para o Google Maps
                                 var a = document.createElement("a");
-                                if (posto.tipo == "PostosPetrobras") {
-                                    a.classList.add("infoPostosPetrobras")
+                                if (element.tipo == "PostosPetrobras") {
+                                    a.style.marginTop = "-5px";
+                                    a.style.padding = "2px 40px";
+                                    a.style.borderRadius = "2px";
+                                    a.style.fontSize = "14px";
+                                    a.style.color = "white";
+                                    a.style.backgroundColor = "#1B965F";
                                 } else {
                                     a.classList.add("infoPostosComum")
                                 }
                     
-                                if (posto.tipo == "PostosShell") {
-                                    a.classList.add("infoPostosShell")
+                                if (element.tipo == "PostosShell") {
+                                    a.style.marginTop = "-5px";
+                                    a.style.padding = "2px 40px";
+                                    a.style.borderRadius = "2px";
+                                    a.style.fontSize = "14px";
+                                    a.style.color = "white";
+                                    a.style.backgroundColor = "#F51D21 ";
                                 } else {
                                     a.classList.add("infoPostosComum")
                                 }
                     
-                                if (posto.tipo == "PostosIpiranga") {
-                                    a.classList.add("infoPostosIpiranga")
+                                if (element.tipo == "PostosIpiranga") {
+                                    a.style.marginTop = "-5px";
+                                    a.style.padding = "2px 40px";
+                                    a.style.borderRadius = "2px";
+                                    a.style.fontSize = "14px";
+                                    a.style.color = "white";
+                                    a.style.backgroundColor = "#1278E8 ";
                                 } else {
                                     a.classList.add("infoPostosComum")
                                 }
                                 a.href = `https://www.google.com/maps/search/?api=1&query=${posto.lat},${posto.lng}&query_place=${posto.nome}`;
-                    
-                                // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
-                                // a.setAttribute("target","_blank")
-                    
+
+
+
                                 a.setAttribute("class", "btnLinkMaps")
                                 a.textContent = "Ver Mapa";
-                    
+
                                 a.addEventListener("click", () => {
                                     a.preventDefault(); // Impede o comportamento padrão do link
                                     window.open(a.href, "_blank"); // Abre a URL em uma nova guia
                                 })
-                    
+
                                 // Adicione todos os elementos criados à estrutura do DOM
                                 divInfoPostos.appendChild(h2);
                                 divInfoPostos.appendChild(p);
                                 divInfoPostos.appendChild(ul);
                                 divInfoPostos.appendChild(a);
-                    
+
                                 divLineInfo.appendChild(divFoto);
                                 divLineInfo.appendChild(divInfoPostos);
-                    
+
                                 // Agora você pode adicionar divLineInfo ao documento, por exemplo:
-                    
+
                                 CardPosto.appendChild(divLineInfo)
-                    
-                    
-                    
-                              });
-                        
+
+
+
+                            });
+
 
 
 
@@ -460,7 +482,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 
 
 
-   
+
 });
 
 

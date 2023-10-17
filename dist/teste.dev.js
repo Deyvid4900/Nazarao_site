@@ -80,10 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
       divLineInfo.classList.add("lineInfo"); // Crie um elemento div com a classe "foto"
 
       var divFoto = document.createElement("div");
-      divFoto.classList.add("foto"); // var foto = document.createElement("img")
-      // foto.setAttribute("src",element.img)
-      // foto.appendChild(divFoto)
-      // Crie um elemento div com a classe "infoPostosPetrobras"
+      divFoto.classList.add("foto");
+      divFoto.style.backgroundImage = "url(".concat(element.img, ")"); // Crie um elemento div com a classe "infoPostosPetrobras"
 
       var divInfoPostos = document.createElement("div");
       divInfoPostos.classList.add("infoPostosComum"); // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
@@ -108,43 +106,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
       var a = document.createElement("a");
+      console.log(element.tipo);
 
       if (element.tipo == "PostosPetrobras") {
-        a.classList.add("infoPostosPetrobras");
+        a.style.marginTop = "-5px";
+        a.style.padding = "2px 40px";
+        a.style.borderRadius = "2px";
+        a.style.fontSize = "14px";
+        a.style.color = "white";
+        a.style.backgroundColor = "#1B965F";
       } else {
         a.classList.add("infoPostosComum");
       }
 
       if (element.tipo == "PostosShell") {
-        a.classList.add("infoPostosShell");
+        a.style.marginTop = "-5px";
+        a.style.padding = "2px 40px";
+        a.style.borderRadius = "2px";
+        a.style.fontSize = "14px";
+        a.style.color = "white";
+        a.style.backgroundColor = "#F51D21 ";
       } else {
         a.classList.add("infoPostosComum");
       }
 
       if (element.tipo == "PostosIpiranga") {
-        a.classList.add("infoPostosIpiranga");
+        a.style.marginTop = "-5px";
+        a.style.padding = "2px 40px";
+        a.style.borderRadius = "2px";
+        a.style.fontSize = "14px";
+        a.style.color = "white";
+        a.style.backgroundColor = "#1278E8 ";
       } else {
         a.classList.add("infoPostosComum");
       }
 
-      a.href = "https://www.google.com/maps/search/?api=1&query=".concat(element.lat, ",").concat(element.lng, "&query_place=").concat(element.nome); // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
-      // a.setAttribute("target","_blank")
-
+      a.href = "https://www.google.com/maps/search/?api=1&query=".concat(element.lat, ",").concat(element.lng, "&query_place=").concat(element.nome);
       a.setAttribute("class", "btnLinkMaps");
       a.textContent = "Ver Mapa";
       a.addEventListener("click", function (event) {
         a.preventDefault(); // Impede o comportamento padrão do link
 
         window.open(a.href, "_blank"); // Abre a URL em uma nova guia
-      }); // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
-      // btnLinkMaps.map((e)=>{
-      //     console.log(e)
-      //     e.addEventListener("click",()=>{
-      //         // Impede o comportamento padrão do link
-      //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
-      //     })
-      // })
-      // Adicione todos os elementos criados à estrutura do DOM
+      }); // Adicione todos os elementos criados à estrutura do DOM
 
       divInfoPostos.appendChild(h2);
       divInfoPostos.appendChild(p);
@@ -170,10 +174,8 @@ document.addEventListener("DOMContentLoaded", function () {
       divLineInfo.classList.add("lineInfo"); // Crie um elemento div com a classe "foto"
 
       var divFoto = document.createElement("div");
-      divFoto.classList.add("foto"); // var foto = document.createElement("img")
-      // foto.setAttribute("src",element.img)
-      // foto.appendChild(divFoto)
-      // Crie um elemento div com a classe "infoPostosPetrobras"
+      divFoto.classList.add("foto");
+      divFoto.style.backgroundImage = "url(".concat(element.img, ")"); // Crie um elemento div com a classe "infoPostosPetrobras"
 
       var divInfoPostos = document.createElement("div");
       divInfoPostos.classList.add("infoPostosComum"); // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
@@ -200,41 +202,46 @@ document.addEventListener("DOMContentLoaded", function () {
       var a = document.createElement("a");
 
       if (element.tipo == "PostosPetrobras") {
-        a.classList.add("infoPostosPetrobras");
+        a.style.marginTop = "-5px";
+        a.style.padding = "2px 40px";
+        a.style.borderRadius = "2px";
+        a.style.fontSize = "14px";
+        a.style.color = "white";
+        a.style.backgroundColor = "#1B965F";
       } else {
         a.classList.add("infoPostosComum");
       }
 
       if (element.tipo == "PostosShell") {
-        a.classList.add("infoPostosShell");
+        a.style.marginTop = "-5px";
+        a.style.padding = "2px 40px";
+        a.style.borderRadius = "2px";
+        a.style.fontSize = "14px";
+        a.style.color = "white";
+        a.style.backgroundColor = "#F51D21 ";
       } else {
         a.classList.add("infoPostosComum");
       }
 
       if (element.tipo == "PostosIpiranga") {
-        a.classList.add("infoPostosIpiranga");
+        a.style.marginTop = "-5px";
+        a.style.padding = "2px 40px";
+        a.style.borderRadius = "2px";
+        a.style.fontSize = "14px";
+        a.style.color = "white";
+        a.style.backgroundColor = "#1278E8 ";
       } else {
         a.classList.add("infoPostosComum");
       }
 
-      a.href = "https://www.google.com/maps/search/?api=1&query=".concat(element.lat, ",").concat(element.lng, "&query_place=").concat(element.nome); // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
-      // a.setAttribute("target","_blank")
-
+      a.href = "https://www.google.com/maps/search/?api=1&query=".concat(element.lat, ",").concat(element.lng, "&query_place=").concat(element.nome);
       a.setAttribute("class", "btnLinkMaps");
       a.textContent = "Ver Mapa";
       a.addEventListener("click", function (event) {
         a.preventDefault(); // Impede o comportamento padrão do link
 
         window.open(a.href, "_blank"); // Abre a URL em uma nova guia
-      }); // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
-      // btnLinkMaps.map((e)=>{
-      //     console.log(e)
-      //     e.addEventListener("click",()=>{
-      //         // Impede o comportamento padrão do link
-      //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
-      //     })
-      // })
-      // Adicione todos os elementos criados à estrutura do DOM
+      }); // Adicione todos os elementos criados à estrutura do DOM
 
       divInfoPostos.appendChild(h2);
       divInfoPostos.appendChild(p);
@@ -314,10 +321,8 @@ document.addEventListener("DOMContentLoaded", function () {
             divLineInfo.classList.add("lineInfo"); // Crie um elemento div com a classe "foto"
 
             var divFoto = document.createElement("div");
-            divFoto.classList.add("foto"); // var foto = document.createElement("img")
-            // foto.setAttribute("src",element.img)
-            // foto.appendChild(divFoto)
-            // Crie um elemento div com a classe "infoPostosPetrobras"
+            divFoto.classList.add("foto");
+            divFoto.style.backgroundImage = "url(".concat(element.img, ")"); // Crie um elemento div com a classe "infoPostosPetrobras"
 
             var divInfoPostos = document.createElement("div");
             divInfoPostos.classList.add("infoPostosComum"); // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
@@ -343,27 +348,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var a = document.createElement("a");
 
-            if (posto.tipo == "PostosPetrobras") {
-              a.classList.add("infoPostosPetrobras");
+            if (element.tipo == "PostosPetrobras") {
+              a.style.marginTop = "-5px";
+              a.style.padding = "2px 40px";
+              a.style.borderRadius = "2px";
+              a.style.fontSize = "14px";
+              a.style.color = "white";
+              a.style.backgroundColor = "#1B965F";
             } else {
               a.classList.add("infoPostosComum");
             }
 
-            if (posto.tipo == "PostosShell") {
-              a.classList.add("infoPostosShell");
+            if (element.tipo == "PostosShell") {
+              a.style.marginTop = "-5px";
+              a.style.padding = "2px 40px";
+              a.style.borderRadius = "2px";
+              a.style.fontSize = "14px";
+              a.style.color = "white";
+              a.style.backgroundColor = "#F51D21 ";
             } else {
               a.classList.add("infoPostosComum");
             }
 
-            if (posto.tipo == "PostosIpiranga") {
-              a.classList.add("infoPostosIpiranga");
+            if (element.tipo == "PostosIpiranga") {
+              a.style.marginTop = "-5px";
+              a.style.padding = "2px 40px";
+              a.style.borderRadius = "2px";
+              a.style.fontSize = "14px";
+              a.style.color = "white";
+              a.style.backgroundColor = "#1278E8 ";
             } else {
               a.classList.add("infoPostosComum");
             }
 
-            a.href = "https://www.google.com/maps/search/?api=1&query=".concat(posto.lat, ",").concat(posto.lng, "&query_place=").concat(posto.nome); // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
-            // a.setAttribute("target","_blank")
-
+            a.href = "https://www.google.com/maps/search/?api=1&query=".concat(posto.lat, ",").concat(posto.lng, "&query_place=").concat(posto.nome);
             a.setAttribute("class", "btnLinkMaps");
             a.textContent = "Ver Mapa";
             a.addEventListener("click", function () {
