@@ -2,7 +2,6 @@
 
 var _postos = require("./postos.js");
 
-// AIzaSyDzixHiJAmfIEYkFwc5ysW5xF0RmmoEFRU    api key
 // AIzaSyB46wG7bMX070nj2Avrb24R-R7F5ihAfwM
 var CepInput = document.getElementById("CepInput");
 var btnPesquisarCep = document.getElementById("btnPesquisarCep");

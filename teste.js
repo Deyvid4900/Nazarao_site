@@ -1,279 +1,467 @@
 import { cordsPostos } from "./postos.js";
-
+const btnBuscarCep = document.getElementById("btnBuscarCep")
 const CardPosto = document.getElementById("CardPosto")
+
 let pontoMaisProximo = null;
 let menorDistancia = Infinity;
 let shouldStop = false
 
-const options = {
-    enableHighAccuracy: true, // Reduz a precisão
-    timeout: 15000, // Tempo limite em milissegundos
-    maximumAge: 0 // Não usar cache
-};
-navigator.geolocation.getCurrentPosition(function (position) {
 
-    let lat = position.coords.latitude;
-    let lng = position.coords.longitude;
+document.addEventListener("DOMContentLoaded", function () {
+    const options = {
+        enableHighAccuracy: true, // Reduz a precisão
+        timeout: 15000, // Tempo limite em milissegundos
+        maximumAge: 0 // Não usar cache
+    };
+    navigator.geolocation.getCurrentPosition(function (position) {
 
-    function calcularDistancia(lat1, lon1, lat2, lon2) {
-        const raio = 6371; // Raio médio da Terra em quilômetros
+        let lat = position.coords.latitude;
+        let lng = position.coords.longitude;
 
-        const dLat = (lat2 - lat1) * (Math.PI / 180);
-        const dLon = (lon2 - lon1) * (Math.PI / 180);
+        function calcularDistancia(lat1, lon1, lat2, lon2) {
+            const raio = 6371; // Raio médio da Terra em quilômetros
 
-        const a =
-            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const dLat = (lat2 - lat1) * (Math.PI / 180);
+            const dLon = (lon2 - lon1) * (Math.PI / 180);
 
-        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            const a =
+                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
 
-        const distancia = raio * c; // Distância em quilômetros
-        return distancia;
-    }
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-    // Iterar sobre os objetos e calcular as distâncias
-    cordsPostos.forEach(local => {
-        const distancia = calcularDistancia(lat, lng, local.lat, local.lng);
-        if (distancia < menorDistancia) {
-            menorDistancia = distancia;
-            pontoMaisProximo = local;
+            const distancia = raio * c; // Distância em quilômetros
+            return distancia;
         }
-    });
+
+        // Iterar sobre os objetos e calcular as distâncias
+        cordsPostos.forEach(local => {
+            const distancia = calcularDistancia(lat, lng, local.lat, local.lng);
+            if (distancia < menorDistancia) {
+                menorDistancia = distancia;
+                pontoMaisProximo = local;
+            }
+        });
 
 
-    console.log("O ponto mais próximo é:", pontoMaisProximo);
-    console.log("Distância:", menorDistancia, "quilômetros");
-    console.log(lat);
-    console.log(lng);
+        console.log("O ponto mais próximo é:", pontoMaisProximo);
+        console.log("Distância:", menorDistancia, "quilômetros");
+        console.log(lat);
+        console.log(lng);
 
-    // Função de comparação para o método sort
-    function compararDistancia(a, b) {
-        const distanciaA = calcularDistancia(lat, lng, a.lat, a.lng);
-        const distanciaB = calcularDistancia(lat, lng, b.lat, b.lng);
-        return (distanciaA - distanciaB)
-    }
+        // Função de comparação para o método sort
+        function compararDistancia(a, b) {
+            const distanciaA = calcularDistancia(lat, lng, a.lat, a.lng);
+            const distanciaB = calcularDistancia(lat, lng, b.lat, b.lng);
+            return (distanciaA - distanciaB)
+        }
 
-    // Ordene o array com base na distância
-    cordsPostos.sort(compararDistancia);
-    const postosOrdenados = cordsPostos.map(posto => ({
-        ...posto,
-        distancia: calcularDistancia(lat, lng, posto.lat, posto.lng)
-    })).sort((a, b) => a.distancia - b.distancia);
+        // Ordene o array com base na distância
+        cordsPostos.sort(compararDistancia);
+        const postosOrdenados = cordsPostos.map(posto => ({
+            ...posto,
+            distancia: calcularDistancia(lat, lng, posto.lat, posto.lng)
+        })).sort((a, b) => a.distancia - b.distancia);
 
-    console.log("Array ordenado:", postosOrdenados);
+        console.log("Array ordenado:", postosOrdenados);
 
 
-    cordsPostos.map((element, i) => {
-        if (shouldStop) return;
-        
-        console.log(i);
-        // Crie um elemento div com a classe "lineInfo"
-        var divLineInfo = document.createElement("div");
-        divLineInfo.classList.add("lineInfo");
+        cordsPostos.map((element, i) => {
+            if (shouldStop) return;
 
-        // Crie um elemento div com a classe "foto"
-        var divFoto = document.createElement("div");
-        divFoto.classList.add("foto");
-        // var foto = document.createElement("img")
-        // foto.setAttribute("src",element.img)
-        // foto.appendChild(divFoto)
+            console.log(i);
+            // Crie um elemento div com a classe "lineInfo"
+            var divLineInfo = document.createElement("div");
+            divLineInfo.classList.add("lineInfo");
 
-        // Crie um elemento div com a classe "infoPostosPetrobras"
-        var divInfoPostos = document.createElement("div");
-        divInfoPostos.classList.add("infoPostosComum");
+            // Crie um elemento div com a classe "foto"
+            var divFoto = document.createElement("div");
+            divFoto.classList.add("foto");
+            // var foto = document.createElement("img")
+            // foto.setAttribute("src",element.img)
+            // foto.appendChild(divFoto)
 
-        // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
-        var h2 = document.createElement("h2");
-        h2.textContent = element.nome;
+            // Crie um elemento div com a classe "infoPostosPetrobras"
+            var divInfoPostos = document.createElement("div");
+            divInfoPostos.classList.add("infoPostosComum");
 
-        // Crie um elemento p com o texto "O que possui:"
-        var p = document.createElement("p");
-        p.textContent = "O que possui:";
+            // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
+            var h2 = document.createElement("h2");
+            h2.textContent = element.nome;
 
-        // Crie uma lista não ordenada (ul)
-        var ul = document.createElement("ul");
-        ul.classList.add('ulist')
+            // Crie um elemento p com o texto "O que possui:"
+            var p = document.createElement("p");
+            p.textContent = "O que possui:";
 
-        // Crie elementos li e adicione texto a eles
-        if (element.possui != 0 || element.possui != "") {
-            element.possui.map((e, i) => {
-                var li = document.createElement("li");
-                li.textContent = element.possui[i];
-                // Adicione os elementos li à lista ul
-                ul.appendChild(li);
+            // Crie uma lista não ordenada (ul)
+            var ul = document.createElement("ul");
+            ul.classList.add('ulist')
+
+            // Crie elementos li e adicione texto a eles
+            if (element.possui != 0 || element.possui != "") {
+                element.possui.map((e, i) => {
+                    var li = document.createElement("li");
+                    li.textContent = element.possui[i];
+                    // Adicione os elementos li à lista ul
+                    ul.appendChild(li);
+                })
+
+            }
+
+
+            // Crie um elemento de âncora (a) com o link para o Google Maps
+            var a = document.createElement("a");
+            if (element.tipo == "PostosPetrobras") {
+                a.classList.add("infoPostosPetrobras")
+            } else {
+                a.classList.add("infoPostosComum")
+            }
+
+            if (element.tipo == "PostosShell") {
+                a.classList.add("infoPostosShell")
+            } else {
+                a.classList.add("infoPostosComum")
+            }
+
+            if (element.tipo == "PostosIpiranga") {
+                a.classList.add("infoPostosIpiranga")
+            } else {
+                a.classList.add("infoPostosComum")
+            }
+            a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
+
+            // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
+            // a.setAttribute("target","_blank")
+
+            a.setAttribute("class", "btnLinkMaps")
+            a.textContent = "Ver Mapa";
+
+            a.addEventListener("click", (event) => {
+                a.preventDefault(); // Impede o comportamento padrão do link
+                window.open(a.href, "_blank"); // Abre a URL em uma nova guia
             })
-
-        }
-
-
-        // Crie um elemento de âncora (a) com o link para o Google Maps
-        var a = document.createElement("a");
-        if (element.tipo == "PostosPetrobras") {
-            a.classList.add("infoPostosPetrobras")
-        } else {
-            a.classList.add("infoPostosComum")
-        }
-
-        if (element.tipo == "PostosShell") {
-            a.classList.add("infoPostosShell")
-        } else {
-            a.classList.add("infoPostosComum")
-        }
-
-        if (element.tipo == "PostosIpiranga") {
-            a.classList.add("infoPostosIpiranga")
-        } else {
-            a.classList.add("infoPostosComum")
-        }
-        a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
-
-        // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
-        // a.setAttribute("target","_blank")
-
-        a.setAttribute("class", "btnLinkMaps")
-        a.textContent = "Ver Mapa";
-
-        a.addEventListener("click", (event) => {
-            a.preventDefault(); // Impede o comportamento padrão do link
-            window.open(a.href, "_blank"); // Abre a URL em uma nova guia
-        })
-        // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
-        // btnLinkMaps.map((e)=>{
-        //     console.log(e)
-        //     e.addEventListener("click",()=>{
-        //         // Impede o comportamento padrão do link
-        //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
-        //     })
-        // })
+            // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
+            // btnLinkMaps.map((e)=>{
+            //     console.log(e)
+            //     e.addEventListener("click",()=>{
+            //         // Impede o comportamento padrão do link
+            //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
+            //     })
+            // })
 
 
-        // Adicione todos os elementos criados à estrutura do DOM
-        divInfoPostos.appendChild(h2);
-        divInfoPostos.appendChild(p);
-        divInfoPostos.appendChild(ul);
-        divInfoPostos.appendChild(a);
+            // Adicione todos os elementos criados à estrutura do DOM
+            divInfoPostos.appendChild(h2);
+            divInfoPostos.appendChild(p);
+            divInfoPostos.appendChild(ul);
+            divInfoPostos.appendChild(a);
 
-        divLineInfo.appendChild(divFoto);
-        divLineInfo.appendChild(divInfoPostos);
+            divLineInfo.appendChild(divFoto);
+            divLineInfo.appendChild(divInfoPostos);
 
-        // Agora você pode adicionar divLineInfo ao documento, por exemplo:
+            // Agora você pode adicionar divLineInfo ao documento, por exemplo:
 
-        CardPosto.appendChild(divLineInfo)
-
-        
+            CardPosto.appendChild(divLineInfo)
 
 
 
-        if (i === 4) {
-            shouldStop = true;
-        }
 
 
-    });
+            if (i === 4) {
+                shouldStop = true;
+            }
 
-}, function (error) {
-    // Função de erro
-    console.error(`Erro ao obter a localização: ${error.message}`);
-    alert("Não foi possivel ajustar os Postos mais proximos")
 
-    cordsPostos.forEach(element => {
-        // Crie um elemento div com a classe "lineInfo"
-        var divLineInfo = document.createElement("div");
-        divLineInfo.classList.add("lineInfo");
+        });
 
-        // Crie um elemento div com a classe "foto"
-        var divFoto = document.createElement("div");
-        divFoto.classList.add("foto");
-        // var foto = document.createElement("img")
-        // foto.setAttribute("src",element.img)
-        // foto.appendChild(divFoto)
+    }, function (error) {
+        // Função de erro
+        console.error(`Erro ao obter a localização: ${error.message}`);
+        alert("Não foi possivel ajustar os Postos mais proximos")
 
-        // Crie um elemento div com a classe "infoPostosPetrobras"
-        var divInfoPostos = document.createElement("div");
-        divInfoPostos.classList.add("infoPostosComum");
+        cordsPostos.forEach(element => {
+            // Crie um elemento div com a classe "lineInfo"
+            var divLineInfo = document.createElement("div");
+            divLineInfo.classList.add("lineInfo");
 
-        // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
-        var h2 = document.createElement("h2");
-        h2.textContent = element.nome;
+            // Crie um elemento div com a classe "foto"
+            var divFoto = document.createElement("div");
+            divFoto.classList.add("foto");
+            // var foto = document.createElement("img")
+            // foto.setAttribute("src",element.img)
+            // foto.appendChild(divFoto)
 
-        // Crie um elemento p com o texto "O que possui:"
-        var p = document.createElement("p");
-        p.textContent = "O que possui:";
+            // Crie um elemento div com a classe "infoPostosPetrobras"
+            var divInfoPostos = document.createElement("div");
+            divInfoPostos.classList.add("infoPostosComum");
 
-        // Crie uma lista não ordenada (ul)
-        var ul = document.createElement("ul");
-        ul.classList.add('ulist')
+            // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
+            var h2 = document.createElement("h2");
+            h2.textContent = element.nome;
 
-        // Crie elementos li e adicione texto a eles
-        if (element.possui != 0 || element.possui != "") {
-            element.possui.map((e, i) => {
-                var li = document.createElement("li");
-                li.textContent = element.possui[i];
-                // Adicione os elementos li à lista ul
-                ul.appendChild(li);
+            // Crie um elemento p com o texto "O que possui:"
+            var p = document.createElement("p");
+            p.textContent = "O que possui:";
+
+            // Crie uma lista não ordenada (ul)
+            var ul = document.createElement("ul");
+            ul.classList.add('ulist')
+
+            // Crie elementos li e adicione texto a eles
+            if (element.possui != 0 || element.possui != "") {
+                element.possui.map((e, i) => {
+                    var li = document.createElement("li");
+                    li.textContent = element.possui[i];
+                    // Adicione os elementos li à lista ul
+                    ul.appendChild(li);
+                })
+
+            }
+
+
+            // Crie um elemento de âncora (a) com o link para o Google Maps
+            var a = document.createElement("a");
+            if (element.tipo == "PostosPetrobras") {
+                a.classList.add("infoPostosPetrobras")
+            } else {
+                a.classList.add("infoPostosComum")
+            }
+
+            if (element.tipo == "PostosShell") {
+                a.classList.add("infoPostosShell")
+            } else {
+                a.classList.add("infoPostosComum")
+            }
+
+            if (element.tipo == "PostosIpiranga") {
+                a.classList.add("infoPostosIpiranga")
+            } else {
+                a.classList.add("infoPostosComum")
+            }
+            a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
+
+            // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
+            // a.setAttribute("target","_blank")
+
+            a.setAttribute("class", "btnLinkMaps")
+            a.textContent = "Ver Mapa";
+
+            a.addEventListener("click", (event) => {
+                a.preventDefault(); // Impede o comportamento padrão do link
+                window.open(a.href, "_blank"); // Abre a URL em uma nova guia
             })
-
-        }
-
-
-        // Crie um elemento de âncora (a) com o link para o Google Maps
-        var a = document.createElement("a");
-        if (element.tipo == "PostosPetrobras") {
-            a.classList.add("infoPostosPetrobras")
-        } else {
-            a.classList.add("infoPostosComum")
-        }
-
-        if (element.tipo == "PostosShell") {
-            a.classList.add("infoPostosShell")
-        } else {
-            a.classList.add("infoPostosComum")
-        }
-
-        if (element.tipo == "PostosIpiranga") {
-            a.classList.add("infoPostosIpiranga")
-        } else {
-            a.classList.add("infoPostosComum")
-        }
-        a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
-
-        // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
-        // a.setAttribute("target","_blank")
-
-        a.setAttribute("class", "btnLinkMaps")
-        a.textContent = "Ver Mapa";
-
-        a.addEventListener("click", (event) => {
-            a.preventDefault(); // Impede o comportamento padrão do link
-            window.open(a.href, "_blank"); // Abre a URL em uma nova guia
-        })
-        // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
-        // btnLinkMaps.map((e)=>{
-        //     console.log(e)
-        //     e.addEventListener("click",()=>{
-        //         // Impede o comportamento padrão do link
-        //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
-        //     })
-        // })
+            // const btnLinkMaps=[...document.getElementsByClassName("btnLinkMaps")]
+            // btnLinkMaps.map((e)=>{
+            //     console.log(e)
+            //     e.addEventListener("click",()=>{
+            //         // Impede o comportamento padrão do link
+            //         window.open(e.href, "_blank"); // Abre a URL em uma nova guia
+            //     })
+            // })
 
 
-        // Adicione todos os elementos criados à estrutura do DOM
-        divInfoPostos.appendChild(h2);
-        divInfoPostos.appendChild(p);
-        divInfoPostos.appendChild(ul);
-        divInfoPostos.appendChild(a);
+            // Adicione todos os elementos criados à estrutura do DOM
+            divInfoPostos.appendChild(h2);
+            divInfoPostos.appendChild(p);
+            divInfoPostos.appendChild(ul);
+            divInfoPostos.appendChild(a);
 
-        divLineInfo.appendChild(divFoto);
-        divLineInfo.appendChild(divInfoPostos);
+            divLineInfo.appendChild(divFoto);
+            divLineInfo.appendChild(divInfoPostos);
 
-        // Agora você pode adicionar divLineInfo ao documento, por exemplo:
+            // Agora você pode adicionar divLineInfo ao documento, por exemplo:
 
-        CardPosto.appendChild(divLineInfo)
-    });
+            CardPosto.appendChild(divLineInfo)
+        });
 
-}, options);
+    }, options);
 
+
+    // 
+    btnBuscarCep.addEventListener("click", () => {
+        const numeroCep = document.getElementById("Cep");
+        const url = `https://viacep.com.br/ws/${numeroCep.value}/json/`;
+        CardPosto.innerHTML = "";
+        // Use o fetch para fazer a solicitação HTTP
+        fetch(url)
+            .then(response => {
+                // Verifique se a resposta foi bem-sucedida (código de status 200)
+
+                if (!response.ok) {
+                    throw new Error('Não foi possível obter as informações do CEP');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Use os dados obtidos a partir da resposta
+                console.log(data);
+                let endereco = data.localidade + ',' + data.bairro + ',' + data.logradouro
+                console.log(endereco)
+                const apiKey = 'AIzaSyB46wG7bMX070nj2Avrb24R-R7F5ihAfwM';
+                const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${endereco}&key=${apiKey}`;
+                fetch(geocodingUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Não foi possível obter as coordenadas');
+                        }
+                        return response.json();
+
+                    })
+                    .then(data => {
+                        // Acesse as coordenadas lat e lng a partir dos dados de resposta
+                        if (data.status === 'OK' && data.results.length > 0) {
+                            const location = data.results[0].geometry.location;
+                            const lat = location.lat;
+                            const lng = location.lng;
+                            console.log(`Latitude: ${lat}, Longitude: ${lng}`);
+
+                            function calcularDistancia(lat1, lon1, lat2, lon2) {
+                                const raio = 6371; // Raio médio da Terra em quilômetros
+                    
+                                const dLat = (lat2 - lat1) * (Math.PI / 180);
+                                const dLon = (lon2 - lon1) * (Math.PI / 180);
+                    
+                                const a =
+                                    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                                    Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+                                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+                    
+                                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                    
+                                const distancia = raio * c; // Distância em quilômetros
+                                return distancia;
+                            }
+                            cordsPostos.forEach(local => {
+                                const distancia = calcularDistancia(lat, lng, local.lat, local.lng);
+                                if (distancia < menorDistancia) {
+                                    menorDistancia = distancia;
+                                    pontoMaisProximo = local;
+                                }
+                            });
+                            function compararDistancia(a, b) {
+                                const distanciaA = calcularDistancia(lat, lng, a.lat, a.lng);
+                                const distanciaB = calcularDistancia(lat, lng, b.lat, b.lng);
+                                return (distanciaA - distanciaB)
+                            }
+                            cordsPostos.sort(compararDistancia);
+                            cordsPostos.slice(0, 5).forEach((posto, i) => {
+                                var divLineInfo = document.createElement("div");
+                                divLineInfo.classList.add("lineInfo");
+                    
+                                // Crie um elemento div com a classe "foto"
+                                var divFoto = document.createElement("div");
+                                divFoto.classList.add("foto");
+                                // var foto = document.createElement("img")
+                                // foto.setAttribute("src",element.img)
+                                // foto.appendChild(divFoto)
+                    
+                                // Crie um elemento div com a classe "infoPostosPetrobras"
+                                var divInfoPostos = document.createElement("div");
+                                divInfoPostos.classList.add("infoPostosComum");
+                    
+                                // Crie um elemento h2 com o texto "Posto Avenida BR Petrobrás"
+                                var h2 = document.createElement("h2");
+                                h2.textContent = posto.nome;
+                    
+                                // Crie um elemento p com o texto "O que possui:"
+                                var p = document.createElement("p");
+                                p.textContent = "O que possui:";
+                    
+                                // Crie uma lista não ordenada (ul)
+                                var ul = document.createElement("ul");
+                                ul.classList.add('ulist')
+                    
+                                // Crie elementos li e adicione texto a eles
+                                if (posto.possui != 0 || posto.possui != "") {
+                                    posto.possui.map((e, i) => {
+                                        var li = document.createElement("li");
+                                        li.textContent = posto.possui[i];
+                                        // Adicione os elementos li à lista ul
+                                        ul.appendChild(li);
+                                    })
+                    
+                                }
+                    
+                    
+                                // Crie um elemento de âncora (a) com o link para o Google Maps
+                                var a = document.createElement("a");
+                                if (posto.tipo == "PostosPetrobras") {
+                                    a.classList.add("infoPostosPetrobras")
+                                } else {
+                                    a.classList.add("infoPostosComum")
+                                }
+                    
+                                if (posto.tipo == "PostosShell") {
+                                    a.classList.add("infoPostosShell")
+                                } else {
+                                    a.classList.add("infoPostosComum")
+                                }
+                    
+                                if (posto.tipo == "PostosIpiranga") {
+                                    a.classList.add("infoPostosIpiranga")
+                                } else {
+                                    a.classList.add("infoPostosComum")
+                                }
+                                a.href = `https://www.google.com/maps/search/?api=1&query=${posto.lat},${posto.lng}&query_place=${posto.nome}`;
+                    
+                                // a.href = "https://www.google.com/maps?q=" + element.lat + "," + element.lng;
+                                // a.setAttribute("target","_blank")
+                    
+                                a.setAttribute("class", "btnLinkMaps")
+                                a.textContent = "Ver Mapa";
+                    
+                                a.addEventListener("click", () => {
+                                    a.preventDefault(); // Impede o comportamento padrão do link
+                                    window.open(a.href, "_blank"); // Abre a URL em uma nova guia
+                                })
+                    
+                                // Adicione todos os elementos criados à estrutura do DOM
+                                divInfoPostos.appendChild(h2);
+                                divInfoPostos.appendChild(p);
+                                divInfoPostos.appendChild(ul);
+                                divInfoPostos.appendChild(a);
+                    
+                                divLineInfo.appendChild(divFoto);
+                                divLineInfo.appendChild(divInfoPostos);
+                    
+                                // Agora você pode adicionar divLineInfo ao documento, por exemplo:
+                    
+                                CardPosto.appendChild(divLineInfo)
+                    
+                    
+                    
+                              });
+                        
+
+
+
+
+
+                        } else {
+                            console.error('Endereço não encontrado ou sem resultados');
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+
+
+
+            })
+            .catch(error => {
+                console.error(error);
+                // Lidar com erros, como CEP não encontrado
+            });
+    })
+
+
+
+    // 
+
+
+   
+});
 
 
 

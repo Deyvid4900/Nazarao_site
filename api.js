@@ -1,5 +1,4 @@
 import {cordsPostos} from "./postos.js";
-// AIzaSyDzixHiJAmfIEYkFwc5ysW5xF0RmmoEFRU    api key
 // AIzaSyB46wG7bMX070nj2Avrb24R-R7F5ihAfwM
 const CepInput = document.getElementById("CepInput")
 const btnPesquisarCep = document.getElementById("btnPesquisarCep")
