@@ -120,28 +120,12 @@
     }  .infoPostosPetrobras h2, .infoPostosShell h2, .infoPostosIpiranga h2, .infoPostosComum h2 {
         margin: 0px auto; 
     }
-    .ulist{
-        /* Defina o número de colunas desejado */
-      column-count: 3;
-      /* Opcional: ajuste a largura da coluna */
-      column-width: 100px;
-      /* Opcional: ajuste o espaço entre as colunas */
-      column-gap:15px;
-      
-    }
+    
 }
 
 @media (min-width: 1025px){
     .lineInfo{
         width: 80%;
     }
-    .ulist{
-        /* Defina o número de colunas desejado */
-      column-count: 3;
-      /* Opcional: ajuste a largura da coluna */
-      column-width: 100px;
-      /* Opcional: ajuste o espaço entre as colunas */
-      column-gap:15px;
-      
-    }  
+   
 }
