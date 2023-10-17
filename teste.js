@@ -290,8 +290,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 
     btnBuscarCep.addEventListener("click", () => {
-        const numeroCep = document.getElementById("Cep");
-        const url = `https://viacep.com.br/ws/${numeroCep.value}/json/`;
+        const numeroCepInput = document.getElementById("Cep");
+        let numeroCep = numeroCepInput.value
+        const cepSemEspacos = numeroCep.replace(/\s/g, "");
+        const url = `https://viacep.com.br/ws/${cepSemEspacos}/json/`;
+       
         CardPosto.innerHTML = "";
         // Use o fetch para fazer a solicitação HTTP
         fetch(url)
