@@ -255,8 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }, options); // 
 
   btnBuscarCep.addEventListener("click", function () {
-    var numeroCep = document.getElementById("Cep");
-    var url = "https://viacep.com.br/ws/".concat(numeroCep.value, "/json/");
+    var numeroCepInput = document.getElementById("Cep");
+    var numeroCep = numeroCepInput.value;
+    var cepSemEspacos = numeroCep.replace(/\s/g, "");
+    var url = "https://viacep.com.br/ws/".concat(cepSemEspacos, "/json/");
     CardPosto.innerHTML = ""; // Use o fetch para fazer a solicitação HTTP
 
     fetch(url).then(function (response) {
