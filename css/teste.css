@@ -1,9 +1,9 @@
 
 #CardPosto{
-    height: 1200px;
+    /* height: 1200px; */
     width: 70%;
     margin: 20px auto;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 .cepText{
     font-family: "Poppins", sans-serif;
