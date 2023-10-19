@@ -4,7 +4,25 @@ const CardPosto = document.getElementById("CardPosto")
 
 let pontoMaisProximo = null;
 let menorDistancia = Infinity;
+
 let shouldStop = false
+
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+    const raio = 6371; // Raio médio da Terra em quilômetros
+
+    const dLat = (lat2 - lat1) * (Math.PI / 180);
+    const dLon = (lon2 - lon1) * (Math.PI / 180);
+
+    const a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    const distancia = raio * c; // Distância em quilômetros
+    return distancia;
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,26 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
         maximumAge: 0 // Não usar cache
     };
     navigator.geolocation.getCurrentPosition(function (position) {
-
+        
         let lat = position.coords.latitude;
         let lng = position.coords.longitude;
 
-        function calcularDistancia(lat1, lon1, lat2, lon2) {
-            const raio = 6371; // Raio médio da Terra em quilômetros
-
-            const dLat = (lat2 - lat1) * (Math.PI / 180);
-            const dLon = (lon2 - lon1) * (Math.PI / 180);
-
-            const a =
-                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
-                Math.sin(dLon / 2) * Math.sin(dLon / 2);
-
-            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-            const distancia = raio * c; // Distância em quilômetros
-            return distancia;
-        }
 
         // Iterar sobre os objetos e calcular as distâncias
         cordsPostos.forEach(local => {
@@ -44,18 +46,17 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-
-        console.log("O ponto mais próximo é:", pontoMaisProximo);
-        console.log("Distância:", menorDistancia, "quilômetros");
-        console.log(lat);
-        console.log(lng);
-
         // Função de comparação para o método sort
         function compararDistancia(a, b) {
             const distanciaA = calcularDistancia(lat, lng, a.lat, a.lng);
             const distanciaB = calcularDistancia(lat, lng, b.lat, b.lng);
             return (distanciaA - distanciaB)
         }
+        console.log("O ponto mais próximo é:", pontoMaisProximo);
+        console.log("Distância:", menorDistancia, "quilômetros");
+        console.log(lat);
+        console.log(lng);
+
 
         // Ordene o array com base na distância
         cordsPostos.sort(compararDistancia);
@@ -64,13 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
             distancia: calcularDistancia(lat, lng, posto.lat, posto.lng)
         })).sort((a, b) => a.distancia - b.distancia);
 
-        console.log("Array ordenado:", postosOrdenados);
+        
 
 
         cordsPostos.map((element, i) => {
             if (shouldStop) return;
 
-            console.log(i);
+            
             // Crie um elemento div com a classe "lineInfo"
             var divLineInfo = document.createElement("div");
             divLineInfo.classList.add("lineInfo");
@@ -112,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Crie um elemento de âncora (a) com o link para o Google Maps
             var a = document.createElement("a");
-            console.log(element.tipo)
             if (element.tipo == "PostosPetrobras") {
                 a.style.marginTop = "-5px";
                 a.style.padding = "2px 40px";
@@ -292,12 +292,13 @@ document.addEventListener("DOMContentLoaded", function () {
     btnBuscarCep.addEventListener("click", () => {
         const numeroCepInput = document.getElementById("Cep");
         let numeroCep = numeroCepInput.value
-        const cepSemEspacos = numeroCep.replace(/\s/g, "");
-        const url = `https://viacep.com.br/ws/${cepSemEspacos}/json/`;
        
+        const cepSemEspacos = numeroCep.replace(/\s/g, "");
+        const ViaCepUrl = `https://viacep.com.br/ws/${cepSemEspacos}/json/`;
+
         CardPosto.innerHTML = "";
         // Use o fetch para fazer a solicitação HTTP
-        fetch(url)
+        fetch(ViaCepUrl)
             .then(response => {
                 // Verifique se a resposta foi bem-sucedida (código de status 200)
 
@@ -308,8 +309,8 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 // Use os dados obtidos a partir da resposta
-                console.log(data);
-                let endereco = data.localidade + ',' + data.bairro + ',' + data.logradouro
+                let endereco = `"${data.logradouro}",`+`"${data.bairro}",`+`"${data.localidade}"`
+                // let endereco = data.localidade + ',' + data.bairro + ',' + data.logradouro + ""
                 console.log(endereco)
                 const apiKey = 'AIzaSyB46wG7bMX070nj2Avrb24R-R7F5ihAfwM';
                 const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${endereco}&key=${apiKey}`;
@@ -318,33 +319,46 @@ document.addEventListener("DOMContentLoaded", function () {
                         if (!response.ok) {
                             throw new Error('Não foi possível obter as coordenadas');
                         }
+                        
                         return response.json();
 
                     })
                     .then(data => {
                         // Acesse as coordenadas lat e lng a partir dos dados de resposta
+                        let menorDistancia = Infinity;
+                        let pontoMaisProximo = null;
+                        console.log(data)
+
+
+                        function calcularDistancia(lat1, lon1, lat2, lon2) {
+                            const raio = 6371; // Raio médio da Terra em quilômetros
+
+                            const dLat = (lat2 - lat1) * (Math.PI / 180);
+                            const dLon = (lon2 - lon1) * (Math.PI / 180);
+
+                            const a =
+                                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                                Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
+                                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+                            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+                            const distancia = raio * c; // Distância em quilômetros
+                            return distancia;
+                        }
                         if (data.status === 'OK' && data.results.length > 0) {
                             const location = data.results[0].geometry.location;
+                            console.log(location)
                             const lat = location.lat;
                             const lng = location.lng;
                             console.log(`Latitude: ${lat}, Longitude: ${lng}`);
 
-                            function calcularDistancia(lat1, lon1, lat2, lon2) {
-                                const raio = 6371; // Raio médio da Terra em quilômetros
-
-                                const dLat = (lat2 - lat1) * (Math.PI / 180);
-                                const dLon = (lon2 - lon1) * (Math.PI / 180);
-
-                                const a =
-                                    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                                    Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) *
-                                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
-
-                                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-                                const distancia = raio * c; // Distância em quilômetros
-                                return distancia;
+                            function compararDistancia(a, b) {
+                                const distanciaA = calcularDistancia(lat, lng, a.lat, a.lng);
+                                const distanciaB = calcularDistancia(lat, lng, b.lat, b.lng);
+                                return (distanciaA - distanciaB)
                             }
+
                             cordsPostos.forEach(local => {
                                 const distancia = calcularDistancia(lat, lng, local.lat, local.lng);
                                 if (distancia < menorDistancia) {
@@ -352,12 +366,15 @@ document.addEventListener("DOMContentLoaded", function () {
                                     pontoMaisProximo = local;
                                 }
                             });
-                            function compararDistancia(a, b) {
-                                const distanciaA = calcularDistancia(lat, lng, a.lat, a.lng);
-                                const distanciaB = calcularDistancia(lat, lng, b.lat, b.lng);
-                                return (distanciaA - distanciaB)
-                            }
+                            console.log("O ponto mais próximo é:", pontoMaisProximo);
+                            console.log("Distância:", menorDistancia, "quilômetros");
+                            console.log(lat);
+                            console.log(lng);
+
                             cordsPostos.sort(compararDistancia);
+
+
+
                             cordsPostos.slice(0, 5).forEach((posto, i) => {
                                 var divLineInfo = document.createElement("div");
                                 divLineInfo.classList.add("lineInfo");
@@ -407,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 } else {
                                     a.classList.add("infoPostosComum")
                                 }
-                    
+
                                 if (posto.tipo == "PostosShell") {
                                     a.style.marginTop = "-5px";
                                     a.style.padding = "2px 40px";
@@ -418,7 +435,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 } else {
                                     a.classList.add("infoPostosComum")
                                 }
-                    
+
                                 if (posto.tipo == "PostosIpiranga") {
                                     a.style.marginTop = "-5px";
                                     a.style.padding = "2px 40px";
@@ -457,6 +474,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                             });
+                            
+
 
 
 
