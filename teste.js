@@ -26,13 +26,15 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    const loading = document.getElementById('loading')
+
     const options = {
         enableHighAccuracy: true, // Reduz a precisão
         timeout: 15000, // Tempo limite em milissegundos
         maximumAge: 0 // Não usar cache
     };
     navigator.geolocation.getCurrentPosition(function (position) {
-        
+
         let lat = position.coords.latitude;
         let lng = position.coords.longitude;
 
@@ -65,13 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
             distancia: calcularDistancia(lat, lng, posto.lat, posto.lng)
         })).sort((a, b) => a.distancia - b.distancia);
 
-        
+
 
 
         cordsPostos.map((element, i) => {
             if (shouldStop) return;
 
-            
+
             // Crie um elemento div com a classe "lineInfo"
             var divLineInfo = document.createElement("div");
             divLineInfo.classList.add("lineInfo");
@@ -148,7 +150,6 @@ document.addEventListener("DOMContentLoaded", function () {
             a.href = `https://www.google.com/maps/search/?api=1&query=${element.lat},${element.lng}&query_place=${element.nome}`;
 
 
-
             a.setAttribute("class", "btnLinkMaps")
             a.textContent = "Ver Mapa";
 
@@ -156,7 +157,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 a.preventDefault(); // Impede o comportamento padrão do link
                 window.open(a.href, "_blank"); // Abre a URL em uma nova guia
             })
-
 
             // Adicione todos os elementos criados à estrutura do DOM
             divInfoPostos.appendChild(h2);
@@ -170,10 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Agora você pode adicionar divLineInfo ao documento, por exemplo:
 
             CardPosto.appendChild(divLineInfo)
-
-
-
-
 
             if (i === 4) {
                 shouldStop = true;
@@ -290,26 +286,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 
     btnBuscarCep.addEventListener("click", () => {
+        const loading = document.getElementById('loading')
         const numeroCepInput = document.getElementById("Cep");
         let numeroCep = numeroCepInput.value
-       
+
         const cepSemEspacos = numeroCep.replace(/\s/g, "");
         const ViaCepUrl = `https://viacep.com.br/ws/${cepSemEspacos}/json/`;
 
         CardPosto.innerHTML = "";
         // Use o fetch para fazer a solicitação HTTP
+
+
+       
+        if (numeroCep.length < 8) {
+            alert("Cep invalido")
+            location.reload();
+            return;
+        }
+        loading.removeAttribute("Class", "carregandoOFF")
+        loading.setAttribute("class", "carregandoON");
+        console.log(loading)
         fetch(ViaCepUrl)
             .then(response => {
                 // Verifique se a resposta foi bem-sucedida (código de status 200)
 
+                console.log(response)
                 if (!response.ok) {
                     throw new Error('Não foi possível obter as informações do CEP');
                 }
                 return response.json();
             })
             .then(data => {
+
+
+
                 // Use os dados obtidos a partir da resposta
-                let endereco = `"${data.logradouro}",`+`"${data.bairro}",`+`"${data.localidade}"`
+                let endereco = `"${data.logradouro}",` + `"${data.bairro}",` + `"${data.localidade}"`
                 // let endereco = data.localidade + ',' + data.bairro + ',' + data.logradouro + ""
                 console.log(endereco)
                 const apiKey = 'AIzaSyB46wG7bMX070nj2Avrb24R-R7F5ihAfwM';
@@ -319,12 +331,15 @@ document.addEventListener("DOMContentLoaded", function () {
                         if (!response.ok) {
                             throw new Error('Não foi possível obter as coordenadas');
                         }
-                        
+
                         return response.json();
 
                     })
                     .then(data => {
                         // Acesse as coordenadas lat e lng a partir dos dados de resposta
+                        loading.removeAttribute("Class", "carregandoON")
+                        loading.setAttribute("class", "carregandoOFF");
+                        console.log(loading)
                         let menorDistancia = Infinity;
                         let pontoMaisProximo = null;
                         console.log(data)
@@ -471,15 +486,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                                 CardPosto.appendChild(divLineInfo)
 
-
-
                             });
-                            
-
-
-
-
-
 
 
                         } else {

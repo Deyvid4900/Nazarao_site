@@ -27,6 +27,7 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  var loading = document.getElementById('loading');
   var options = {
     enableHighAccuracy: true,
     // Reduz a precisão
@@ -251,14 +252,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }, options); // 
 
   btnBuscarCep.addEventListener("click", function () {
+    var loading = document.getElementById('loading');
     var numeroCepInput = document.getElementById("Cep");
     var numeroCep = numeroCepInput.value;
     var cepSemEspacos = numeroCep.replace(/\s/g, "");
     var ViaCepUrl = "https://viacep.com.br/ws/".concat(cepSemEspacos, "/json/");
     CardPosto.innerHTML = ""; // Use o fetch para fazer a solicitação HTTP
 
+    if (numeroCep.length < 8) {
+      alert("Cep invalido");
+      location.reload();
+      return;
+    }
+
+    loading.removeAttribute("Class", "carregandoOFF");
+    loading.setAttribute("class", "carregandoON");
+    console.log(loading);
     fetch(ViaCepUrl).then(function (response) {
       // Verifique se a resposta foi bem-sucedida (código de status 200)
+      console.log(response);
+
       if (!response.ok) {
         throw new Error('Não foi possível obter as informações do CEP');
       }
@@ -279,6 +292,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.json();
       }).then(function (data) {
         // Acesse as coordenadas lat e lng a partir dos dados de resposta
+        loading.removeAttribute("Class", "carregandoON");
+        loading.setAttribute("class", "carregandoOFF");
+        console.log(loading);
         var menorDistancia = Infinity;
         var pontoMaisProximo = null;
         console.log(data);
@@ -302,10 +318,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return distanciaA - distanciaB;
           };
 
-          var location = data.results[0].geometry.location;
-          console.log(location);
-          var lat = location.lat;
-          var lng = location.lng;
+          var _location = data.results[0].geometry.location;
+          console.log(_location);
+          var lat = _location.lat;
+          var lng = _location.lng;
           console.log("Latitude: ".concat(lat, ", Longitude: ").concat(lng));
 
           _postos.cordsPostos.forEach(function (local) {
