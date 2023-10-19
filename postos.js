@@ -178,7 +178,7 @@ export const cordsPostos = [
         lat: -20.84389240243609,
         lng: -41.12881863217908,
         nome: "Posto Alvorada BR Petrobrás",
-        img: " ",
+        img: "./img-svg/postos/alvorada.png",
         tipo: "PostosPetrobras",
         possui: ["Conveniencia", "Troca de Óleo"],
 
