@@ -1,6 +1,7 @@
 import { cordsPostos } from "./postos.js";
 const btnBuscarCep = document.getElementById("btnBuscarCep")
 const CardPosto = document.getElementById("CardPosto")
+const btnCloseModal = document.getElementById("btnCloseModal")
 
 let pontoMaisProximo = null;
 let menorDistancia = Infinity;
@@ -34,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         maximumAge: 0 // Não usar cache
     };
     navigator.geolocation.getCurrentPosition(function (position) {
-
+        loading.style.display = "block";
         let lat = position.coords.latitude;
         let lng = position.coords.longitude;
 
@@ -174,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (i === 4) {
                 shouldStop = true;
             }
-
+            loading.style.display = "none";
 
         });
 
@@ -288,6 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
     btnBuscarCep.addEventListener("click", () => {
         const loading = document.getElementById('loading')
         const numeroCepInput = document.getElementById("Cep");
+        
         let numeroCep = numeroCepInput.value
 
         const cepSemEspacos = numeroCep.replace(/\s/g, "");
@@ -297,14 +299,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // Use o fetch para fazer a solicitação HTTP
 
 
-       
+
         if (numeroCep.length < 8) {
-            alert("Cep invalido")
-            location.reload();
-            return;
+            document.getElementById("modalOverlay").style.display = "flex";
+            btnCloseModal.addEventListener("click",()=>{
+                document.getElementById("modalOverlay").style.display = "none";
+                location.reload();
+            })
+            return
         }
-        loading.removeAttribute("Class", "carregandoOFF")
-        loading.setAttribute("class", "carregandoON");
+        loading.style.display = "block";
         console.log(loading)
         fetch(ViaCepUrl)
             .then(response => {
@@ -337,8 +341,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     })
                     .then(data => {
                         // Acesse as coordenadas lat e lng a partir dos dados de resposta
-                        loading.removeAttribute("Class", "carregandoON")
-                        loading.setAttribute("class", "carregandoOFF");
+                        loading.style.display = "none";
+
                         console.log(loading)
                         let menorDistancia = Infinity;
                         let pontoMaisProximo = null;

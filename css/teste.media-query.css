@@ -103,10 +103,16 @@
     }
     
     .lineInfo{
-        width: 500px;
+        width: 550px;
+        
     }  
     .infoPostosPetrobras h2, .infoPostosShell h2, .infoPostosIpiranga h2, .infoPostosComum h2 {
+        width: 290px;
         margin: 0px auto; 
+        word-wrap: break-word;
+    }
+    .infoPostos h2::after, .infoPostosShell h2:after, .infoPostosIpiranga h2::after, .infoPostosComum h2::after {
+        display: none;
     }
 }
 

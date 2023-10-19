@@ -10,6 +10,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var btnBuscarCep = document.getElementById("btnBuscarCep");
 var CardPosto = document.getElementById("CardPosto");
+var btnCloseModal = document.getElementById("btnCloseModal");
 var pontoMaisProximo = null;
 var menorDistancia = Infinity;
 var shouldStop = false;
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   };
   navigator.geolocation.getCurrentPosition(function (position) {
+    loading.style.display = "block";
     var lat = position.coords.latitude;
     var lng = position.coords.longitude; // Iterar sobre os objetos e calcular as distâncias
 
@@ -159,6 +161,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (i === 4) {
         shouldStop = true;
       }
+
+      loading.style.display = "none";
     });
   }, function (error) {
     // Função de erro
@@ -260,13 +264,15 @@ document.addEventListener("DOMContentLoaded", function () {
     CardPosto.innerHTML = ""; // Use o fetch para fazer a solicitação HTTP
 
     if (numeroCep.length < 8) {
-      alert("Cep invalido");
-      location.reload();
+      document.getElementById("modalOverlay").style.display = "flex";
+      btnCloseModal.addEventListener("click", function () {
+        document.getElementById("modalOverlay").style.display = "none";
+        location.reload();
+      });
       return;
     }
 
-    loading.removeAttribute("Class", "carregandoOFF");
-    loading.setAttribute("class", "carregandoON");
+    loading.style.display = "block";
     console.log(loading);
     fetch(ViaCepUrl).then(function (response) {
       // Verifique se a resposta foi bem-sucedida (código de status 200)
@@ -292,8 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.json();
       }).then(function (data) {
         // Acesse as coordenadas lat e lng a partir dos dados de resposta
-        loading.removeAttribute("Class", "carregandoON");
-        loading.setAttribute("class", "carregandoOFF");
+        loading.style.display = "none";
         console.log(loading);
         var menorDistancia = Infinity;
         var pontoMaisProximo = null;
