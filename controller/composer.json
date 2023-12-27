@@ -1,0 +1,17 @@
+{
+    "name": "deyvid/controller",
+    "autoload": {
+        "psr-4": {
+            "Deyvid\\Controller\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Deyvid Oliveira Silva",
+            "email": "94657946+Deyvid4900@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}

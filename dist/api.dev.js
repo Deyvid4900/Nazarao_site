@@ -56,22 +56,6 @@ if ("geolocation" in navigator) {
                 marker.addListener("click", function (_ref3) {
                   var domEvent = _ref3.domEvent,
                       latLng = _ref3.latLng;
-                  // const { target } = domEvent;
-                  // //   content that show when you click em pin/markes
-                  // const contentString =
-                  //   '<div style="height: 100%;">' +
-                  //   "<h1>" +
-                  //   position.nome +
-                  //   "</h1>" +
-                  //   "<img src=" +
-                  //   +' alt="" style="width: 400px;">' +
-                  //   "</div>";
-                  // infoWindow.setContent(contentString);
-                  // //   infoWindow.setIcon();
-                  // infoWindow.open({
-                  //   anchor: marker,
-                  //   map,
-                  // });
                   var mapaURL = 'https://www.google.com/maps?q=' + position.lat + ',' + position.lng;
                   window.location.href = mapaURL;
                 });
@@ -85,10 +69,12 @@ if ("geolocation" in navigator) {
                 });
                 var cep = CepInput.value;
 
-                function focusOnLocation(cep) {
+                function focusOnLocation(cep, map) {
                   geocoder.geocode({
                     address: cep
                   }, function (results, status) {
+                    console.log("Geocoding Response:", results, status);
+
                     if (status === "OK" && results[0]) {
                       var location = results[0].geometry.location;
                       map.setCenter(location);
@@ -99,8 +85,7 @@ if ("geolocation" in navigator) {
                   });
                 }
 
-                focusOnLocation(cep);
-                google.maps.event.addDomListener(window, "load", initializeMap);
+                focusOnLocation(cep, map);
               });
 
             case 14:
@@ -133,8 +118,10 @@ function findClosestMarker(userLocation) {
     }
   });
 
+  console.log("Closest Marker:", closestMarker, "Distance:", closestDistance);
+
   if (closestMarker) {
-    calculateAndDisplayRoute(userLocation, closestMarker);
+    calculateAndDisplayRoute(userLocation, closestMarker.position);
   }
 }
 

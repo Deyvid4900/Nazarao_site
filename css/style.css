@@ -11,10 +11,10 @@
 @import url('main/media-query-main.css');
 
 
-@import url('section-2/section-inov.css');
+/* @import url('section-2/section-inov.css'); */
 @import url('section-2/media-query-section2.css');
 
-@import url('section-3/trabalhe.css');
+/* @import url('section-3/trabalhe.css'); */
 @import url('section-3/media-query-section3.css');
 
 @import url('footer/footer.css');

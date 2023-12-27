@@ -34,11 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
         timeout: 15000, // Tempo limite em milissegundos
         maximumAge: 0 // Não usar cache
     };
+
     navigator.geolocation.getCurrentPosition(function (position) {
         loading.style.display = "block";
         let lat = position.coords.latitude;
         let lng = position.coords.longitude;
-
+        console.log(position)
 
         // Iterar sobre os objetos e calcular as distâncias
         cordsPostos.forEach(local => {
@@ -53,21 +54,26 @@ document.addEventListener("DOMContentLoaded", function () {
         function compararDistancia(a, b) {
             const distanciaA = calcularDistancia(lat, lng, a.lat, a.lng);
             const distanciaB = calcularDistancia(lat, lng, b.lat, b.lng);
-            return (distanciaA - distanciaB)
+            return distanciaA - distanciaB;
         }
+        
+        // Calcula a distância e encontra o posto mais próximo
+        cordsPostos.forEach(local => {
+            const distancia = calcularDistancia(lat, lng, local.lat, local.lng);
+            if (distancia < menorDistancia) {
+                menorDistancia = distancia;
+                pontoMaisProximo = local;
+            }
+        });
+        
         console.log("O ponto mais próximo é:", pontoMaisProximo);
         console.log("Distância:", menorDistancia, "quilômetros");
         console.log(lat);
         console.log(lng);
-
-
+        
         // Ordene o array com base na distância
         cordsPostos.sort(compararDistancia);
-        const postosOrdenados = cordsPostos.map(posto => ({
-            ...posto,
-            distancia: calcularDistancia(lat, lng, posto.lat, posto.lng)
-        })).sort((a, b) => a.distancia - b.distancia);
-
+        
 
 
 
@@ -182,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, function (error) {
         // Função de erro
         console.error(`Erro ao obter a localização: ${error.message}`);
-        alert("Não foi possivel ajustar os Postos mais proximos")
+        // alert("Não foi possivel ajustar os Postos mais proximos")
 
         cordsPostos.forEach(element => {
             // Crie um elemento div com a classe "lineInfo"
@@ -284,25 +290,45 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }, options);
 
+    function buscarPostosDeAbastecimento(cep) {
+        const apiKey = 'AIzaSyDzixHiJAmfIEYkFwc5ysW5xF0RmmoEFRU';
+        const radius = 10000; // Raio em metros para a busca (5 km neste exemplo)
 
+        cep = encodeURIComponent(cep);
+        const url = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=posto+de+gasolina&location=${cep}&radius=${radius}&key=${apiKey}`;
+
+        // Fazendo a requisição à API usando Fetch
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'OK') {
+                    // Resultados bem-sucedidos
+                    exibirResultados(data.results);
+                } else {
+                    // Tratamento de erro
+                    console.error('Erro na busca de postos de abastecimento.');
+                }
+            })
+            .catch(error => console.error('Erro na requisição:', error));
+    }
     // 
     btnBuscarCep.addEventListener("click", () => {
         const loading = document.getElementById('loading')
         const numeroCepInput = document.getElementById("Cep");
-        
+
         let numeroCep = numeroCepInput.value
 
-        const cepSemEspacos = numeroCep.replace(/\s/g, "");
+        const cepSemEspacos = numeroCep.replace(/-/g, '');
         const ViaCepUrl = `https://viacep.com.br/ws/${cepSemEspacos}/json/`;
 
         CardPosto.innerHTML = "";
         // Use o fetch para fazer a solicitação HTTP
-
+        // buscarPostosDeAbastecimento(numeroCep)
 
 
         if (numeroCep.length < 8) {
             document.getElementById("modalOverlay").style.display = "flex";
-            btnCloseModal.addEventListener("click",()=>{
+            btnCloseModal.addEventListener("click", () => {
                 document.getElementById("modalOverlay").style.display = "none";
                 location.reload();
             })
@@ -310,6 +336,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         loading.style.display = "block";
         console.log(loading)
+
+
         fetch(ViaCepUrl)
             .then(response => {
                 // Verifique se a resposta foi bem-sucedida (código de status 200)
@@ -328,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let endereco = `"${data.logradouro}",` + `"${data.bairro}",` + `"${data.localidade}"`
                 // let endereco = data.localidade + ',' + data.bairro + ',' + data.logradouro + ""
                 console.log(endereco)
-                const apiKey = 'AIzaSyB46wG7bMX070nj2Avrb24R-R7F5ihAfwM';
+                const apiKey = 'AIzaSyDzixHiJAmfIEYkFwc5ysW5xF0RmmoEFRU';
                 const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${endereco}&key=${apiKey}`;
                 fetch(geocodingUrl)
                     .then(response => {
@@ -495,6 +523,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         } else {
                             console.error('Endereço não encontrado ou sem resultados');
+                            alert('Endereço não encontrado ou sem resultado');
                         }
                     })
                     .catch(error => {

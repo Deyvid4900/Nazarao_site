@@ -2,12 +2,6 @@
 
 var _postos = require("./postos.js");
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var btnBuscarCep = document.getElementById("btnBuscarCep");
 var CardPosto = document.getElementById("CardPosto");
 var btnCloseModal = document.getElementById("btnCloseModal");
@@ -40,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
   navigator.geolocation.getCurrentPosition(function (position) {
     loading.style.display = "block";
     var lat = position.coords.latitude;
-    var lng = position.coords.longitude; // Iterar sobre os objetos e calcular as distâncias
+    var lng = position.coords.longitude;
+    console.log(position); // Iterar sobre os objetos e calcular as distâncias
 
     _postos.cordsPostos.forEach(function (local) {
       var distancia = calcularDistancia(lat, lng, local.lat, local.lng);
@@ -56,7 +51,17 @@ document.addEventListener("DOMContentLoaded", function () {
       var distanciaA = calcularDistancia(lat, lng, a.lat, a.lng);
       var distanciaB = calcularDistancia(lat, lng, b.lat, b.lng);
       return distanciaA - distanciaB;
-    }
+    } // Calcula a distância e encontra o posto mais próximo
+
+
+    _postos.cordsPostos.forEach(function (local) {
+      var distancia = calcularDistancia(lat, lng, local.lat, local.lng);
+
+      if (distancia < menorDistancia) {
+        menorDistancia = distancia;
+        pontoMaisProximo = local;
+      }
+    });
 
     console.log("O ponto mais próximo é:", pontoMaisProximo);
     console.log("Distância:", menorDistancia, "quilômetros");
@@ -64,14 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(lng); // Ordene o array com base na distância
 
     _postos.cordsPostos.sort(compararDistancia);
-
-    var postosOrdenados = _postos.cordsPostos.map(function (posto) {
-      return _objectSpread({}, posto, {
-        distancia: calcularDistancia(lat, lng, posto.lat, posto.lng)
-      });
-    }).sort(function (a, b) {
-      return a.distancia - b.distancia;
-    });
 
     _postos.cordsPostos.map(function (element, i) {
       if (shouldStop) return; // Crie um elemento div com a classe "lineInfo"
@@ -166,8 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, function (error) {
     // Função de erro
-    console.error("Erro ao obter a localiza\xE7\xE3o: ".concat(error.message));
-    alert("Não foi possivel ajustar os Postos mais proximos");
+    console.error("Erro ao obter a localiza\xE7\xE3o: ".concat(error.message)); // alert("Não foi possivel ajustar os Postos mais proximos")
 
     _postos.cordsPostos.forEach(function (element) {
       // Crie um elemento div com a classe "lineInfo"
@@ -253,15 +249,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
       CardPosto.appendChild(divLineInfo);
     });
-  }, options); // 
+  }, options);
+
+  function buscarPostosDeAbastecimento(cep) {
+    var apiKey = 'AIzaSyDzixHiJAmfIEYkFwc5ysW5xF0RmmoEFRU';
+    var radius = 10000; // Raio em metros para a busca (5 km neste exemplo)
+
+    cep = encodeURIComponent(cep);
+    var url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=posto+de+gasolina&location=".concat(cep, "&radius=").concat(radius, "&key=").concat(apiKey); // Fazendo a requisição à API usando Fetch
+
+    fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      if (data.status === 'OK') {
+        // Resultados bem-sucedidos
+        exibirResultados(data.results);
+      } else {
+        // Tratamento de erro
+        console.error('Erro na busca de postos de abastecimento.');
+      }
+    })["catch"](function (error) {
+      return console.error('Erro na requisição:', error);
+    });
+  } // 
+
 
   btnBuscarCep.addEventListener("click", function () {
     var loading = document.getElementById('loading');
     var numeroCepInput = document.getElementById("Cep");
     var numeroCep = numeroCepInput.value;
-    var cepSemEspacos = numeroCep.replace(/\s/g, "");
+    var cepSemEspacos = numeroCep.replace(/-/g, '');
     var ViaCepUrl = "https://viacep.com.br/ws/".concat(cepSemEspacos, "/json/");
     CardPosto.innerHTML = ""; // Use o fetch para fazer a solicitação HTTP
+    // buscarPostosDeAbastecimento(numeroCep)
 
     if (numeroCep.length < 8) {
       document.getElementById("modalOverlay").style.display = "flex";
@@ -288,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var endereco = "\"".concat(data.logradouro, "\",") + "\"".concat(data.bairro, "\",") + "\"".concat(data.localidade, "\""); // let endereco = data.localidade + ',' + data.bairro + ',' + data.logradouro + ""
 
       console.log(endereco);
-      var apiKey = 'AIzaSyB46wG7bMX070nj2Avrb24R-R7F5ihAfwM';
+      var apiKey = 'AIzaSyDzixHiJAmfIEYkFwc5ysW5xF0RmmoEFRU';
       var geocodingUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=".concat(endereco, "&key=").concat(apiKey);
       fetch(geocodingUrl).then(function (response) {
         if (!response.ok) {
@@ -430,6 +450,7 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         } else {
           console.error('Endereço não encontrado ou sem resultados');
+          alert('Endereço não encontrado ou sem resultado');
         }
       })["catch"](function (error) {
         console.error(error);

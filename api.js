@@ -49,25 +49,7 @@ if ("geolocation" in navigator) {
 
 
         marker.addListener("click", ({ domEvent, latLng }) => {
-          // const { target } = domEvent;
-
-          // //   content that show when you click em pin/markes
-          // const contentString =
-          //   '<div style="height: 100%;">' +
-          //   "<h1>" +
-          //   position.nome +
-          //   "</h1>" +
-          //   "<img src=" +
-          //   +' alt="" style="width: 400px;">' +
-          //   "</div>";
-
-          // infoWindow.setContent(contentString);
-          // //   infoWindow.setIcon();
-
-          // infoWindow.open({
-          //   anchor: marker,
-          //   map,
-          // });
+          
           var mapaURL = 'https://www.google.com/maps?q=' + position.lat + ',' + position.lng;
 
         
@@ -78,22 +60,24 @@ if ("geolocation" in navigator) {
         geocoder = new google.maps.Geocoder();
         directionsService = new google.maps.DirectionsService();
         directionsRenderer = new google.maps.DirectionsRenderer({ map });
-        let cep = CepInput.value
-
-        function focusOnLocation(cep) {
-          geocoder.geocode({ address: cep }, function (results, status) {
-            if (status === "OK" && results[0]) {
-              const location = results[0].geometry.location;
-              map.setCenter(location);
-              findClosestMarker(location);
-            } else {
-              alert("CEP não encontrado. Verifique o CEP e tente novamente.");
-            }
-          });
+        let cep = CepInput.value;
+    
+        function focusOnLocation(cep, map) {
+            geocoder.geocode({ address: cep }, function (results, status) {
+              console.log("Geocoding Response:", results, status);
+                if (status === "OK" && results[0]) {
+                    const location = results[0].geometry.location;
+                    map.setCenter(location);
+                    findClosestMarker(location);
+                } else {
+                    alert("CEP não encontrado. Verifique o CEP e tente novamente.");
+                }
+            });
         }
-        focusOnLocation(cep);
-        google.maps.event.addDomListener(window, "load", initializeMap);
-      })
+    
+        focusOnLocation(cep, map);
+    });
+    
 
     }
 
@@ -124,8 +108,10 @@ function findClosestMarker(userLocation) {
     }
   });
 
+  console.log("Closest Marker:", closestMarker, "Distance:", closestDistance);
+
   if (closestMarker) {
-    calculateAndDisplayRoute(userLocation, closestMarker);
+    calculateAndDisplayRoute(userLocation, closestMarker.position);
   }
 }
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fale Conosco | Grupo Nazarão</title>
@@ -19,8 +20,45 @@
     <link rel="icon" href="img-svg/Frame 3.svg" type="svg">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <link rel="stylesheet" href="./css/style.css">
-   
 </head>
+<style>
+  .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  margin: 0px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #000 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+</style>
 <body id="fale-conosco">
   <header>
     <div style="height: 100%;">
@@ -96,7 +134,7 @@
             </section>
 
             <section class="contato-formulario">
-                <form class="form" action="">
+                <form class="form" id="form" method="POST" action="/controller/controllerFormContato.php" >
                   <div>
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" placeholder="Seu nome" maxlength="45" required="required" autocomplete="off">
@@ -116,7 +154,7 @@
                   <div class="line-2"><p>Escolha com quem deseja falar:</p></div>
                   <div class="input-radio">
                       <div class="inputt">
-                          <input class="radio" type="radio" name="escolha" value="suporte" id="suporte">
+                          <input class="radio" type="radio" name="escolha" value="suporte" id="suporte" checked>
                           <label class="suporte" for="suporte">Suporte</label>
                       </div>
 
@@ -126,8 +164,13 @@
                           <label for="trr">TRR</label>
                       </div>
                   </div>
+                  <div style="display: flex; align-items: center; justify-content: space-between;width: 100%;"><button class="botao" type="submit">Enviar Mensagem</button>
+                    <div class="lds-ring">
+                      <div></div><div></div><div></div><div></div></div></div>
+                      <div class="mensagem sucesso">Mensagem enviada com sucesso!</div>
+                    <div class="mensagem erro">Erro ao enviar mensagem. Por favor, tente novamente.</div>
+                      
                 </form>
-                <button class="botao">Enviar Mensagem</button>
             </section>
         </div>
     </main>
@@ -159,7 +202,7 @@
         <div class="divFooterBloco">
           <h4>Rede Social</h4>
           <a href="https://www.facebook.com/gruponazarao/"><img class="face pad-rg" a src="img-svg/Icons/facebook.svg" /></a>
-          <a href=""><img class="linkedin pad-rg" src="img-svg/Icons/Linkedin.svg" alt=""/></a>
+          <a href=""><img class="linkedin pad-rg" src="img-svg/Icons/linkedin.svg" alt=""/></a>
           <a href="https://www.instagram.com/gruponazarao/"><img src="img-svg/Icons/instagram.svg" alt="" /></a>
         </div>
       </div>
@@ -175,5 +218,34 @@ AOS.init({
 });
 </script>
 <script src="script.js"></script>
+<script src="script/formFetch.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let form = document.getElementById('form')
+    form.addEventListener('submit',(e)=>{
+      e.preventDefault();
+    })
+    const radioButtons = document.querySelectorAll('.inputt input[type="radio"]');
+
+    radioButtons.forEach(function(radioButton) {
+      radioButton.addEventListener('change', function() {
+        // Desmarca todos os outros radios
+        radioButtons.forEach(function(otherRadioButton) {
+          if (otherRadioButton !== radioButton) {
+            otherRadioButton.checked = false;
+            otherRadioButton.parentElement.classList.remove('selected');
+          }
+        });
+
+        // Marca o radio atual
+        if (radioButton.checked) {
+          radioButton.parentElement.classList.add('selected');
+        } else {
+          radioButton.parentElement.classList.remove('selected');
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
